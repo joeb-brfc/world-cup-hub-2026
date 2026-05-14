@@ -8,3 +8,19 @@ class Stadium(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Team(models.Model):
+    GROUP_CHOICES = [
+        ('A', 'Group A'),
+        ('B', 'Group B'),
+        ('C', 'Group C'),
+        ('D', 'Group D'),
+        ('E', 'Group E'),
+        ('F', 'Group F'),
+        ('G', 'Group G'),
+        ('H', 'Group H'),
+        ('I', 'Group I'),
+        ('J', 'Group J'),
+        ('K', 'Group K'),
+        ('L', 'Group L'),
+    ]

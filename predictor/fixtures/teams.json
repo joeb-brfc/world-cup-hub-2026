@@ -1,0 +1,418 @@
+[
+    {
+        "team": "Argentina",
+        "group": "Group E",
+        "manager": "Lionel Scaloni",
+        "captain": "Lionel Messi",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1978, 1986, 2022"
+    },
+    {
+        "team": "Australia",
+        "group": "Group H",
+        "manager": "Graham Arnold",
+        "captain": "Mat Ryan",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "2006, 2022"
+    },
+    {
+        "team": "Austria",
+        "group": "Group K",
+        "manager": "Ralf Rangnick",
+        "captain": "David Alaba",
+        "best_world_cup_finish": "Third Place",
+        "best_finish_year": "1954"
+    },
+    {
+        "team": "Algeria",
+        "group": "Group G",
+        "manager": "Vladimir Petković",
+        "captain": "Riyad Mahrez",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "2014"
+    },
+    {
+        "team": "Belgium",
+        "group": "Group C",
+        "manager": "Domenico Tedesco",
+        "captain": "Kevin De Bruyne",
+        "best_world_cup_finish": "Third Place",
+        "best_finish_year": "2018"
+    },
+    {
+        "team": "Bosnia and Herzegovina",
+        "group": "Group J",
+        "manager": "Sergej Barbarez",
+        "captain": "Edin Džeko",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "2014"
+    },
+    {
+        "team": "Brazil",
+        "group": "Group F",
+        "manager": "Dorival Júnior",
+        "captain": "Marquinhos",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1958, 1962, 1970, 1994, 2002"
+    },
+    {
+        "team": "Cameroon",
+        "group": "Group I",
+        "manager": "Marc Brys",
+        "captain": "Vincent Aboubakar",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "1990"
+    },
+    {
+        "team": "Canada",
+        "group": "Group B",
+        "manager": "Jesse Marsch",
+        "captain": "Alphonso Davies",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "1986, 2022"
+    },
+    {
+        "team": "Cape Verde",
+        "group": "Group L",
+        "manager": "Bubista",
+        "captain": "Ryan Mendes",
+        "best_world_cup_finish": "Debut",
+        "best_finish_year": "2026"
+    },
+    {
+        "team": "Colombia",
+        "group": "Group D",
+        "manager": "Néstor Lorenzo",
+        "captain": "James Rodríguez",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "2014"
+    },
+    {
+        "team": "Croatia",
+        "group": "Group A",
+        "manager": "Zlatko Dalić",
+        "captain": "Luka Modrić",
+        "best_world_cup_finish": "Runners-up",
+        "best_finish_year": "2018"
+    },
+    {
+        "team": "Curaçao",
+        "group": "Group G",
+        "manager": "Dick Advocaat",
+        "captain": "Cuco Martina",
+        "best_world_cup_finish": "Debut",
+        "best_finish_year": "2026"
+    },
+    {
+        "team": "Czech Republic",
+        "group": "Group H",
+        "manager": "Ivan Hašek",
+        "captain": "Tomáš Souček",
+        "best_world_cup_finish": "Runners-up",
+        "best_finish_year": "1934, 1962"
+    },
+    {
+        "team": "DR Congo",
+        "group": "Group F",
+        "manager": "Sébastien Desabre",
+        "captain": "Chancel Mbemba",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "1974"
+    },
+    {
+        "team": "Ecuador",
+        "group": "Group D",
+        "manager": "Félix Sánchez Bas",
+        "captain": "Enner Valencia",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "2006"
+    },
+    {
+        "team": "Egypt",
+        "group": "Group E",
+        "manager": "Hossam Hassan",
+        "captain": "Mohamed Salah",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "1934"
+    },
+    {
+        "team": "England",
+        "group": "Group C",
+        "manager": "Thomas Tuchel",
+        "captain": "Harry Kane",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1966"
+    },
+    {
+        "team": "France",
+        "group": "Group B",
+        "manager": "Didier Deschamps",
+        "captain": "Kylian Mbappé",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1998, 2018"
+    },
+    {
+        "team": "Germany",
+        "group": "Group A",
+        "manager": "Julian Nagelsmann",
+        "captain": "Joshua Kimmich",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1954, 1974, 1990, 2014"
+    },
+    {
+        "team": "Ghana",
+        "group": "Group K",
+        "manager": "Otto Addo",
+        "captain": "Thomas Partey",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "2010"
+    },
+    {
+        "team": "Haiti",
+        "group": "Group I",
+        "manager": "Sébastien Migné",
+        "captain": "Ricardo Adé",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "1974"
+    },
+    {
+        "team": "Iran",
+        "group": "Group J",
+        "manager": "Amir Ghalenoei",
+        "captain": "Alireza Jahanbakhsh",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "Multiple"
+    },
+    {
+        "team": "Iraq",
+        "group": "Group D",
+        "manager": "Jesús Casas",
+        "captain": "Jalal Hassan",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "1986"
+    },
+    {
+        "team": "Italy",
+        "group": "Group L",
+        "manager": "Luciano Spalletti",
+        "captain": "Gianluigi Donnarumma",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1934, 1938, 1982, 2006"
+    },
+    {
+        "team": "Ivory Coast",
+        "group": "Group E",
+        "manager": "Emerse Faé",
+        "captain": "Serge Aurier",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "2006, 2010, 2014"
+    },
+    {
+        "team": "Japan",
+        "group": "Group C",
+        "manager": "Hajime Moriyasu",
+        "captain": "Wataru Endō",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "2002, 2010, 2018, 2022"
+    },
+    {
+        "team": "Jordan",
+        "group": "Group B",
+        "manager": "Hussein Ammouta",
+        "captain": "Ihsan Haddad",
+        "best_world_cup_finish": "Debut",
+        "best_finish_year": "2026"
+    },
+    {
+        "team": "Mexico",
+        "group": "Group A",
+        "manager": "Jaime Lozano",
+        "captain": "Edson Álvarez",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "1970, 1986"
+    },
+    {
+        "team": "Morocco",
+        "group": "Group F",
+        "manager": "Walid Regragui",
+        "captain": "Romain Saïss",
+        "best_world_cup_finish": "Semi-finals",
+        "best_finish_year": "2022"
+    },
+    {
+        "team": "Netherlands",
+        "group": "Group H",
+        "manager": "Ronald Koeman",
+        "captain": "Virgil van Dijk",
+        "best_world_cup_finish": "Runners-up",
+        "best_finish_year": "1974, 1978, 2010"
+    },
+    {
+        "team": "New Zealand",
+        "group": "Group G",
+        "manager": "Darren Bazeley",
+        "captain": "Chris Wood",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "1982, 2010"
+    },
+    {
+        "team": "Nigeria",
+        "group": "Group K",
+        "manager": "Finidi George",
+        "captain": "William Troost-Ekong",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "1994, 1998, 2014"
+    },
+    {
+        "team": "Norway",
+        "group": "Group I",
+        "manager": "Ståle Solbakken",
+        "captain": "Martin Ødegaard",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "1998"
+    },
+    {
+        "team": "Panama",
+        "group": "Group J",
+        "manager": "Thomas Christiansen",
+        "captain": "Aníbal Godoy",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "2018"
+    },
+    {
+        "team": "Paraguay",
+        "group": "Group L",
+        "manager": "Daniel Garnero",
+        "captain": "Gustavo Gómez",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "2010"
+    },
+    {
+        "team": "Poland",
+        "group": "Group D",
+        "manager": "Michał Probierz",
+        "captain": "Robert Lewandowski",
+        "best_world_cup_finish": "Third Place",
+        "best_finish_year": "1974, 1982"
+    },
+    {
+        "team": "Portugal",
+        "group": "Group E",
+        "manager": "Roberto Martínez",
+        "captain": "Cristiano Ronaldo",
+        "best_world_cup_finish": "Third Place",
+        "best_finish_year": "1966"
+    },
+    {
+        "team": "Qatar",
+        "group": "Group A",
+        "manager": "Tintín Márquez",
+        "captain": "Hassan Al-Haydos",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "2022"
+    },
+    {
+        "team": "Saudi Arabia",
+        "group": "Group J",
+        "manager": "Roberto Mancini",
+        "captain": "Salem Al-Dawsari",
+        "best_world_cup_finish": "Round of 16",
+        "best_finish_year": "1994"
+    },
+    {
+        "team": "Scotland",
+        "group": "Group B",
+        "manager": "Steve Clarke",
+        "captain": "Andy Robertson",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "1954-1998"
+    },
+    {
+        "team": "Senegal",
+        "group": "Group H",
+        "manager": "Aliou Cissé",
+        "captain": "Kalidou Koulibaly",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "2002"
+    },
+    {
+        "team": "Serbia",
+        "group": "Group C",
+        "manager": "Dragan Stojković",
+        "captain": "Dušan Tadić",
+        "best_world_cup_finish": "Runners-up",
+        "best_finish_year": "1930, 1962"
+    },
+    {
+        "team": "South Africa",
+        "group": "Group G",
+        "manager": "Hugo Broos",
+        "captain": "Ronwen Williams",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "2010"
+    },
+    {
+        "team": "South Korea",
+        "group": "Group F",
+        "manager": "Hong Myung-bo",
+        "captain": "Son Heung-min",
+        "best_world_cup_finish": "Fourth Place",
+        "best_finish_year": "2002"
+    },
+    {
+        "team": "Spain",
+        "group": "Group I",
+        "manager": "Luis de la Fuente",
+        "captain": "Álvaro Morata",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "2010"
+    },
+    {
+        "team": "Sweden",
+        "group": "Group K",
+        "manager": "Jon Dahl Tomasson",
+        "captain": "Victor Lindelöf",
+        "best_world_cup_finish": "Runners-up",
+        "best_finish_year": "1958"
+    },
+    {
+        "team": "Switzerland",
+        "group": "Group L",
+        "manager": "Murat Yakin",
+        "captain": "Granit Xhaka",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_finish_year": "1934, 1938, 1954"
+    },
+    {
+        "team": "Türkiye",
+        "group": "Group A",
+        "manager": "Vincenzo Montella",
+        "captain": "Hakan Çalhanoğlu",
+        "best_world_cup_finish": "Third Place",
+        "best_finish_year": "2002"
+    },
+    {
+        "team": "USA",
+        "group": "Group D",
+        "manager": "Mauricio Pochettino",
+        "captain": "Christian Pulisic",
+        "best_world_cup_finish": "Third Place",
+        "best_finish_year": "1930"
+    },
+    {
+        "team": "Uruguay",
+        "group": "Group H",
+        "manager": "Marcelo Bielsa",
+        "captain": "Federico Valverde",
+        "best_world_cup_finish": "Winners",
+        "best_finish_year": "1930, 1950"
+    },
+    {
+        "team": "Uzbekistan",
+        "group": "Group C",
+        "manager": "Srečko Katanec",
+        "captain": "Eldor Shomurodov",
+        "best_world_cup_finish": "Debut",
+        "best_finish_year": "2026"
+    }
+]
