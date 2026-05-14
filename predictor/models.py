@@ -34,3 +34,33 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Fixture(models.Model):
+    STAGE_CHOICES = [
+        ('Group Stage', 'Group Stage'),
+        ('Round of 32', 'Round of 32'),
+        ('Round of 16', 'Round of 16'),
+        ('Quarterfinals', 'Quarterfinals'),
+        ('Semifinals', 'Semifinals'),
+        ('Final', 'Final'),
+    ]
+
+    home_team = models.ForeignKey(
+        Team, 
+        on_delete=models.CASCADE,
+        related_name='home_fixtures'
+    )
+
+    away_team = models.ForeignKey(
+        Team,
+        on_delete=models.CASCADE,
+        related_name='away_fixtures'
+    )
+
+    stadium = models.ForeignKey(
+        Stadium,
+        on_delete=models.SET_NULL,
+        related_name='fixtures',
+        null=True,
+        blank=True
+    )
