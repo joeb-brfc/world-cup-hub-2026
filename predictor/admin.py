@@ -1,8 +1,10 @@
 from django.contrib import admin
-from models import Stadium
+from .models import Stadium
 
-# Register your models here.
-admin.site.register(Stadium, StadiumAdmin)
+@admin.register(Stadium)
 class StadiumAdmin(admin.ModelAdmin):
     list_display = ('name', 'city', 'capacity')
     search_fields = ('name', 'city')
+
+# Register your models here.
+
