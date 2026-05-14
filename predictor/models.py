@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Stadium(models.Model):
@@ -74,3 +75,18 @@ class Fixture(models.Model):
 
     def __str__(self):
         return f"{self.home_team} vs {self.away_team}"
+    
+class Prediction(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='predictions')
+    fixture = models.ForeignKey(Fixture, on_delete=models.CASCADE, related_name='predictions')
+    predicted_home_score = models.PositiveIntegerField()
+    predicted_away_score = models.PositiveIntegerField()
+    points_awarded = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'fixture')
+        ordering = ['fixture__kickoff_time']
+
+    def __str__(self):
+        return f"{self.user.username}'s prediction for {self.fixture}"
