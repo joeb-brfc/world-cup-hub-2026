@@ -64,3 +64,13 @@ class Fixture(models.Model):
         null=True,
         blank=True
     )
+    stage = models.CharField(max_length=20, choices=STAGE_CHOICES)
+    kickoff_time = models.DateTimeField()
+    home_team_score = models.PositiveIntegerField(blank=True, null=True)
+    away_team_score = models.PositiveIntegerField(blank=True, null=True)
+
+    class Meta:
+        ordering = ['kickoff_time']
+
+    def __str__(self):
+        return f"{self.home_team} vs {self.away_team}"
