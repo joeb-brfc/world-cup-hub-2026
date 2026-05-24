@@ -1,58 +1,33 @@
-{% extends "base.html" %}
-
-{% block title %}Fixtures | World Cup Hub 2026{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Fixtures | World Cup Hub 2026{% endblock %} {% block content %}
 
 <section class="container py-5">
+  <h1 class="mb-4">World Cup Fixtures</h1>
 
-    <h1 class="mb-4">World Cup Fixtures</h1>
+  <div class="row">
+    {% for fixture in fixtures %}
 
-    <div class="row">
+    <div class="col-12 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h5">{{ fixture.home_team }} vs {{ fixture.away_team }}</h2>
 
-        {% for fixture in fixtures %}
+          <p class="mb-1">Stage: {{ fixture.get_stage_display }}</p>
 
-        <div class="col-12 mb-4">
+          <p class="mb-1">Stadium: {{ fixture.stadium }}</p>
 
-            <div class="card shadow-sm">
+          <p class="mb-0">Kickoff: {{ fixture.kickoff }}</p>
 
-                <div class="card-body">
-
-                    <h2 class="h5">
-                        {{ fixture.home_team }}
-                        vs
-                        {{ fixture.away_team }}
-                    </h2>
-
-                    <p class="mb-1">
-                        Stage:
-                        {{ fixture.get_stage_display }}
-                    </p>
-
-                    <p class="mb-1">
-                        Stadium:
-                        {{ fixture.stadium }}
-                    </p>
-
-                    <p class="mb-0">
-                        Kickoff:
-                        {{ fixture.kickoff }}
-                    </p>
-
-                </div>
-
-            </div>
-
+          <a href="{% url 'create_prediction' fixture.id %}" class="btn btn-primary btn-sm mt-3"> Predict </a>
         </div>
-
-        {% empty %}
-
-        <p>No fixtures available.</p>
-
-        {% endfor %}
-
+      </div>
     </div>
 
+    {% empty %}
+
+    <p>No fixtures available.</p>
+
+    {% endfor %}
+  </div>
 </section>
 
 {% endblock %}
