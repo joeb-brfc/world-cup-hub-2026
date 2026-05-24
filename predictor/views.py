@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Fixture, Prediction
 from .forms import PredictionForm
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -15,6 +16,7 @@ def fixture_list(request):
     }
     return render(request, "predictor/fixture_list.html", context)
 
+@login_required
 def create_prediction(request, fixture_id):
     fixture = get_object_or_404(Fixture, id=fixture_id)
 
