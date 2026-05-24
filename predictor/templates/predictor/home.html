@@ -1,6 +1,35 @@
-{% extends "base.html" %} {% block title %}Home | World Cup Hub 2026{% endblock %} {% block content %}
+{% extends "base.html" %}
+
+{% block title %}Home | World Cup Hub 2026{% endblock %}
+
+{% block content %}
 <section class="container py-5">
-  <h1 class="display-4 fw-bold">World Cup Hub 2026</h1>
-  <p class="lead">world cup 2026</p>
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-7">
+            <h1 class="display-4 fw-bold">World Cup Hub 2026</h1>
+            <p class="lead">
+                World cup engagement platform for fans, with free predictions, premium pontoon, team fact files and leaderboard scoring.
+            </p>
+
+            <div class="mt-4">
+                <a href="#" class="btn btn-primary me-2">View Fixtures</a>
+                <a href="#" class="btn btn-outline-dark">Play Pontoon</a>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="h4">Features</h2>
+                    <ul class="mb-0">
+                        <li>Free prediction game</li>
+                        <li>Premium Pontoon</li>
+                        <li>Team fact files</li>
+                        <li>Leaderboard scoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}
