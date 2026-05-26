@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Fixture, Prediction
 from .forms import PredictionForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 
@@ -28,6 +29,7 @@ def create_prediction(request, fixture_id):
             prediction.fixture = fixture
             prediction.user = request.user
             prediction.save()
+            messages.success(request, "Prediction created successfully!")
             return redirect("fixtures")
     else:
         form = PredictionForm()
