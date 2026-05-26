@@ -12,9 +12,16 @@ def home(request):
 def fixture_list(request):
     fixtures = Fixture.objects.all()
 
+    if request.user.is_authenticated:
+        predictions = Prediction.objects.filter(user=request.user)
+    else:
+        predictions = []
+
     context = {
-        "fixtures": fixtures
+        "fixtures": fixtures,
+        "predictions": predictions,
     }
+
     return render(request, "predictor/fixture_list.html", context)
 
 @login_required
