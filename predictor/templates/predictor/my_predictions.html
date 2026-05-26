@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Predictions | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <h1 class="mb-4">My Predictions</h1>
+
+    {% for prediction in predictions %}
+
+        <div class="card mb-3 shadow-sm">
+
+            <div class="card-body">
+
+                <h2 class="h5">
+                    {{ prediction.fixture.home_team }}
+                    vs
+                    {{ prediction.fixture.away_team }}
+                </h2>
+
+                <p class="mb-1">
+                    Your prediction:
+                    {{ prediction.predicted_home_score }}
+                    -
+                    {{ prediction.predicted_away_score }}
+                </p>
+
+                <p class="mb-0">
+                    Stage:
+                    {{ prediction.fixture.get_stage_display }}
+                </p>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <p>You have not made any predictions yet.</p>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}
