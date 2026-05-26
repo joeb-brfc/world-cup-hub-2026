@@ -17,7 +17,7 @@
 
           <p class="mb-0">Kickoff: {{ fixture.kickoff }}</p>
 
-          <a href="{% url 'create_prediction' fixture.id %}" class="btn btn-primary btn-sm mt-3"> Predict </a>
+          <a href="{% url 'create_prediction' fixture.id %}" class="btn btn-primary btn-sm mt-3"> Predict / Edit </a>
           {% for prediction in predictions %} {% if prediction.fixture.id == fixture.id %}
           <p class="mt-3 mb-0 text-success">Your prediction: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
           {% endif %} {% endfor %}

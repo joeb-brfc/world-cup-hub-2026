@@ -9,4 +9,9 @@ urlpatterns = [
         views.create_prediction,
         name="create_prediction",
     ),
+    path(
+        "my-predictions/",
+        views.my_predictions,
+        name="my_predictions",
+    ),
 ]

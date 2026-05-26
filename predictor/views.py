@@ -69,3 +69,19 @@ def create_prediction(request, fixture_id):
         "predictor/create_prediction.html",
         context
     )
+
+@login_required
+def my_predictions(request):
+    predictions = Prediction.objects.filter(
+        user=request.user
+    )
+
+    context = {
+        "predictions": predictions,
+    }
+
+    return render(
+        request,
+        "predictor/my_predictions.html",
+        context
+    )
