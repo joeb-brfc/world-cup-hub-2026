@@ -1,7 +1,7 @@
 [
     {
         "team": "Argentina",
-        "group": "Group E",
+        "group": "Group J",
         "manager": "Lionel Scaloni",
         "captain": "Lionel Messi",
         "best_world_cup_finish": "Winners",
@@ -9,15 +9,15 @@
     },
     {
         "team": "Australia",
-        "group": "Group H",
-        "manager": "Graham Arnold",
+        "group": "Group D",
+        "manager": "Tony Popovic",
         "captain": "Mat Ryan",
         "best_world_cup_finish": "Round of 16",
         "best_finish_year": "2006, 2022"
     },
     {
         "team": "Austria",
-        "group": "Group K",
+        "group": "Group J",
         "manager": "Ralf Rangnick",
         "captain": "David Alaba",
         "best_world_cup_finish": "Third Place",
@@ -25,7 +25,7 @@
     },
     {
         "team": "Algeria",
-        "group": "Group G",
+        "group": "Group J",
         "manager": "Vladimir Petković",
         "captain": "Riyad Mahrez",
         "best_world_cup_finish": "Round of 16",
@@ -33,15 +33,15 @@
     },
     {
         "team": "Belgium",
-        "group": "Group C",
-        "manager": "Domenico Tedesco",
+        "group": "Group G",
+        "manager": "Rudi Garcia",
         "captain": "Kevin De Bruyne",
         "best_world_cup_finish": "Third Place",
         "best_finish_year": "2018"
     },
     {
         "team": "Bosnia and Herzegovina",
-        "group": "Group J",
+        "group": "Group B",
         "manager": "Sergej Barbarez",
         "captain": "Edin Džeko",
         "best_world_cup_finish": "Group Stage",
@@ -49,8 +49,8 @@
     },
     {
         "team": "Brazil",
-        "group": "Group F",
-        "manager": "Dorival Júnior",
+        "group": "Group C",
+        "manager": "Carlo Ancelotti",
         "captain": "Marquinhos",
         "best_world_cup_finish": "Winners",
         "best_finish_year": "1958, 1962, 1970, 1994, 2002"
@@ -73,7 +73,7 @@
     },
     {
         "team": "Cape Verde",
-        "group": "Group L",
+        "group": "Group H",
         "manager": "Bubista",
         "captain": "Ryan Mendes",
         "best_world_cup_finish": "Debut",
@@ -81,7 +81,7 @@
     },
     {
         "team": "Colombia",
-        "group": "Group D",
+        "group": "Group K",
         "manager": "Néstor Lorenzo",
         "captain": "James Rodríguez",
         "best_world_cup_finish": "Quarter-finals",
@@ -89,7 +89,7 @@
     },
     {
         "team": "Croatia",
-        "group": "Group A",
+        "group": "Group K",
         "manager": "Zlatko Dalić",
         "captain": "Luka Modrić",
         "best_world_cup_finish": "Runners-up",
@@ -97,7 +97,7 @@
     },
     {
         "team": "Curaçao",
-        "group": "Group G",
+        "group": "Group E",
         "manager": "Dick Advocaat",
         "captain": "Cuco Martina",
         "best_world_cup_finish": "Debut",
@@ -105,15 +105,15 @@
     },
     {
         "team": "Czech Republic",
-        "group": "Group H",
-        "manager": "Ivan Hašek",
+        "group": "Group A",
+        "manager": "Miroslav Koubek",
         "captain": "Tomáš Souček",
         "best_world_cup_finish": "Runners-up",
         "best_finish_year": "1934, 1962"
     },
     {
         "team": "DR Congo",
-        "group": "Group F",
+        "group": "Group K",
         "manager": "Sébastien Desabre",
         "captain": "Chancel Mbemba",
         "best_world_cup_finish": "Group Stage",
@@ -121,8 +121,8 @@
     },
     {
         "team": "Ecuador",
-        "group": "Group D",
-        "manager": "Félix Sánchez Bas",
+        "group": "Group E",
+        "manager": "Sebastián Beccacece",
         "captain": "Enner Valencia",
         "best_world_cup_finish": "Round of 16",
         "best_finish_year": "2006"
@@ -137,7 +137,7 @@
     },
     {
         "team": "England",
-        "group": "Group C",
+        "group": "Group L",
         "manager": "Thomas Tuchel",
         "captain": "Harry Kane",
         "best_world_cup_finish": "Winners",
@@ -145,7 +145,7 @@
     },
     {
         "team": "France",
-        "group": "Group B",
+        "group": "Group I",
         "manager": "Didier Deschamps",
         "captain": "Kylian Mbappé",
         "best_world_cup_finish": "Winners",
@@ -153,7 +153,7 @@
     },
     {
         "team": "Germany",
-        "group": "Group A",
+        "group": "Group E",
         "manager": "Julian Nagelsmann",
         "captain": "Joshua Kimmich",
         "best_world_cup_finish": "Winners",
@@ -161,15 +161,15 @@
     },
     {
         "team": "Ghana",
-        "group": "Group K",
-        "manager": "Otto Addo",
+        "group": "Group L",
+        "manager": "Carlos Queiroz",
         "captain": "Thomas Partey",
         "best_world_cup_finish": "Quarter-finals",
         "best_finish_year": "2010"
     },
     {
         "team": "Haiti",
-        "group": "Group I",
+        "group": "Group C",
         "manager": "Sébastien Migné",
         "captain": "Ricardo Adé",
         "best_world_cup_finish": "Group Stage",
@@ -177,7 +177,7 @@
     },
     {
         "team": "Iran",
-        "group": "Group J",
+        "group": "Group G",
         "manager": "Amir Ghalenoei",
         "captain": "Alireza Jahanbakhsh",
         "best_world_cup_finish": "Group Stage",
@@ -185,19 +185,19 @@
     },
     {
         "team": "Iraq",
-        "group": "Group D",
-        "manager": "Jesús Casas",
+        "group": "Group I",
+        "manager": "Graham Arnold",
         "captain": "Jalal Hassan",
         "best_world_cup_finish": "Group Stage",
         "best_finish_year": "1986"
     },
     {
-        "team": "Italy",
-        "group": "Group L",
-        "manager": "Luciano Spalletti",
-        "captain": "Gianluigi Donnarumma",
-        "best_world_cup_finish": "Winners",
-        "best_finish_year": "1934, 1938, 1982, 2006"
+        "team": "Tunisia",
+        "group": "Group F",
+        "manager": "Sabri Lamouchi",
+        "captain": "Youssef Msakni",
+        "best_world_cup_finish": "Group Stage",
+        "best_finish_year": "2018"
     },
     {
         "team": "Ivory Coast",
@@ -209,7 +209,7 @@
     },
     {
         "team": "Japan",
-        "group": "Group C",
+        "group": "Group F",
         "manager": "Hajime Moriyasu",
         "captain": "Wataru Endō",
         "best_world_cup_finish": "Round of 16",
@@ -217,8 +217,8 @@
     },
     {
         "team": "Jordan",
-        "group": "Group B",
-        "manager": "Hussein Ammouta",
+        "group": "Group J",
+        "manager": "Jamal Sellami",
         "captain": "Ihsan Haddad",
         "best_world_cup_finish": "Debut",
         "best_finish_year": "2026"
@@ -226,22 +226,22 @@
     {
         "team": "Mexico",
         "group": "Group A",
-        "manager": "Jaime Lozano",
+        "manager": "Javier Aguirre",
         "captain": "Edson Álvarez",
         "best_world_cup_finish": "Quarter-finals",
         "best_finish_year": "1970, 1986"
     },
     {
         "team": "Morocco",
-        "group": "Group F",
-        "manager": "Walid Regragui",
+        "group": "Group C",
+        "manager": "Mohamed Ouahbi",
         "captain": "Romain Saïss",
         "best_world_cup_finish": "Semi-finals",
         "best_finish_year": "2022"
     },
     {
         "team": "Netherlands",
-        "group": "Group H",
+        "group": "Group F",
         "manager": "Ronald Koeman",
         "captain": "Virgil van Dijk",
         "best_world_cup_finish": "Runners-up",
@@ -281,8 +281,8 @@
     },
     {
         "team": "Paraguay",
-        "group": "Group L",
-        "manager": "Daniel Garnero",
+        "group": "Group D",
+        "manager": "Gustavo Alfaro",
         "captain": "Gustavo Gómez",
         "best_world_cup_finish": "Quarter-finals",
         "best_finish_year": "2010"
@@ -297,7 +297,7 @@
     },
     {
         "team": "Portugal",
-        "group": "Group E",
+        "group": "Group K",
         "manager": "Roberto Martínez",
         "captain": "Cristiano Ronaldo",
         "best_world_cup_finish": "Third Place",
@@ -305,23 +305,23 @@
     },
     {
         "team": "Qatar",
-        "group": "Group A",
-        "manager": "Tintín Márquez",
+        "group": "Group B",
+        "manager": "Julen Lopetegui",
         "captain": "Hassan Al-Haydos",
         "best_world_cup_finish": "Group Stage",
         "best_finish_year": "2022"
     },
     {
         "team": "Saudi Arabia",
-        "group": "Group J",
-        "manager": "Roberto Mancini",
+        "group": "Group H",
+        "manager": "Georgios Donis",
         "captain": "Salem Al-Dawsari",
         "best_world_cup_finish": "Round of 16",
         "best_finish_year": "1994"
     },
     {
         "team": "Scotland",
-        "group": "Group B",
+        "group": "Group C",
         "manager": "Steve Clarke",
         "captain": "Andy Robertson",
         "best_world_cup_finish": "Group Stage",
@@ -329,8 +329,8 @@
     },
     {
         "team": "Senegal",
-        "group": "Group H",
-        "manager": "Aliou Cissé",
+        "group": "Group I",
+        "manager": "Pape Thiaw",
         "captain": "Kalidou Koulibaly",
         "best_world_cup_finish": "Quarter-finals",
         "best_finish_year": "2002"
@@ -345,7 +345,7 @@
     },
     {
         "team": "South Africa",
-        "group": "Group G",
+        "group": "Group A",
         "manager": "Hugo Broos",
         "captain": "Ronwen Williams",
         "best_world_cup_finish": "Quarter-finals",
@@ -353,7 +353,7 @@
     },
     {
         "team": "South Korea",
-        "group": "Group F",
+        "group": "Group A",
         "manager": "Hong Myung-bo",
         "captain": "Son Heung-min",
         "best_world_cup_finish": "Fourth Place",
@@ -361,7 +361,7 @@
     },
     {
         "team": "Spain",
-        "group": "Group I",
+        "group": "Group H",
         "manager": "Luis de la Fuente",
         "captain": "Álvaro Morata",
         "best_world_cup_finish": "Winners",
@@ -369,15 +369,15 @@
     },
     {
         "team": "Sweden",
-        "group": "Group K",
-        "manager": "Jon Dahl Tomasson",
+        "group": "Group F",
+        "manager": "Graham Potter",
         "captain": "Victor Lindelöf",
         "best_world_cup_finish": "Runners-up",
         "best_finish_year": "1958"
     },
     {
         "team": "Switzerland",
-        "group": "Group L",
+        "group": "Group B",
         "manager": "Murat Yakin",
         "captain": "Granit Xhaka",
         "best_world_cup_finish": "Quarter-finals",
@@ -385,7 +385,7 @@
     },
     {
         "team": "Türkiye",
-        "group": "Group A",
+        "group": "Group D",
         "manager": "Vincenzo Montella",
         "captain": "Hakan Çalhanoğlu",
         "best_world_cup_finish": "Third Place",
@@ -409,8 +409,8 @@
     },
     {
         "team": "Uzbekistan",
-        "group": "Group C",
-        "manager": "Srečko Katanec",
+        "group": "Group K",
+        "manager": "Fabio Cannavaro",
         "captain": "Eldor Shomurodov",
         "best_world_cup_finish": "Debut",
         "best_finish_year": "2026"

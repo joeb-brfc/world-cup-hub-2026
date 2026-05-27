@@ -76,6 +76,17 @@ class Fixture(models.Model):
     def __str__(self):
         return f"{self.home_team} vs {self.away_team}"
     
+    
+    def update_prediction_points(self):
+        predictions = self.predictions.all()
+
+        for prediction in predictions:
+            prediction.points_awarded = (
+                prediction.calculate_points()
+            )
+
+            prediction.save()
+    
 class Prediction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='predictions')
     fixture = models.ForeignKey(Fixture, on_delete=models.CASCADE, related_name='predictions')
