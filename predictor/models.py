@@ -142,3 +142,10 @@ class Prediction(models.Model):
 
         return 0
     
+    def save(self, *args, **kwargs):
+        self.points_awarded = (
+            self.calculate_points()
+        )
+
+        super().save(*args, **kwargs)
+    
