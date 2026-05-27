@@ -26,33 +26,29 @@ def fixture_list(request):
 
 @login_required
 def create_prediction(request, fixture_id):
-
     fixture = get_object_or_404(Fixture, id=fixture_id)
 
-    prediction, created = Prediction.objects.get_or_create(
+    prediction = Prediction.objects.filter(
         user=request.user,
         fixture=fixture,
-    )
+    ).first()
 
     if request.method == "POST":
-
-        form = PredictionForm(request.POST, instance=prediction)
+        form = PredictionForm(
+            request.POST,
+            instance=prediction,
+        )
 
         if form.is_valid():
+            prediction = form.save(commit=False)
+            prediction.fixture = fixture
+            prediction.user = request.user
+            prediction.save()
 
-            form.save()
-
-            if created:
-                messages.success(
-                    request,
-                    "Prediction created successfully!"
-                )
-
-            else:
-                messages.success(
-                    request,
-                    "Prediction updated successfully!"
-                )
+            messages.success(
+                request,
+                "Prediction saved successfully!"
+            )
 
             return redirect("fixtures")
 

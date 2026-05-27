@@ -86,10 +86,22 @@ class Fixture(models.Model):
             )
 
             prediction.save()
-    
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+
 class Prediction(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='predictions')
-    fixture = models.ForeignKey(Fixture, on_delete=models.CASCADE, related_name='predictions')
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='predictions'
+    )
+    fixture = models.ForeignKey(
+        Fixture,
+        on_delete=models.CASCADE,
+        related_name='predictions'
+    )
     predicted_home_score = models.PositiveIntegerField()
     predicted_away_score = models.PositiveIntegerField()
     points_awarded = models.IntegerField(default=0)
