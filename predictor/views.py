@@ -85,3 +85,32 @@ def my_predictions(request):
         "predictor/my_predictions.html",
         context
     )
+
+@login_required
+def delete_prediction(request, prediction_id):
+
+    prediction = get_object_or_404(
+        Prediction,
+        id=prediction_id,
+        user=request.user,
+    )
+
+    if request.method == "POST":
+        prediction.delete()
+
+        messages.success(
+            request,
+            "Prediction deleted successfully!"
+        )
+
+        return redirect("my_predictions")
+
+    context = {
+        "prediction": prediction,
+    }
+
+    return render(
+        request,
+        "predictor/delete_prediction.html",
+        context,
+    )
