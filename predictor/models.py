@@ -90,3 +90,55 @@ class Prediction(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s prediction for {self.fixture}"
+    
+    def calculate_points(self):
+        fixture = self.fixture
+
+        if (
+            fixture.home_team_score is None or
+            fixture.away_team_score is None
+        ):
+            return 0
+
+        # Exact score prediction
+
+        if (
+            self.predicted_home_score ==
+            fixture.home_team_score and
+            self.predicted_away_score ==
+            fixture.away_team_score
+        ):
+            return 3
+
+        # Correct outcome only
+
+        predicted_difference = (
+            self.predicted_home_score -
+            self.predicted_away_score
+        )
+
+        actual_difference = (
+            fixture.home_team_score -
+            fixture.away_team_score
+        )
+
+        if (
+            predicted_difference > 0 and
+            actual_difference > 0
+        ):
+            return 1
+
+        if (
+            predicted_difference < 0 and
+            actual_difference < 0
+        ):
+            return 1
+
+        if (
+            predicted_difference == 0 and
+            actual_difference == 0
+        ):
+            return 1
+
+        return 0
+    
