@@ -8,33 +8,45 @@ Pontoon | World Cup Hub 2026
 
 <section class="container py-5">
 
-    <h1>World Cup Pontoon</h1>
+    <h1 class="mb-4">World Cup Pontoon</h1>
+
+    <p>
+        Choose a numbered football to reveal your team.
+    </p>
 
     <div class="row">
 
-    {% for ball in balls %}
+        {% for ball in balls %}
 
-        <div class="col-6 col-md-3 mb-3">
+            <div class="col-6 col-md-3 mb-3">
 
-            <div class="card text-center">
+                <div class="card text-center shadow-sm">
 
-                <div class="card-body">
+                    <div class="card-body">
 
-                    <h2>PICK</h2>
+                        {% if ball.selected_by %}
 
-                    <p>
-                        Number {{ ball.number }}
-                    </p>
+                            <h2 class="h5">{{ ball.team }}</h2>
+                            <p class="mb-0">
+                                Taken by {{ ball.selected_by.username }}
+                            </p>
+
+                        {% else %}
+
+                            <h2 class="display-6">⚽</h2>
+                            <p>Number {{ ball.number }}</p>
+
+                        {% endif %}
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+        {% endfor %}
 
-    {% endfor %}
-
-</div>
+    </div>
 
 </section>
 
