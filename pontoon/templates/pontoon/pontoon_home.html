@@ -10,6 +10,32 @@ Pontoon | World Cup Hub 2026
 
     <h1>World Cup Pontoon</h1>
 
+    <div class="row">
+
+    {% for ball in balls %}
+
+        <div class="col-6 col-md-3 mb-3">
+
+            <div class="card text-center">
+
+                <div class="card-body">
+
+                    <h2>PICK</h2>
+
+                    <p>
+                        Number {{ ball.number }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
 </section>
 
 {% endblock %}
