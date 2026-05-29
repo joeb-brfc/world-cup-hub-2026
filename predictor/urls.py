@@ -19,5 +19,11 @@ urlpatterns = [
     "prediction/<int:prediction_id>/delete/",
     views.delete_prediction,
     name="delete_prediction",
+    ),
+
+    path(
+    "leaderboard/",
+    views.leaderboard,
+    name="leaderboard",
 ),
 ]

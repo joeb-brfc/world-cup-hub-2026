@@ -3,6 +3,7 @@ from .models import Fixture, Prediction
 from .forms import PredictionForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Sum
 
 
 
@@ -108,5 +109,24 @@ def delete_prediction(request, prediction_id):
     return render(
         request,
         "predictor/delete_prediction.html",
+        context,
+    )
+
+def leaderboard(request):
+
+    leaderboard = (
+        Prediction.objects
+        .values("user__username")
+        .annotate(total_points=Sum("points_awarded"))
+        .order_by("-total_points")
+    )
+
+    context = {
+        "leaderboard": leaderboard,
+    }
+
+    return render(
+        request,
+        "predictor/leaderboard.html",
         context,
     )
