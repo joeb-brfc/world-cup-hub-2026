@@ -8,3 +8,17 @@ class PontoonBall(models.Model):
 
     def __str__(self):
         return f"Football {self.number}"
+    
+    team = models.ForeignKey(
+    Team,
+    on_delete=models.SET_NULL,
+    null=True,
+    blank=True
+)
+
+selected_by = models.OneToOneField(
+    User,
+    on_delete=models.SET_NULL,
+    null=True,
+    blank=True
+)
