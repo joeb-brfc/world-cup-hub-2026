@@ -8,4 +8,5 @@ urlpatterns = [
     views.select_ball,
     name="select_ball",
 ),
+    
 ]

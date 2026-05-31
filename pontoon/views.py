@@ -27,5 +27,22 @@ def select_ball(request, ball_id):
             "That football has already been taken."
         )
         return redirect("pontoon_home")
+    
+    already_selected = PontoonBall.objects.filter(
+        selected_by=request.user
+    ).exists()
 
+    if already_selected:
+        messages.error(
+            request,
+            "You have already selected a football."
+        )
+        return redirect("pontoon_home")
+
+    ball.selected_by = request.user
+    ball.save()
+    messages.success(
+        request,
+        "You have selected a football."
+    )
     return redirect("pontoon_home")
