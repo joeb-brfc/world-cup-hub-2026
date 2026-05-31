@@ -10,8 +10,15 @@ from django.db.models import Sum
 def home(request):
     return render(request, "predictor/home.html")
 
-def fixture_list(request):
-    fixtures = Fixture.objects.all()
+def fixture_list(request, stage=None):
+    stages = Fixture.STAGE_CHOICES
+
+    if stage:
+        fixtures = Fixture.objects.filter(stage=stage)
+        selected_stage = stage
+    else:
+        fixtures = Fixture.objects.all()
+        selected_stage = "all"
 
     if request.user.is_authenticated:
         predictions = Prediction.objects.filter(user=request.user)
@@ -21,6 +28,8 @@ def fixture_list(request):
     context = {
         "fixtures": fixtures,
         "predictions": predictions,
+        "stages": stages,
+        "selected_stage": selected_stage,
     }
 
     return render(request, "predictor/fixture_list.html", context)
