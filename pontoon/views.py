@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import PontoonBall
 
 
@@ -19,5 +20,12 @@ def select_ball(request, ball_id):
         PontoonBall,
         id=ball_id
     )
+
+    if ball.selected_by:
+        messages.error(
+            request,
+            "That football has already been taken."
+        )
+        return redirect("pontoon_home")
 
     return redirect("pontoon_home")
