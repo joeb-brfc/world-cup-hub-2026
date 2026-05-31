@@ -31,7 +31,7 @@ class Team(models.Model):
     manager = models.CharField(max_length=100, blank=True, null=True)
     captain = models.CharField(max_length=100, blank=True, null=True)
     best_world_cup_finish = models.CharField(max_length=100, blank=True, null=True) 
-    best_world_cup_year = models.PositiveIntegerField(blank=True, null=True)    
+    best_world_cup_year = models.CharField(max_length=100,blank=True,null=True) 
 
     def __str__(self):
         return self.name
