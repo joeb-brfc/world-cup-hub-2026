@@ -25,5 +25,11 @@ urlpatterns = [
     "leaderboard/",
     views.leaderboard,
     name="leaderboard",
-),
+    ),
+    
+    path(
+    "fixtures/<str:stage>/",
+    views.fixture_list,
+    name="fixtures_by_stage",
+    ),
 ]
