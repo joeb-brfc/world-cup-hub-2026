@@ -29,6 +29,25 @@
 
     {% endfor %}
   </div>
+  <h2 class="mt-5">Pontoon Leaderboard</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Team</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for ball in balls %} {% if ball.selected_by %}
+      <tr>
+        <td>{{ ball.selected_by.username }}</td>
+        <td>{{ ball.team }}</td>
+      </tr>
+      {% endif %} {% endfor %}
+    </tbody>
+  </table>
 </section>
 
 {% endblock %}
