@@ -1,53 +1,34 @@
-{% extends "base.html" %}
-
-{% block title %}
-Pontoon | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Pontoon | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <h1 class="mb-4">World Cup Pontoon</h1>
 
-    <h1 class="mb-4">World Cup Pontoon</h1>
+  <p>Choose a numbered football to reveal your team.</p>
 
-    <p>
-        Choose a numbered football to reveal your team.
-    </p>
+  <div class="row">
+    {% for ball in balls %}
 
-    <div class="row">
+    <div class="col-6 col-md-3 mb-3">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          {% if ball.selected_by %}
 
-        {% for ball in balls %}
+          <h2 class="h5">{{ ball.team }}</h2>
+          <p class="mb-0">Taken by {{ ball.selected_by.username }}</p>
 
-            <div class="col-6 col-md-3 mb-3">
+          {% else %}
 
-                <div class="card text-center shadow-sm">
+          <h2 class="display-6">⚽</h2>
+          <p>Number {{ ball.number }}</p>
+          <a href="{% url 'select_ball' ball.id %}" class="btn btn-primary btn-sm"> Choose Football </a>
 
-                    <div class="card-body">
-
-                        {% if ball.selected_by %}
-
-                            <h2 class="h5">{{ ball.team }}</h2>
-                            <p class="mb-0">
-                                Taken by {{ ball.selected_by.username }}
-                            </p>
-
-                        {% else %}
-
-                            <h2 class="display-6">⚽</h2>
-                            <p>Number {{ ball.number }}</p>
-
-                        {% endif %}
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        {% endfor %}
-
+          {% endif %}
+        </div>
+      </div>
     </div>
 
+    {% endfor %}
+  </div>
 </section>
 
 {% endblock %}
