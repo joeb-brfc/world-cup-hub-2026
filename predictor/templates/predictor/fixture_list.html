@@ -3,6 +3,24 @@
 <section class="container py-5">
   <h1 class="mb-4">World Cup Fixtures</h1>
 
+<div class="mb-4">
+
+    <a href="{% url 'fixtures' %}"
+       class="btn btn-sm mb-2 {% if selected_stage == 'all' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+        All Fixtures
+    </a>
+
+    {% for stage_value, stage_label in stages %}
+
+        <a href="{% url 'fixtures_by_stage' stage_value %}"
+           class="btn btn-sm mb-2 {% if selected_stage == stage_value %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            {{ stage_label }}
+        </a>
+
+    {% endfor %}
+
+</div>
+
   <div class="row">
     {% for fixture in fixtures %}
 
