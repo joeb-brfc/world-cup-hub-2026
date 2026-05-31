@@ -33,7 +33,7 @@
 
           <p class="mb-1">Stadium: {{ fixture.stadium }}</p>
 
-          <p class="mb-0">Kickoff: {{ fixture.kickoff }}</p>
+          <p class="mb-0">Kickoff: {{ fixture.kickoff_time }}</p>
 
           <a href="{% url 'create_prediction' fixture.id %}" class="btn btn-primary btn-sm mt-3"> Predict / Edit </a>
           {% for prediction in predictions %} {% if prediction.fixture.id == fixture.id %}

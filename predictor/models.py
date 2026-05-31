@@ -89,6 +89,7 @@ class Fixture(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+        self.update_prediction_points()
 
 
 class Prediction(models.Model):
