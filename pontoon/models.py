@@ -26,6 +26,20 @@ class PontoonBall(models.Model):
         default=False
     )
     
-
+    def calculate_score(self):
+        """
+        Placeholder score calculation.
+        Will be updated later to use fixture results.
+        """
+        return 0
+    
+    def update_score(self):
+        self.score = self.calculate_score()
+        if self.score > 21:
+            self.busted = True
+        else:
+            self.busted = False
+        self.save()
+    
     def __str__(self):
         return f"Football {self.number}"
