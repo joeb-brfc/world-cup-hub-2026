@@ -12,7 +12,8 @@
 
     <p class="mb-1">Team: {{ selected_ball.team }}</p>
 
-    <p class="mb-0">Current Points: {{ selected_ball.points }}</p>
+    <p class="mb-0">Current Score: {{ selected_ball.score }}</p>
+    <p class="mb-0">Status: {% if selected_ball.busted %} Busted {% else %} Active {% endif %}</p>
   </div>
 
   {% endif %}
