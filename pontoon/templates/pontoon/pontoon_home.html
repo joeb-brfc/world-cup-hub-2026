@@ -5,6 +5,18 @@
 
   <p>Choose a numbered football to reveal your team.</p>
 
+  {% if selected_ball %}
+
+  <div class="alert alert-success">
+    <h2 class="h5">Your Pontoon Team</h2>
+
+    <p class="mb-1">Team: {{ selected_ball.team }}</p>
+
+    <p class="mb-0">Current Points: {{ selected_ball.points }}</p>
+  </div>
+
+  {% endif %}
+
   <div class="row">
     {% for ball in balls %}
 
