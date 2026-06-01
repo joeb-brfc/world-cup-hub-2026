@@ -7,8 +7,16 @@ from .models import PontoonBall
 def pontoon_home(request):
     balls = PontoonBall.objects.all().order_by("number")
 
+    selected_ball = None
+
+    if request.user.is_authenticated:
+        selected_ball = PontoonBall.objects.filter(
+            selected_by=request.user
+        ).first()
+
     context = {
         "balls": balls,
+        "selected_ball": selected_ball,
     }
 
     return render(request, "pontoon/pontoon_home.html", context)
