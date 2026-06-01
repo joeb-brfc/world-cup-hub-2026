@@ -18,6 +18,14 @@ class PontoonBall(models.Model):
         null=True,
         blank=True
     )
+    score = models.IntegerField(
+        default=0
+    )
+
+    busted = models.BooleanField(
+        default=False
+    )
+    
 
     def __str__(self):
         return f"Football {self.number}"
