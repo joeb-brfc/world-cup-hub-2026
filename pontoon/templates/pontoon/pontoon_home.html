@@ -49,6 +49,8 @@
       <tr>
         <th>User</th>
         <th>Team</th>
+        <th>Score</th>
+        <th>Status</th>
       </tr>
     </thead>
 
@@ -57,6 +59,8 @@
       <tr>
         <td>{{ ball.selected_by.username }}</td>
         <td>{{ ball.team }}</td>
+        <td>{{ ball.score }}</td>
+        <td>{% if ball.busted %} Busted {% else %} Active {% endif %}</td>
       </tr>
       {% endif %} {% endfor %}
     </tbody>
