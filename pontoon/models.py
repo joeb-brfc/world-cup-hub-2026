@@ -80,3 +80,7 @@ class PontoonBall(models.Model):
     
     def __str__(self):
         return f"Football {self.number}"
+    
+def update_all_pontoon_scores():
+    for ball in PontoonBall.objects.all():
+        ball.update_score()
