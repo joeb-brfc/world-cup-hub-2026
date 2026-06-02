@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
+from datetime import timedelta
 
-# Create your models here.
 class Stadium(models.Model):
     name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
@@ -92,6 +93,11 @@ class Fixture(models.Model):
 
         from pontoon.models import update_all_pontoon_scores
         update_all_pontoon_scores()
+
+    def preddiction_locked(self):
+        lock_time = self.kickoff_time + timedelta(minutes=1)
+
+        return timezone.now() >= lock_time
 
 
 class Prediction(models.Model):
