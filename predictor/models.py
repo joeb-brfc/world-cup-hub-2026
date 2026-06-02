@@ -89,7 +89,9 @@ class Fixture(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        self.update_prediction_points()
+
+        from pontoon.models import update_all_pontoon_scores
+        update_all_pontoon_scores()
 
 
 class Prediction(models.Model):
