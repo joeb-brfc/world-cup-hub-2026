@@ -40,13 +40,19 @@ class PontoonBall(models.Model):
         )
 
         for fixture in fixtures:
-
             if (
                 fixture.home_team_score is None
                 or
                 fixture.away_team_score is None
             ):
                 continue
+
+            if fixture.home_team == self.team:
+                score += fixture.home_team_score * 2
+                score -= fixture.away_team_score
+            else:
+                score += fixture.away_team_score * 2
+                score -= fixture.home_team_score
 
         return score
     
