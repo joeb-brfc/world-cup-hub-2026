@@ -77,6 +77,11 @@ class Fixture(models.Model):
     def __str__(self):
         return f"{self.home_team} vs {self.away_team}"
     
+    def predictions_locked(self):
+        lock_time = self.kickoff_time + timedelta(minutes=1)
+
+        return timezone.now() >= lock_time
+    
     
     def update_prediction_points(self):
         predictions = self.predictions.all()

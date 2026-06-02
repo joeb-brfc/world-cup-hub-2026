@@ -28,6 +28,10 @@
           <p class="mb-0">Kickoff: {{ fixture.kickoff_time }}</p>
 
           {% if fixture.predictions_locked %}
+          <p class="text-danger mb-1">Prediction status: Locked</p>
+          {% else %}
+          <p class="text-success mb-1">Prediction status: Open</p>
+          {% endif %} {% if fixture.predictions_locked %}
 
           <p class="text-danger mt-3 mb-0">Predictions locked</p>
 
