@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from predictor.models import Team
+from predictor.models import Fixture
 
 
 class PontoonBall(models.Model):
@@ -31,6 +32,12 @@ class PontoonBall(models.Model):
             return 0
 
         score = 0
+
+        fixtures = Fixture.objects.filter(
+            models.Q(home_team=self.team)
+            |
+            models.Q(away_team=self.team)
+        )
 
         return score
     
