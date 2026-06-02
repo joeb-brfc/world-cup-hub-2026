@@ -38,6 +38,13 @@ def fixture_list(request, stage=None):
 def create_prediction(request, fixture_id):
     fixture = get_object_or_404(Fixture, id=fixture_id)
 
+    if fixture.predictions_locked():
+        messages.error(
+            request,
+            "Predictions are now locked for this fixture."
+        )
+        return redirect("fixtures")
+
     prediction = Prediction.objects.filter(
         user=request.user,
         fixture=fixture,
