@@ -27,11 +27,12 @@ class PontoonBall(models.Model):
     )
     
     def calculate_score(self):
-        """
-        Placeholder score calculation.
-        Will be updated later to use fixture results.
-        """
-        return 0
+        if not self.team:
+            return 0
+
+        score = 0
+
+        return score
     
     def update_score(self):
         self.score = self.calculate_score()
