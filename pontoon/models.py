@@ -39,6 +39,15 @@ class PontoonBall(models.Model):
             models.Q(away_team=self.team)
         )
 
+        for fixture in fixtures:
+
+            if (
+                fixture.home_team_score is None
+                or
+                fixture.away_team_score is None
+            ):
+                continue
+
         return score
     
     def update_score(self):
