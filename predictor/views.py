@@ -150,7 +150,7 @@ def leaderboard(request):
 def fixture_predictions(request,fixture_id):
     fixture = get_object_or_404(Fixture, id=fixture_id)
 
-    predictions = Prediction.onjects.filter(
+    predictions = Prediction.objects.filter(
         fixture=fixture
     )
 
