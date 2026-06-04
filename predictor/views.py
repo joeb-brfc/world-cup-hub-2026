@@ -146,3 +146,21 @@ def leaderboard(request):
         "predictor/leaderboard.html",
         context,
     )
+
+def fixture_predictions(request,fixture_id):
+    fixture = get_object_or_404(Fixture, id=fixture_id)
+
+    predictions = Prediction.onjects.filter(
+        fixture=fixture
+    )
+
+    context = {
+        "fixture": fixture,
+        "predictions": predictions,
+    }
+
+    return render(
+        request,
+        "predictor/fixture_predictions.html",
+        context,
+    )
