@@ -16,6 +16,16 @@ Fixture Predictions | World Cup Hub 2026
         {{ fixture.home_team }} vs {{ fixture.away_team }}
     </h2>
 
+    {% if fixture.predictions_locked %}
+
+    {% else %}
+
+        <div class="alert alert-warning">
+            Predictions are hidden until this fixture has kicked off.
+        </div>
+
+    {% endif %}
+
 </section>
 
 {% endblock %}
