@@ -32,4 +32,11 @@ urlpatterns = [
     views.fixture_list,
     name="fixtures_by_stage",
     ),
+
+    path(
+    "fixtures/<int:fixture_id>/predictions/",
+    views.fixture_predictions,
+    name="fixture_predictions",
+    ),
+
 ]
