@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'predictor',
     'pontoon',
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +127,15 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_LOGIN_METHODS = {"username"}
+ACCOUNT_SIGNUP_FIELDS = ["username*", "password1*", "password2*"]
