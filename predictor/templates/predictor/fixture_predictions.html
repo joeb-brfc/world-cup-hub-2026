@@ -18,14 +18,36 @@ Fixture Predictions | World Cup Hub 2026
 
     {% if fixture.predictions_locked %}
 
-    {% else %}
+    <div class="card shadow-sm">
 
-        <div class="alert alert-warning">
-            Predictions are hidden until this fixture has kicked off.
+        <div class="card-body">
+
+            {% for prediction in predictions %}
+
+                <p>
+                    {{ prediction.user.username }}:
+                    {{ prediction.predicted_home_score }}
+                    -
+                    {{ prediction.predicted_away_score }}
+                </p>
+
+            {% empty %}
+
+                <p>No predictions were submitted for this fixture.</p>
+
+            {% endfor %}
+
         </div>
 
-    {% endif %}
+    </div>
 
+{% else %}
+
+    <div class="alert alert-warning">
+        Predictions are hidden until this fixture is locked.
+    </div>
+
+{% endif %}
 </section>
 
 {% endblock %}
