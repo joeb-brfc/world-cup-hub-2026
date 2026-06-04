@@ -1,53 +1,33 @@
-{% extends "base.html" %}
-
-{% block title %}
-Fixture Predictions | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Fixture Predictions | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <h1 class="mb-4">Fixture Predictions</h1>
 
-    <h1 class="mb-4">
-        Fixture Predictions
-    </h1>
+  <h2 class="h4 mb-4">{{ fixture.home_team }} vs {{ fixture.away_team }}</h2>
 
-    <h2 class="h4 mb-4">
-        {{ fixture.home_team }} vs {{ fixture.away_team }}
-    </h2>
+  {% if fixture.predictions_locked %}
 
-    {% if fixture.predictions_locked %}
+  <div class="card shadow-sm">
+    <div class="card-body">
+      {% for prediction in predictions %}
 
-    <div class="card shadow-sm">
+      <p>{{ prediction.user.username }}: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
 
-        <div class="card-body">
+      {% empty %}
 
-            {% for prediction in predictions %}
+      <p>No predictions were submitted for this fixture.</p>
 
-                <p>
-                    {{ prediction.user.username }}:
-                    {{ prediction.predicted_home_score }}
-                    -
-                    {{ prediction.predicted_away_score }}
-                </p>
-
-            {% empty %}
-
-                <p>No predictions were submitted for this fixture.</p>
-
-            {% endfor %}
-
-        </div>
-
+      {% endfor %}
     </div>
+  </div>
 
-{% else %}
+  {% else %}
 
-    <div class="alert alert-warning">
-        Predictions are hidden until this fixture is locked.
-    </div>
+  <div class="alert alert-warning">Predictions are hidden until this fixture is locked.</div>
 
-{% endif %}
+  {% endif %}
+
+  <a href="{% url 'fixtures' %}" class="btn btn-secondary mt-4"> Back to Fixtures </a>
 </section>
 
 {% endblock %}
