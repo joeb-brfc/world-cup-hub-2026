@@ -8,5 +8,10 @@ urlpatterns = [
     views.select_ball,
     name="select_ball",
 ),
+    path(
+    "confirm/<int:ball_id>/",
+    views.confirm_ball,
+    name="confirm_ball",
+),
     
 ]
