@@ -7,22 +7,19 @@
 
   <div class="card mb-4 shadow-sm">
     <div class="card-body">
-        <h2 class="h5">How Pontoon Works</h2>
+      <h2 class="h5">How Pontoon Works</h2>
 
-        <p>
-            Choose one numbered football to reveal your hidden World Cup team.
-            Once selected, you cannot change your football.
-        </p>
+      <p>Choose one numbered football to reveal your hidden World Cup team. Once selected, you cannot change your football.</p>
 
-        <ul class="mb-0">
-            <li>Each goal scored by your team is worth 2 points.</li>
-            <li>Each goal conceded by your team deducts 1 point.</li>
-            <li>If your team goes over 21 points, you are bust.</li>
-            <li>First team to reach 21 points wins.</li>
-            <li>If no team reaches 21 points, the team closest to 21 points wins.</li>
-        </ul>
+      <ul class="mb-0">
+        <li>Each goal scored by your team is worth 2 points.</li>
+        <li>Each goal conceded by your team deducts 1 point.</li>
+        <li>If your team goes over 21 points, you are bust.</li>
+        <li>First team to reach 21 points wins.</li>
+        <li>If no team reaches 21 points, the team closest to 21 points wins.</li>
+      </ul>
     </div>
-</div>
+  </div>
 
   {% if selected_ball %}
 
@@ -52,7 +49,7 @@
 
           <h2 class="display-6">⚽</h2>
           <p>Number {{ ball.number }}</p>
-          <a href="{% url 'select_ball' ball.id %}" class="btn btn-primary btn-sm"> Choose Football </a>
+          <a href="{% url 'confirm_ball' ball.id %}" class="btn btn-primary btn-sm"> Choose Football </a>
 
           {% endif %}
         </div>

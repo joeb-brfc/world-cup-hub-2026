@@ -54,3 +54,14 @@ def select_ball(request, ball_id):
         "You have selected a football."
     )
     return redirect("pontoon_home")
+
+def confirm_ball(request, ball_id):
+    ball = get_object_or_404(PontoonBall, id=ball_id)
+
+    return render(
+        request,
+        "pontoon/confirm_ball.html",
+        {
+            "ball": ball,
+        }
+    )
