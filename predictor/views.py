@@ -51,11 +51,7 @@ def create_prediction(request, fixture_id):
     ).first()
 
     if request.method == "POST":
-        form = PredictionForm(
-            request.POST,
-            instance=prediction,
-        )
-
+        form = PredictionForm(request.POST, instance=prediction)
         if form.is_valid():
             prediction = form.save(commit=False)
             prediction.fixture = fixture
@@ -68,7 +64,6 @@ def create_prediction(request, fixture_id):
             )
 
             return redirect("fixtures")
-
     else:
         form = PredictionForm(instance=prediction)
 
