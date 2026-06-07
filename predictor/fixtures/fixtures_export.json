@@ -1,0 +1,314 @@
+[
+{
+    "model": "predictor.fixture",
+    "pk": 5,
+    "fields": {
+        "home_team": 1,
+        "away_team": 2,
+        "stadium": 3,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-11T20:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 6,
+    "fields": {
+        "home_team": 13,
+        "away_team": 10,
+        "stadium": 1,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-12T20:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 7,
+    "fields": {
+        "home_team": 3,
+        "away_team": 4,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-12T03:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 8,
+    "fields": {
+        "home_team": 50,
+        "away_team": 38,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-13T02:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 9,
+    "fields": {
+        "home_team": 41,
+        "away_team": 48,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-13T20:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 10,
+    "fields": {
+        "home_team": 11,
+        "away_team": 32,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-13T23:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 11,
+    "fields": {
+        "home_team": 25,
+        "away_team": 43,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-14T02:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 12,
+    "fields": {
+        "home_team": 6,
+        "away_team": 49,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-14T05:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 13,
+    "fields": {
+        "home_team": 23,
+        "away_team": 17,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-14T18:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 14,
+    "fields": {
+        "home_team": 33,
+        "away_team": 30,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-14T21:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 15,
+    "fields": {
+        "home_team": 29,
+        "away_team": 19,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-15T00:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 16,
+    "fields": {
+        "home_team": 47,
+        "away_team": 28,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-15T03:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 17,
+    "fields": {
+        "home_team": 46,
+        "away_team": 14,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-15T17:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 18,
+    "fields": {
+        "home_team": 9,
+        "away_team": 20,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-15T20:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 19,
+    "fields": {
+        "home_team": 42,
+        "away_team": 51,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-15T23:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 20,
+    "fields": {
+        "home_team": 26,
+        "away_team": 34,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-16T02:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 21,
+    "fields": {
+        "home_team": 22,
+        "away_team": 44,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-16T20:00:00Z",
+        "home_team_score": 1,
+        "away_team_score": 11
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 22,
+    "fields": {
+        "home_team": 27,
+        "away_team": 36,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-16T23:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 23,
+    "fields": {
+        "home_team": 5,
+        "away_team": 8,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-17T02:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 24,
+    "fields": {
+        "home_team": 7,
+        "away_team": 31,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-17T05:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 25,
+    "fields": {
+        "home_team": 40,
+        "away_team": 18,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-17T18:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 26,
+    "fields": {
+        "home_team": 21,
+        "away_team": 16,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-17T21:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 27,
+    "fields": {
+        "home_team": 24,
+        "away_team": 37,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-18T00:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+},
+{
+    "model": "predictor.fixture",
+    "pk": 28,
+    "fields": {
+        "home_team": 52,
+        "away_team": 15,
+        "stadium": null,
+        "stage": "Group Stage",
+        "kickoff_time": "2026-06-18T03:00:00Z",
+        "home_team_score": null,
+        "away_team_score": null
+    }
+}
+]

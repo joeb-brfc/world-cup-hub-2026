@@ -1,0 +1,51 @@
+[
+{
+    "model": "predictor.stadium",
+    "pk": 1,
+    "fields": {
+        "name": "Toronto Stadium",
+        "city": "Toronto",
+        "capacity": 45000
+    }
+},
+{
+    "model": "predictor.stadium",
+    "pk": 2,
+    "fields": {
+        "name": "BC Place Vancouver",
+        "city": "Vancouver",
+        "capacity": 54000
+    }
+},
+{
+    "model": "predictor.stadium",
+    "pk": 3,
+    "fields": {
+        "name": "Mexico City Stadium",
+        "city": "Mexico City",
+        "capacity": 83000
+    }
+},
+{
+    "model": "predictor.stadium",
+    "pk": 4,
+    "fields": {
+        "name": "Estadio Guadalajara",
+        "city": "Zapopan",
+        "capacity": 48000
+    }
+},
+{
+    "model": "predictor.stadium",
+    "pk": 5,
+    "fields": {
+        "name": "Estadio Monterrey",
+        "city": "Guadalupe",
+        "capacity": 53500
+    }
+},
+{
+    "model": "predictor.stadium",
+    "pk": 6,
+    "fields": {
+        "name": 

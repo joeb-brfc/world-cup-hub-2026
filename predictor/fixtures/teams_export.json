@@ -1,0 +1,45 @@
+[
+{
+    "model": "predictor.team",
+    "pk": 1,
+    "fields": {
+        "name": "Mexico",
+        "group": "A",
+        "manager": "Javier Aguirre",
+        "captain": "Edson Álvarez",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_world_cup_year": "1970, 1986"
+    }
+},
+{
+    "model": "predictor.team",
+    "pk": 2,
+    "fields": {
+        "name": "South Africa",
+        "group": "A",
+        "manager": "Hugo Broos",
+        "captain": "Ronwen Williams",
+        "best_world_cup_finish": "Quarter-finals",
+        "best_world_cup_year": "2010"
+    }
+},
+{
+    "model": "predictor.team",
+    "pk": 3,
+    "fields": {
+        "name": "South Korea",
+        "group": "A",
+        "manager": "Hong Myung-bo",
+        "captain": "Son Heung-min",
+        "best_world_cup_finish": "Fourth Place",
+        "best_world_cup_year": "2002"
+    }
+},
+{
+    "model": "predictor.team",
+    "pk": 4,
+    "fields": {
+        "name": "Czech Republic",
+        "group": "A",
+        "manager": "Miroslav Koubek",
+        "captain": 
