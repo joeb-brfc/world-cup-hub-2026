@@ -1,30 +1,108 @@
-{% extends "base.html" %} {% block title %}Home | World Cup Hub 2026{% endblock %} {% block content %}
+{% extends "base.html" %}
+
+{% block title %}
+Home | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
+
 <section class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-12 col-lg-7">
-      <h1 class="display-4 fw-bold">World Cup Hub 2026</h1>
-      <p class="lead">World cup engagement platform for fans, with free predictions, premium pontoon, team fact files and leaderboard scoring.</p>
 
-      <div class="mt-4">
-        <a href="{% url 'fixtures' %}" class="btn btn-primary me-2"> View Fixtures </a>
+    <div class="alert alert-info mb-4">
+        <h4>⚽ Welcome to World Cup Hub 2026</h4>
 
-        <a href="{% url 'pontoon_home' %}" class="btn btn-outline-dark"> Play Pontoon </a>
-      </div>
+        <p>
+            Thank you for taking part in the World Cup Hub community.
+            This project is currently under active development and new
+            features are being added regularly.
+        </p>
+
+        <p>
+            You may occasionally encounter bugs, missing features,
+            or unexpected behaviour while improvements are being made.
+            Thank you for your patience and support.
+        </p>
+
+        <p class="mb-0">
+            Most importantly, enjoy the tournament, enjoy the competition,
+            and let's experience the FIFA World Cup 2026 together.
+        </p>
     </div>
 
-    <div class="col-12 col-lg-5 mt-4 mt-lg-0">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h2 class="h4">Features</h2>
-          <ul class="mb-0">
-            <li>Free prediction game</li>
-            <li>Premium Pontoon</li>
-            <li>Team fact files</li>
-            <li>Leaderboard scoring</li>
-          </ul>
+    <div class="row align-items-center">
+
+        <div class="col-12 col-lg-7">
+
+            <h1 class="display-4 fw-bold">
+                World Cup Hub 2026
+            </h1>
+
+            <p class="lead">
+                World Cup Hub 2026 is an interactive fan platform designed
+                to bring supporters together throughout the tournament.
+            </p>
+
+            <p>
+                Predict match results, compete against friends, track your
+                progress on the leaderboard, and take part in the World Cup
+                Pontoon competition where every goal scored can move you
+                closer to victory.
+            </p>
+
+            <p>
+                New features and content will continue to be added throughout
+                the tournament, including expanded team fact files and
+                additional statistics.
+            </p>
+
+            <div class="mt-4">
+
+                <a href="{% url 'fixtures' %}" class="btn btn-primary me-2">
+                    View Fixtures
+                </a>
+
+                <a href="{% url 'pontoon_home' %}" class="btn btn-outline-dark">
+                    Play Pontoon
+                </a>
+
+            </div>
+
         </div>
-      </div>
+
+        <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h2 class="h4">Current Features</h2>
+
+                    <ul>
+                        <li>Free prediction game</li>
+                        <li>World Cup fixtures</li>
+                        <li>Prediction scoring</li>
+                        <li>Pontoon competition</li>
+                        <li>Live leaderboard</li>
+                        <li>Country flags</li>
+                    </ul>
+
+                    <h2 class="h5 mt-4">Coming Soon</h2>
+
+                    <ul class="mb-0">
+                        <li>Expanded team fact files</li>
+                        <li>World Cup statistics</li>
+                        <li>Tournament insights</li>
+                        <li>Additional fan features</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
+
 {% endblock %}
