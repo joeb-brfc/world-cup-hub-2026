@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %} Pontoon | World Cup Hub 2026 {% endblock %} {% block content %}
+{% extends "base.html" %} {% load static %} {% block title %} Pontoon | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
   <h1 class="mb-4">World Cup Pontoon</h1>
@@ -26,9 +26,14 @@
   <div class="alert alert-success">
     <h2 class="h5">Your Pontoon Team</h2>
 
-    <p class="mb-1">Team: {{ selected_ball.team }}</p>
+    <p class="mb-1">
+      <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" class="me-2" />
+
+      {{ selected_ball.team }}
+    </p>
 
     <p class="mb-0">Current Score: {{ selected_ball.score }}</p>
+
     <p class="mb-0">Status: {% if selected_ball.busted %} Busted {% else %} Active {% endif %}</p>
   </div>
 
@@ -42,13 +47,21 @@
         <div class="card-body">
           {% if ball.selected_by %}
 
-          <h2 class="h5">{{ ball.team }}</h2>
+          <h2 class="h5">
+            <img src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg" alt="{{ ball.team.name }} flag" width="32" class="mb-2" />
+
+            <br />
+
+            {{ ball.team }} 
+          </h2>
+
           <p class="mb-0">Taken by {{ ball.selected_by.username }}</p>
 
           {% else %}
 
           <h2 class="display-6">⚽</h2>
           <p>Number {{ ball.number }}</p>
+
           <a href="{% url 'confirm_ball' ball.id %}" class="btn btn-primary btn-sm"> Choose Football </a>
 
           {% endif %}
@@ -58,6 +71,7 @@
 
     {% endfor %}
   </div>
+
   <h2 class="mt-5">Pontoon Leaderboard</h2>
 
   <table class="table">
