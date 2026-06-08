@@ -55,14 +55,7 @@
         "best_world_cup_finish": "Winners",
         "best_finish_year": "1958, 1962, 1970, 1994, 2002"
     },
-    {
-        "team": "Cameroon",
-        "group": "Group I",
-        "manager": "Marc Brys",
-        "captain": "Vincent Aboubakar",
-        "best_world_cup_finish": "Quarter-finals",
-        "best_finish_year": "1990"
-    },
+
     {
         "team": "Canada",
         "group": "Group B",
@@ -255,14 +248,7 @@
         "best_world_cup_finish": "Group Stage",
         "best_finish_year": "1982, 2010"
     },
-    {
-        "team": "Nigeria",
-        "group": "Group K",
-        "manager": "Finidi George",
-        "captain": "William Troost-Ekong",
-        "best_world_cup_finish": "Round of 16",
-        "best_finish_year": "1994, 1998, 2014"
-    },
+
     {
         "team": "Norway",
         "group": "Group I",
@@ -287,14 +273,7 @@
         "best_world_cup_finish": "Quarter-finals",
         "best_finish_year": "2010"
     },
-    {
-        "team": "Poland",
-        "group": "Group D",
-        "manager": "Michał Probierz",
-        "captain": "Robert Lewandowski",
-        "best_world_cup_finish": "Third Place",
-        "best_finish_year": "1974, 1982"
-    },
+    
     {
         "team": "Portugal",
         "group": "Group K",
@@ -335,14 +314,7 @@
         "best_world_cup_finish": "Quarter-finals",
         "best_finish_year": "2002"
     },
-    {
-        "team": "Serbia",
-        "group": "Group C",
-        "manager": "Dragan Stojković",
-        "captain": "Dušan Tadić",
-        "best_world_cup_finish": "Runners-up",
-        "best_finish_year": "1930, 1962"
-    },
+
     {
         "team": "South Africa",
         "group": "Group A",
