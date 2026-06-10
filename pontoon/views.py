@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import PontoonBall
 
 
+@login_required
 def pontoon_home(request):
     balls = PontoonBall.objects.all().order_by("number")
 

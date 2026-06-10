@@ -11,6 +11,7 @@ def home(request):
     return render(request, "predictor/home.html")
 
 
+@login_required
 def fixture_list(request, stage=None):
     stages = Fixture.STAGE_CHOICES
 
@@ -25,7 +26,7 @@ def fixture_list(request, stage=None):
 
     if request.user.is_authenticated:
         predictions = Prediction.objects.filter(user=request.user)
-        
+
         for prediction in predictions:
             prediction_map[prediction.fixture.id] = prediction
     else:
@@ -166,6 +167,7 @@ def delete_prediction(request, prediction_id):
         context,
     )
 
+@login_required
 def leaderboard(request):
 
     leaderboard = (
@@ -185,6 +187,7 @@ def leaderboard(request):
         context,
     )
 
+@login_required
 def fixture_predictions(request,fixture_id):
     fixture = get_object_or_404(Fixture, id=fixture_id)
 

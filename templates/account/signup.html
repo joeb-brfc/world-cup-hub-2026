@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sign Up | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+
+                    <h1 class="h3 mb-3 text-center">Create Account</h1>
+
+                    <p class="text-center text-muted">
+                        Create an account to save predictions and join the World Cup games.
+                    </p>
+
+                    <form method="POST" action="{% url 'account_signup' %}">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Sign Up
+                        </button>
+                    </form>
+
+                    <p class="text-center mt-3 mb-0">
+                        Already have an account?
+                        <a href="{% url 'account_login' %}">
+                            Login here
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
