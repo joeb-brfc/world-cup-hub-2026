@@ -39,4 +39,10 @@ urlpatterns = [
     name="fixture_predictions",
     ),
 
+    path(
+    "fixtures/save-all/",
+    views.save_all_predictions,
+    name="save_all_predictions",
+),
+
 ]

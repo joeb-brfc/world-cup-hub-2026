@@ -79,6 +79,42 @@ def create_prediction(request, fixture_id):
     )
 
 @login_required
+def save_all_predictions(request):
+    if request.method == "POST":
+        fixtures = Fixture.objects.all()
+
+        saved_count = 0
+
+        for fixture in fixtures:
+            home_score = request.POST.get(f"home_{fixture.id}")
+            away_score = request.POST.get(f"away_{fixture.id}")
+
+            if home_score == "" or away_score == "":
+                continue
+
+            if fixture.predictions_locked():
+                continue
+
+            Prediction.objects.update_or_create(
+                user=request.user,
+                fixture=fixture,
+                defaults={
+                    "predicted_home_score": home_score,
+                    "predicted_away_score": away_score,
+                }
+            )
+
+            saved_count += 1
+
+        messages.success(
+            request,
+            f"{saved_count} prediction(s) saved successfully."
+        )
+
+    return redirect(request.META.get("HTTP_REFERER", "fixtures"))
+
+
+@login_required
 def my_predictions(request):
     predictions = Prediction.objects.filter(
         user=request.user
