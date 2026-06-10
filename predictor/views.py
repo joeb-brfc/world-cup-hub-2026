@@ -22,22 +22,20 @@ def fixture_list(request, stage=None):
         fixtures = Fixture.objects.all()
         selected_stage = "all"
 
+    predictions = Prediction.objects.filter(user=request.user)
+
     prediction_map = {}
 
-    if request.user.is_authenticated:
-        predictions = Prediction.objects.filter(user=request.user)
+    for prediction in predictions:
+        prediction_map[prediction.fixture.id] = prediction
 
-        for prediction in predictions:
-            prediction_map[prediction.fixture.id] = prediction
-    else:
-        predictions = []
+    for fixture in fixtures:
+        fixture.user_prediction = prediction_map.get(fixture.id)
 
     context = {
         "fixtures": fixtures,
-        "predictions": predictions,
         "stages": stages,
         "selected_stage": selected_stage,
-        "prediction_map" :prediction_map,
     }
 
     return render(request, "predictor/fixture_list.html", context)
@@ -90,7 +88,6 @@ def create_prediction(request, fixture_id):
 def save_all_predictions(request):
     if request.method == "POST":
         fixtures = Fixture.objects.all()
-
         saved_count = 0
 
         for fixture in fixtures:
@@ -98,6 +95,9 @@ def save_all_predictions(request):
             away_score = request.POST.get(f"away_{fixture.id}")
 
             if home_score == "" or away_score == "":
+                continue
+
+            if home_score is None or away_score is None:
                 continue
 
             if fixture.predictions_locked():
@@ -119,7 +119,7 @@ def save_all_predictions(request):
             f"{saved_count} prediction(s) saved successfully."
         )
 
-    return redirect(request.META.get("HTTP_REFERER", "fixtures"))
+    return redirect("fixtures")
 
 
 @login_required

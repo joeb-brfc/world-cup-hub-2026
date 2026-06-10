@@ -80,20 +80,16 @@ Fixtures | World Cup Hub 2026
                                 Kickoff: {{ fixture.kickoff_time }}
                             </p>
 
-                            {% for prediction in predictions %}
+                            {% if fixture.user_prediction %}
 
-                                {% if prediction.fixture.id == fixture.id %}
+                                <p class="mt-3 mb-0 text-success">
+                                    Your prediction:
+                                    {{ fixture.user_prediction.predicted_home_score }}
+                                    -
+                                    {{ fixture.user_prediction.predicted_away_score }}
+                                </p>
 
-                                    <p class="mt-3 mb-0 text-success">
-                                        Your prediction:
-                                        {{ prediction.predicted_home_score }}
-                                        -
-                                        {{ prediction.predicted_away_score }}
-                                    </p>
-
-                                {% endif %}
-
-                            {% endfor %}
+                            {% endif %}
 
                             {% if fixture.predictions_locked %}
 
@@ -122,6 +118,7 @@ Fixtures | World Cup Hub 2026
                                         class="form-control"
                                         style="width: 90px;"
                                         placeholder="Home"
+                                        value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_home_score }}{% endif %}"
                                     >
 
                                     <span>-</span>
@@ -134,6 +131,7 @@ Fixtures | World Cup Hub 2026
                                         class="form-control"
                                         style="width: 90px;"
                                         placeholder="Away"
+                                        value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_away_score }}{% endif %}"
                                     >
 
                                 </div>
