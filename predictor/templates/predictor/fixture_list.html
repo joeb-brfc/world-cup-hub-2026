@@ -18,12 +18,35 @@ Fixtures | World Cup Hub 2026
             All Fixtures
         </a>
 
+        <h2 class="h5 mt-3">Group Stage</h2>
+
+        <a href="{% url 'fixtures_by_matchday' 1 %}"
+           class="btn btn-sm mb-2 {% if selected_matchday == 1 %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            Matchday 1
+        </a>
+
+        <a href="{% url 'fixtures_by_matchday' 2 %}"
+           class="btn btn-sm mb-2 {% if selected_matchday == 2 %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            Matchday 2
+        </a>
+
+        <a href="{% url 'fixtures_by_matchday' 3 %}"
+           class="btn btn-sm mb-2 {% if selected_matchday == 3 %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            Matchday 3
+        </a>
+
+        <h2 class="h5 mt-3">Knockout Stage</h2>
+
         {% for stage_value, stage_label in stages %}
 
-            <a href="{% url 'fixtures_by_stage' stage_value %}"
-               class="btn btn-sm mb-2 {% if selected_stage == stage_value %}btn-primary{% else %}btn-outline-primary{% endif %}">
-                {{ stage_label }}
-            </a>
+            {% if stage_value != "Group Stage" %}
+
+                <a href="{% url 'fixtures_by_stage' stage_value %}"
+                   class="btn btn-sm mb-2 {% if selected_stage == stage_value %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                    {{ stage_label }}
+                </a>
+
+            {% endif %}
 
         {% endfor %}
 
@@ -71,6 +94,14 @@ Fixtures | World Cup Hub 2026
                             <p class="mb-1">
                                 Stage: {{ fixture.get_stage_display }}
                             </p>
+
+                            {% if fixture.matchday %}
+
+                                <p class="mb-1">
+                                    Matchday: {{ fixture.matchday }}
+                                </p>
+
+                            {% endif %}
 
                             <p class="mb-1">
                                 Stadium: {{ fixture.stadium }}

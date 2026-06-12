@@ -16,9 +16,27 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Fixture)
 class FixtureAdmin(admin.ModelAdmin):
-    list_display = ('home_team', 'away_team', 'stadium', 'stage', 'kickoff_time', 'home_team_score', 'away_team_score')
-    list_filter = ('stage', 'kickoff_time')
-    search_fields = ('home_team__name', 'away_team__name')
+    list_display = (
+        "home_team",
+        "away_team",
+        "stadium",
+        "stage",
+        "matchday",
+        "kickoff_time",
+        "home_team_score",
+        "away_team_score",
+    )
+
+    list_filter = (
+        "stage",
+        "matchday",
+        "kickoff_time",
+    )
+
+    search_fields = (
+        "home_team__name",
+        "away_team__name",
+    )
 
 @admin.register(Prediction)
 class PredictionAdmin(admin.ModelAdmin):

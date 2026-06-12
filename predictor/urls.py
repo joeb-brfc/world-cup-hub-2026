@@ -36,6 +36,12 @@ urlpatterns = [
     ),
 
     path(
+        "fixtures/group-stage/matchday/<int:matchday>/",
+        views.fixture_list,
+        name="fixtures_by_matchday",
+    ),
+
+    path(
         "fixtures/<str:stage>/",
         views.fixture_list,
         name="fixtures_by_stage",

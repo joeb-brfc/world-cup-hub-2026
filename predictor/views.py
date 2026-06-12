@@ -12,15 +12,26 @@ def home(request):
 
 
 @login_required
-def fixture_list(request, stage=None):
+def fixture_list(request, stage=None, matchday=None):
     stages = Fixture.STAGE_CHOICES
 
-    if stage:
+    if matchday:
+        fixtures = Fixture.objects.filter(
+            stage="Group Stage",
+            matchday=matchday
+        )
+        selected_stage = "Group Stage"
+        selected_matchday = matchday
+
+    elif stage:
         fixtures = Fixture.objects.filter(stage=stage)
         selected_stage = stage
+        selected_matchday = None
+
     else:
         fixtures = Fixture.objects.all()
         selected_stage = "all"
+        selected_matchday = None
 
     predictions = Prediction.objects.filter(user=request.user)
 
@@ -36,6 +47,7 @@ def fixture_list(request, stage=None):
         "fixtures": fixtures,
         "stages": stages,
         "selected_stage": selected_stage,
+        "selected_matchday": selected_matchday,
     }
 
     return render(request, "predictor/fixture_list.html", context)
