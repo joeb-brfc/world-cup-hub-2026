@@ -40,7 +40,7 @@
   {% endif %}
 
   <div class="row">
-    {% for ball in leaderboard_balls %}
+    {% for ball in balls %}
 
     <div class="col-6 col-md-3 mb-3">
       <div class="card text-center shadow-sm">
@@ -52,7 +52,7 @@
 
             <br />
 
-            {{ ball.team }} 
+            {{ ball.team }}
           </h2>
 
           <p class="mb-0">Taken by {{ ball.selected_by.username }}</p>
@@ -85,14 +85,18 @@
     </thead>
 
     <tbody>
-      {% for ball in balls %} {% if ball.selected_by %}
+      {% for ball in leaderboard_balls %}
       <tr>
         <td>{{ ball.selected_by.username }}</td>
         <td>{{ ball.team }}</td>
         <td>{{ ball.score }}</td>
         <td>{% if ball.busted %} Busted {% else %} Active {% endif %}</td>
       </tr>
-      {% endif %} {% endfor %}
+      {% empty %}
+      <tr>
+        <td colspan="4">No Pontoon teams have been selected yet.</td>
+      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </section>
