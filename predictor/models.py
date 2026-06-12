@@ -96,6 +96,10 @@ class Fixture(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
+        # Recalculate prediction points when a fixture result is saved.
+        self.update_prediction_points()
+
+        # Recalculate Pontoon scores when a fixture result is saved.
         from pontoon.models import update_all_pontoon_scores
         update_all_pontoon_scores()
 
