@@ -71,6 +71,10 @@ class Fixture(models.Model):
     )
 
     stage = models.CharField(max_length=20, choices=STAGE_CHOICES)
+    matchday = models.PositiveIntegerField(
+    blank=True,
+    null=True
+)
     kickoff_time = models.DateTimeField()
     home_team_score = models.PositiveIntegerField(blank=True, null=True)
     away_team_score = models.PositiveIntegerField(blank=True, null=True)
