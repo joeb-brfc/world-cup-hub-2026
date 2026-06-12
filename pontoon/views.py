@@ -6,17 +6,21 @@ from .models import PontoonBall
 
 @login_required
 def pontoon_home(request):
+    # Used for the football grid, so balls stay in number order.
     balls = PontoonBall.objects.all().order_by("number")
 
-    selected_ball = None
+    # Used for the leaderboard, so highest active scores appear first.
+    leaderboard_balls = PontoonBall.objects.filter(
+        selected_by__isnull=False
+    ).order_by("busted", "-score")
 
-    if request.user.is_authenticated:
-        selected_ball = PontoonBall.objects.filter(
-            selected_by=request.user
-        ).first()
+    selected_ball = PontoonBall.objects.filter(
+        selected_by=request.user
+    ).first()
 
     context = {
         "balls": balls,
+        "leaderboard_balls": leaderboard_balls,
         "selected_ball": selected_ball,
     }
 
