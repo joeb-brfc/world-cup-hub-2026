@@ -1,31 +1,74 @@
-{% extends "base.html" %} {% load static %} {% block title %} Pontoon Payment | World Cup Hub 2026 {% endblock %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Pontoon Payment | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
 
 <section class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <div class="card shadow-sm">
-        <div class="card-body text-center">
-          <h1 class="h3 mb-3">Unlock World Cup Pontoon</h1>
 
-          <p>Pay once to unlock access to the Pontoon game. After payment, you can choose one football and reveal your assigned World Cup team.</p>
+    <div class="row justify-content-center">
 
-          <form id="payment-form">
-            <div class="mb-3 text-start">
-              <label for="card-element" class="form-label"> Card details </label>
+        <div class="col-12 col-md-8 col-lg-6">
 
-              <div id="card-element" class="form-control"></div>
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h1 class="h3 mb-3 text-center">
+                        Unlock World Cup Pontoon
+                    </h1>
+
+                    <p class="text-center">
+                        Pay once to unlock access to the Pontoon game.
+                        After payment, you can choose one football and reveal
+                        your assigned World Cup team.
+                    </p>
+
+                    <form id="payment-form">
+
+                        <div class="mb-3">
+                            <label for="card-element" class="form-label">
+                                Card details
+                            </label>
+
+                            <div id="card-element" class="form-control"></div>
+                        </div>
+
+                        <div id="card-errors" class="text-danger mb-3" role="alert"></div>
+
+                        <button id="submit-button" class="btn btn-primary w-100">
+                            Pay to Play Pontoon
+                        </button>
+
+                    </form>
+
+                    <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100 mt-3">
+                        Back to Home
+                    </a>
+
+                </div>
+
             </div>
 
-            <div id="card-errors" class="text-danger mb-3" role="alert"></div>
-
-            <button id="submit-button" class="btn btn-primary w-100">Pay to Play Pontoon</button>
-          </form>
-
-          <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100 mt-3"> Back to Home </a>
         </div>
-      </div>
+
     </div>
-  </div>
+
 </section>
 
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+    const stripePublicKey = "{{ stripe_public_key }}";
+    const clientSecret = "{{ client_secret }}";
+    const successUrl = "{% url 'pontoon_payment_success' %}";
+</script>
+
+<script src="{% static 'js/stripe_elements.js' %}"></script>
 {% endblock %}
