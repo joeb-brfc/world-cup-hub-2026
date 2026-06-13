@@ -1,38 +1,31 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-Pontoon Payment | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block title %} Pontoon Payment | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h1 class="h3 mb-3">Unlock World Cup Pontoon</h1>
 
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
+          <p>Pay once to unlock access to the Pontoon game. After payment, you can choose one football and reveal your assigned World Cup team.</p>
 
-                    <h1 class="h3 mb-3">
-                        Unlock World Cup Pontoon
-                    </h1>
+          <form id="payment-form">
+            <div class="mb-3 text-start">
+              <label for="card-element" class="form-label"> Card details </label>
 
-                    <p>
-                        Pay once to unlock access to the Pontoon game.
-                        After payment, you can choose one football and reveal
-                        your assigned World Cup team.
-                    </p>
-
-                    <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100 mt-3">
-                        Back to Home
-                    </a>
-
-                </div>
+              <div id="card-element" class="form-control"></div>
             </div>
 
+            <div id="card-errors" class="text-danger mb-3" role="alert"></div>
+
+            <button id="submit-button" class="btn btn-primary w-100">Pay to Play Pontoon</button>
+          </form>
+
+          <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100 mt-3"> Back to Home </a>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 {% endblock %}
