@@ -13,5 +13,15 @@ urlpatterns = [
     views.confirm_ball,
     name="confirm_ball",
 ),
+    path(
+    "checkout/",
+    views.pontoon_checkout,
+    name="pontoon_checkout",
+),
+    path(
+    "payment-success/",
+    views.pontoon_payment_success,
+    name="pontoon_payment_success",
+),
     
 ]
