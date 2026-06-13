@@ -8,10 +8,16 @@ from .models import PontoonBall, PontoonAccess
 
 @login_required
 def pontoon_home(request):
-    # Used for the football grid, so balls stay in number order.
+    access = PontoonAccess.objects.filter(
+        user=request.user,
+        has_access=True
+    ).exists()
+
+    if not access:
+        return redirect("pontoon_checkout")
+
     balls = PontoonBall.objects.all().order_by("number")
 
-    # Used for the leaderboard, so highest active scores appear first.
     leaderboard_balls = PontoonBall.objects.filter(
         selected_by__isnull=False
     ).order_by("busted", "-score")
