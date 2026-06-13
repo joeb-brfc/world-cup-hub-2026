@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import PontoonBall
+from .models import PontoonBall, PontoonAccess
+
+admin.site.register(PontoonAccess)
 
 
 @admin.register(PontoonBall)
