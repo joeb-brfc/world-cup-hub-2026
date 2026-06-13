@@ -93,3 +93,22 @@ def pontoon_checkout(request):
     }
 
     return render(request, "pontoon/pontoon_checkout.html", context)
+
+@login_required
+def pontoon_payment_success(request):
+    payment_intent = request.GET.get("payment_intent")
+
+    access, created = PontoonAccess.objects.get_or_create(
+        user=request.user
+    )
+
+    access.has_access = True
+    access.stripe_pid = payment_intent
+    access.save()
+
+    messages.success(
+        request,
+        "Payment successful. Pontoon access has been unlocked."
+    )
+
+    return redirect("pontoon_home")
