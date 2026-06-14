@@ -9,3 +9,16 @@
     --wc-light: #f5f7fa;
 
 }
+
+body {
+    background-color: var(--wc-d);
+    font-family: Arial, sans-serif;
+    color: var(--wc-dark);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
