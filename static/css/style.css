@@ -22,3 +22,19 @@ h3,
 h4 {
     font-weight: 700;
 }
+
+.wc-navbar {
+    background: linear-gradient(
+        90deg,
+        var(--wc-dark),
+        var(--wc-purple)
+    );
+}
+
+.wc-navbar .nav-link {
+    color: white;
+}
+
+.wc-navbar .nav-link:hover {
+    color: #ffd700;
+}
