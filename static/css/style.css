@@ -74,3 +74,15 @@ h4 {
     padding: 4px 10px;
     border-radius: 20px;
 }
+
+.pontoon-team-panel {
+    background: #eaf8ee;
+    border-left: 5px solid var(--wc-green);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.wc-table thead {
+    background: var(--wc-dark);
+    color: white;
+}
