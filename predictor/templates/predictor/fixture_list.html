@@ -14,24 +14,24 @@ Fixtures | World Cup Hub 2026
     <div class="mb-4">
 
         <a href="{% url 'fixtures' %}"
-           class="btn btn-sm mb-2 {% if selected_stage == 'all' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+           class="btn btn-sm mb-2 {% if selected_stage == 'all' %}wc-btn-primary{% else %}btn-outline-primary{% endif %}">
             All Fixtures
         </a>
 
         <h2 class="h5 mt-3">Group Stage</h2>
 
         <a href="{% url 'fixtures_by_matchday' 1 %}"
-           class="btn btn-sm mb-2 {% if selected_matchday == 1 %}btn-primary{% else %}btn-outline-primary{% endif %}">
+           class="btn btn-sm mb-2 {% if selected_matchday == 1 %}wc-btn-primary{% else %}btn-outline-primary{% endif %}">
             Matchday 1
         </a>
 
         <a href="{% url 'fixtures_by_matchday' 2 %}"
-           class="btn btn-sm mb-2 {% if selected_matchday == 2 %}btn-primary{% else %}btn-outline-primary{% endif %}">
+           class="btn btn-sm mb-2 {% if selected_matchday == 2 %}wc-btn-primary{% else %}btn-outline-primary{% endif %}">
             Matchday 2
         </a>
 
         <a href="{% url 'fixtures_by_matchday' 3 %}"
-           class="btn btn-sm mb-2 {% if selected_matchday == 3 %}btn-primary{% else %}btn-outline-primary{% endif %}">
+           class="btn btn-sm mb-2 {% if selected_matchday == 3 %}wc-btn-primary{% else %}btn-outline-primary{% endif %}">
             Matchday 3
         </a>
 
@@ -42,7 +42,7 @@ Fixtures | World Cup Hub 2026
             {% if stage_value != "Group Stage" %}
 
                 <a href="{% url 'fixtures_by_stage' stage_value %}"
-                   class="btn btn-sm mb-2 {% if selected_stage == stage_value %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                   class="btn btn-sm mb-2 {% if selected_stage == stage_value %}wc-btn-primary{% else %}btn-outline-primary{% endif %}">
                     {{ stage_label }}
                 </a>
 
@@ -55,7 +55,7 @@ Fixtures | World Cup Hub 2026
     <form method="POST" action="{% url 'save_all_predictions' %}">
         {% csrf_token %}
 
-        <button type="submit" class="btn btn-success mb-4">
+        <button type="submit" class="btn wc-btn-success mb-4">
             Save All Predictions
         </button>
 
@@ -183,7 +183,7 @@ Fixtures | World Cup Hub 2026
 
         </div>
 
-        <button type="submit" class="btn btn-success mt-2">
+        <button type="submit" class="btn wc-btn-success mt-2">
             Save All Predictions
         </button>
 

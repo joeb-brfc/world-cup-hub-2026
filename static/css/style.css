@@ -38,3 +38,15 @@ h4 {
 .wc-navbar .nav-link:hover {
     color: #ffd700;
 }
+
+.wc-wc-btn-primary {
+    background-color: var(--wc-purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.wc-wc-btn-primary:hover {
+    background-color: var(--wc-blue);
+}
