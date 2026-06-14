@@ -50,3 +50,13 @@ h4 {
 .wc-wc-btn-primary:hover {
     background-color: var(--wc-blue);
 }
+
+.wc-card {
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.wc-card:hover {
+    transform: translateY(-3px);
+}
