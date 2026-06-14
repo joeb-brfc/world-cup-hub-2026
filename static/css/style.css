@@ -60,3 +60,17 @@ h4 {
 .wc-card:hover {
     transform: translateY(-3px);
 }
+
+.status-open {
+    background: var(--wc-green);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status-locked {
+    background: var(--wc-red);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
