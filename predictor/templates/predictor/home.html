@@ -1,52 +1,82 @@
-{% extends "base.html" %} {% load static %} {% block title %} Home | World Cup Hub 2026 {% endblock %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Home | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
 
 <section class="container py-5">
+
   <div class="alert alert-info mb-4">
     <h4>⚽ Welcome to World Cup Hub 2026</h4>
 
-    <p>Thank you for taking part in the World Cup Hub community. This project is currently under active development and new features are being added regularly.</p>
+    <p>
+      Thank you for taking part in the World Cup Hub community. This project is currently under active development and new features are being added regularly.
+    </p>
 
-    <p>You may occasionally encounter bugs, missing features, or unexpected behaviour while improvements are being made. Thank you for your patience and support.</p>
+    <p>
+      You may occasionally encounter bugs, missing features, or unexpected behaviour while improvements are being made. Thank you for your patience and support.
+    </p>
 
-    <p class="mb-0">Most importantly, enjoy the tournament, enjoy the competition, and let's experience the FIFA World Cup 2026 together.</p>
+    <p class="mb-0">
+      Most importantly, enjoy the tournament, enjoy the competition, and let's experience the FIFA World Cup 2026 together.
+    </p>
   </div>
 
   <div class="row align-items-center">
+
     <div class="col-12 col-lg-7">
-      <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 mb-3">
-        <img src="{% static 'images/flags/usa.svg' %}" alt="USA" width="60" height="40" />
 
-        <img src="{% static 'images/world-cup-trophy.png' %}" alt="World Cup Trophy" width="50" />
+      <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 mb-3 flex-wrap">
 
-        <h1 class="display-4 fw-bold mb-0">World Cup Hub 2026</h1>
+        <img src="{% static 'images/flags/usa.svg' %}" alt="USA" width="60" height="40">
 
-        <img src="{% static 'images/flags/mexico.svg' %}" alt="Mexico" width="60" height="40" />
+        <img src="{% static 'images/world-cup-trophy.png' %}" alt="World Cup Trophy" width="50">
 
-        <img src="{% static 'images/flags/canada.svg' %}" alt="Canada" width="60" height="40" />
+        <h1 class="display-4 fw-bold mb-0">
+          World Cup Hub 2026
+        </h1>
+
+        <img src="{% static 'images/flags/mexico.svg' %}" alt="Mexico" width="60" height="40">
+
+        <img src="{% static 'images/flags/canada.svg' %}" alt="Canada" width="60" height="40">
+
       </div>
 
-      <p class="lead">World Cup Hub 2026 is an interactive fan platform designed to bring supporters together throughout the tournament.</p>
+      <p class="lead">
+        World Cup Hub 2026 is an interactive fan platform designed to bring supporters together throughout the tournament.
+      </p>
 
-      <p>Predict match results, compete against friends, track your progress on the leaderboard, and take part in the World Cup Pontoon competition where every goal scored can move you closer to victory.</p>
+      <p>
+        Predict match results, compete against friends, and track your progress on the leaderboard as the tournament unfolds.
+      </p>
 
-      <p>New features and content will continue to be added throughout the tournament, including expanded team fact files and additional statistics.</p>
+      <p>
+        New features and content will continue to be added throughout the tournament, including expanded team fact files and additional statistics.
+      </p>
 
       <div class="mt-4">
-        <a href="{% url 'fixtures' %}" class="btn btn-primary me-2"> View Fixtures </a>
-
-        <a href="{% url 'pontoon_home' %}" class="btn btn-outline-dark"> Play Pontoon </a>
+        <a href="{% url 'fixtures' %}" class="btn btn-primary me-2">
+          View Fixtures & Make Predictions
+        </a>
       </div>
+
     </div>
 
     <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+
       <div class="card shadow-sm">
+
         <div class="card-body">
+
           <h2 class="h4">Current Features</h2>
 
           <ul>
             <li>World Cup fixtures</li>
             <li>Free prediction game</li>
-            <li>Pontoon competition</li>
+            <li>Prediction leaderboard</li>
           </ul>
 
           <h2 class="h5 mt-4">Coming Soon</h2>
@@ -56,12 +86,55 @@
             <li>World Cup statistics</li>
             <li>Tournament insights</li>
             <li>Additional fan features</li>
-            <li>Premier league and Championship competitions for 26/27 season </li>
+            <li>Premier League and Championship competitions for the 2026/27 season</li>
           </ul>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
+</section>
+
+<section class="container pb-5">
+
+  <div class="card shadow-sm border-0">
+
+    <div class="card-body text-center py-5">
+
+      <h2 class="display-6 fw-bold">
+        World Cup Pontoon
+      </h2>
+
+      <p class="lead">
+        Unlock the premium World Cup Pontoon competition.
+      </p>
+
+      <p>
+        Choose one football, reveal a randomly assigned World Cup nation,
+        and score points throughout the tournament.
+      </p>
+
+      <ul class="list-unstyled mb-4">
+        <li> Goals scored = +2 points</li>
+        <li> Goals conceded = -1 point</li>
+        <li> Go above 21 and you're bust</li>
+        <li> Closest to 21 wins</li>
+        <li> Compete against friends</li>
+        <li> £5 Entry</li>
+      </ul>
+
+      <a href="{% url 'pontoon_home' %}" class="btn btn-primary btn-lg">
+        Play Pontoon
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
 {% endblock %}
