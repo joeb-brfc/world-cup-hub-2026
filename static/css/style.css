@@ -190,6 +190,20 @@ h5 {
     box-shadow: 0 12px 25px rgba(123,0,255,.35);
 }
 
+.score-positive {
+    color: var(--wc-green);
+    font-weight: 700;
+}
+
+.score-negative {
+    color: var(--wc-red);
+    font-weight: 700;
+}
+
+.score-neutral {
+    color: #666;
+    font-weight: 600;
+}
 
 
 .pontoon-active {

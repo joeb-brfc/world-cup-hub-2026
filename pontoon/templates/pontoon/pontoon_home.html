@@ -89,7 +89,18 @@
       <tr>
         <td>{{ ball.selected_by.username }}</td>
         <td>{{ ball.team }}</td>
-        <td>{{ ball.score }}</td>
+        <td>
+          {% if ball.score > 0 %}
+          <span class="score-positive"> +{{ ball.score }} </span>
+
+          {% elif ball.score < 0 %}
+          <span class="score-negative"> {{ ball.score }} </span>
+
+          {% else %}
+          <span class="score-neutral"> {{ ball.score }} </span>
+
+          {% endif %}
+        </td>
         <td>{% if ball.busted %} Busted {% else %} Active {% endif %}</td>
       </tr>
       {% empty %}
