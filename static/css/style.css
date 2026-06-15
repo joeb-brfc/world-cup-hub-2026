@@ -1,88 +1,234 @@
 :root {
-
     --wc-purple: #7b00ff;
     --wc-blue: #0066ff;
     --wc-red: #ff2b2b;
     --wc-green: #00b050;
-
+    --wc-gold: #d4af37;
     --wc-dark: #151c2c;
     --wc-light: #f5f7fa;
-
+    --wc-white: #ffffff;
 }
 
+/* Global */
+
 body {
-    background-color: var(--wc-d);
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef1ff 100%);
     color: var(--wc-dark);
+    font-family: Arial, sans-serif;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
+    font-weight: 800;
+    color: var(--wc-dark);
+}
+
+/* Navbar */
+
+.navbar {
+    background: linear-gradient(90deg, var(--wc-dark), var(--wc-purple)) !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: var(--wc-white) !important;
+    font-weight: 800;
+}
+
+.nav-link {
+    color: var(--wc-white) !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--wc-gold) !important;
+}
+
+/* Alerts */
+
+.alert-info {
+    background-color: #dff8ff;
+    border: 1px solid #87e3ff;
+    border-radius: 14px;
+    color: #064b5c;
+}
+
+/* Cards */
+
+.card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(21, 28, 44, 0.08) !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    transition: 0.25s ease;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-success {
+    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    padding: 0.7rem 1.2rem;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border-color: var(--wc-purple);
+    color: var(--wc-purple);
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--wc-purple);
+    border-color: var(--wc-purple);
+    color: white;
+}
+
+/* Fixture cards */
+
+.fixture-card,
+.card.shadow-sm {
+    border-left: 6px solid var(--wc-purple);
+}
+
+.text-success {
+    color: var(--wc-green) !important;
     font-weight: 700;
 }
 
-.wc-navbar {
+.text-danger {
+    color: var(--wc-red) !important;
+    font-weight: 700;
+}
+
+/* Tables */
+
+.table {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: var(--wc-dark);
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(123, 0, 255, 0.06);
+}
+
+/* Pontoon */
+
+.pontoon-team-panel {
+    background: #eaf8ee;
+    border-left: 6px solid var(--wc-green);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.pontoon-button {
     background: linear-gradient(
         90deg,
-        var(--wc-dark),
-        var(--wc-purple)
+        var(--wc-purple),
+        var(--wc-blue)
     );
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 32px;
+    box-shadow: 0 8px 20px rgba(123,0,255,.25);
+    transition: all .3s ease;
 }
 
-.wc-navbar .nav-link {
+.choose-football-btn {
+    background: var(--wc-purple);
+    color: white;
+    border-radius: 25px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.choose-football-btn:hover {
+    background: var(--wc-blue);
     color: white;
 }
 
-.wc-navbar .nav-link:hover {
-    color: #ffd700;
-}
-
-.wc-wc-btn-primary {
-    background-color: var(--wc-purple);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-}
-
-.wc-wc-btn-primary:hover {
-    background-color: var(--wc-blue);
-}
-
-.wc-card {
-    border-radius: 15px;
-    border: none;
-    transition: 0.3s;
-}
-
-.wc-card:hover {
+.pontoon-button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(123,0,255,.35);
 }
+
+.premium-section,
+section .card.border-0 {
+    background: linear-gradient(135deg, #ffffff, #f2edff);
+    border-top: 6px solid var(--wc-gold);
+}
+
+/* Status badges */
 
 .status-open {
     background: var(--wc-green);
     color: white;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
+    font-weight: 700;
 }
 
 .status-locked {
     background: var(--wc-red);
     color: white;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
+    font-weight: 700;
 }
 
-.pontoon-team-panel {
-    background: #eaf8ee;
-    border-left: 5px solid var(--wc-green);
-    border-radius: 12px;
-    padding: 20px;
-}
 
-.wc-table thead {
-    background: var(--wc-dark);
-    color: white;
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    input[type="number"] {
+        width: 70px !important;
+        height: 50px;
+    }
 }
