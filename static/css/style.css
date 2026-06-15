@@ -66,6 +66,11 @@ h5 {
 
 /* Cards */
 
+.fixture-help-card {
+    border-left: 6px solid var(--wc-blue);
+    background: linear-gradient(135deg, #ffffff, #eef4ff);
+}
+
 .card {
     border: none;
     border-radius: 18px;
