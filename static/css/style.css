@@ -205,6 +205,16 @@ h5 {
     font-weight: 600;
 }
 
+.pontoon-active {
+    color: var(--wc-green);
+    font-weight: 700;
+}
+
+.pontoon-busted {
+    color: var(--wc-red);
+    font-weight: 700;
+}
+
 
 .pontoon-active {
     background-color: #e8f8ed;

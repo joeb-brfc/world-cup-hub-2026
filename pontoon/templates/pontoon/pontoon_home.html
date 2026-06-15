@@ -101,7 +101,17 @@
 
           {% endif %}
         </td>
-        <td>{% if ball.busted %} Busted {% else %} Active {% endif %}</td>
+        <td>
+          {% if ball.busted %}
+
+          <span class="pontoon-busted"> ✖ Busted </span>
+
+          {% else %}
+
+          <span class="pontoon-active"> ✔ Active </span>
+
+          {% endif %}
+        </td>
       </tr>
       {% empty %}
       <tr>
