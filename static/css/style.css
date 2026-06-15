@@ -190,6 +190,31 @@ h5 {
     box-shadow: 0 12px 25px rgba(123,0,255,.35);
 }
 
+
+
+.pontoon-active {
+    background-color: #e8f8ed;
+    border-left: 5px solid var(--wc-green);
+}
+
+.pontoon-busted {
+    background-color: #fff0f0;
+    border-left: 5px solid var(--wc-red);
+}
+
+table {
+    background-color: var(--wc-white);
+}
+
+thead {
+    background-color: var(--wc-dark);
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: rgba(111, 0, 255, 0.05);
+}
+
 .premium-section,
 section .card.border-0 {
     background: linear-gradient(135deg, #ffffff, #f2edff);
@@ -213,6 +238,40 @@ section .card.border-0 {
     border-radius: 20px;
     font-weight: 700;
 }
+
+/* Score inputs */
+
+input[type="number"] {
+    width: 76px !important;
+    height: 54px;
+    border-radius: 50px;
+    border: 2px solid #d6dbe6;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--wc-dark);
+    background-color: white;
+}
+
+/* Remove number input arrows */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+    border-color: var(--wc-purple);
+    box-shadow: 0 0 0 0.2rem rgba(123, 0, 255, 0.15);
+    outline: none;
+}
+
 
 
 
