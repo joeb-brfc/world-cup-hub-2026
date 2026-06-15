@@ -30,8 +30,8 @@ h2,
 h3,
 h4,
 h5 {
-    font-weight: 800;
     color: var(--wc-dark);
+    font-weight: 800;
 }
 
 /* Navbar */
@@ -41,37 +41,20 @@ h5 {
     padding: 1rem 0;
 }
 
-.navbar-brand {
-    color: var(--wc-white) !important;
-    font-weight: 800;
-}
-
+.navbar-brand,
 .nav-link {
     color: var(--wc-white) !important;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .nav-link:hover {
     color: var(--wc-gold) !important;
 }
 
-/* Alerts */
-
-.alert-info {
-    background-color: #dff8ff;
-    border: 1px solid #87e3ff;
-    border-radius: 14px;
-    color: #064b5c;
-}
-
 /* Cards */
 
-.fixture-help-card {
-    border-left: 6px solid var(--wc-blue);
-    background: linear-gradient(135deg, #ffffff, #eef4ff);
-}
-
 .card {
+    background-color: rgba(255, 255, 255, 0.96);
     border: none;
     border-radius: 18px;
     box-shadow: 0 8px 24px rgba(21, 28, 44, 0.08) !important;
@@ -86,38 +69,67 @@ h5 {
     transition: 0.25s ease;
 }
 
+/* Alerts */
+
+.alert-info {
+    background-color: #dff8ff;
+    border: 1px solid #87e3ff;
+    border-radius: 14px;
+    color: #064b5c;
+}
+
 /* Buttons */
 
 .btn-primary,
-.btn-success {
-    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
-    border: none;
+.btn-success,
+.wc-btn-primary {
+    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue)) !important;
+    border: none !important;
     border-radius: 12px;
-    color: white;
-    font-weight: 700;
+    color: var(--wc-white) !important;
+    font-weight: 800;
     padding: 0.7rem 1.2rem;
+    box-shadow: 0 4px 12px rgba(123, 0, 255, 0.25);
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover,
-.btn-success:hover {
+.btn-success:hover,
+.wc-btn-primary:hover {
+    color: var(--wc-white) !important;
     opacity: 0.95;
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.35);
 }
 
 .btn-outline-primary {
-    border-color: var(--wc-purple);
+    background: var(--wc-white);
+    border: 2px solid var(--wc-purple);
+    border-radius: 12px;
     color: var(--wc-purple);
-    border-radius: 10px;
-    font-weight: 600;
+    font-weight: 700;
+    padding: 0.45rem 0.75rem;
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--wc-purple);
+    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
     border-color: var(--wc-purple);
-    color: white;
+    color: var(--wc-white);
+    transform: translateY(-1px);
 }
 
-/* Fixture cards */
+/* Fixtures page */
+
+.fixture-help-card {
+    background: linear-gradient(135deg, #ffffff, #f3edff);
+    border-left: 6px solid var(--wc-purple) !important;
+    border-radius: 18px;
+}
+
+.fixture-help-card h2 {
+    color: var(--wc-purple);
+    font-weight: 800;
+}
 
 .fixture-card,
 .card.shadow-sm {
@@ -126,28 +138,58 @@ h5 {
 
 .text-success {
     color: var(--wc-green) !important;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .text-danger {
     color: var(--wc-red) !important;
-    font-weight: 700;
+    font-weight: 800;
+}
+
+/* Score inputs */
+
+input[type="number"] {
+    width: 76px !important;
+    height: 54px;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    background-color: var(--wc-white);
+    border: 2px solid #d6dbe6;
+    border-radius: 50px;
+    color: var(--wc-dark);
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]:focus {
+    border-color: var(--wc-purple);
+    box-shadow: 0 0 0 0.2rem rgba(123, 0, 255, 0.15);
+    outline: none;
 }
 
 /* Tables */
 
 .table {
-    background-color: white;
+    background-color: var(--wc-white);
     border-radius: 12px;
     overflow: hidden;
 }
 
-.table thead {
+.table thead,
+thead {
     background-color: var(--wc-dark);
-    color: white;
+    color: var(--wc-white);
 }
 
-.table tbody tr:hover {
+.table tbody tr:hover,
+tbody tr:hover {
     background-color: rgba(123, 0, 255, 0.06);
 }
 
@@ -160,149 +202,73 @@ h5 {
     padding: 20px;
 }
 
-.pontoon-button {
-    background: linear-gradient(
-        90deg,
-        var(--wc-purple),
-        var(--wc-blue)
-    );
-    border: none;
-    border-radius: 50px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 14px 32px;
-    box-shadow: 0 8px 20px rgba(123,0,255,.25);
-    transition: all .3s ease;
-}
-
-.choose-football-btn {
-    background: var(--wc-purple);
-    color: white;
-    border-radius: 25px;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.choose-football-btn:hover {
-    background: var(--wc-blue);
-    color: white;
-}
-
-.pontoon-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(123,0,255,.35);
-}
-
-.score-positive {
-    color: var(--wc-green);
-    font-weight: 700;
-}
-
-.score-negative {
-    color: var(--wc-red);
-    font-weight: 700;
-}
-
-.score-neutral {
-    color: #666;
-    font-weight: 600;
-}
-
-.pontoon-active {
-    color: var(--wc-green);
-    font-weight: 700;
-}
-
-.pontoon-busted {
-    color: var(--wc-red);
-    font-weight: 700;
-}
-
-
-.pontoon-active {
-    background-color: #e8f8ed;
-    border-left: 5px solid var(--wc-green);
-}
-
-.pontoon-busted {
-    background-color: #fff0f0;
-    border-left: 5px solid var(--wc-red);
-}
-
-table {
-    background-color: var(--wc-white);
-}
-
-thead {
-    background-color: var(--wc-dark);
-    color: white;
-}
-
-tbody tr:hover {
-    background-color: rgba(111, 0, 255, 0.05);
-}
-
 .premium-section,
 section .card.border-0 {
     background: linear-gradient(135deg, #ffffff, #f2edff);
     border-top: 6px solid var(--wc-gold);
 }
 
+.pontoon-button,
+.choose-football-btn {
+    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
+    border: none;
+    border-radius: 50px;
+    color: var(--wc-white);
+    display: inline-block;
+    font-weight: 800;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pontoon-button:hover,
+.choose-football-btn:hover {
+    color: var(--wc-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.3);
+}
+
+/* Pontoon scores and statuses */
+
+.score-positive,
+.pontoon-active {
+    color: var(--wc-green);
+    font-weight: 800;
+}
+
+.score-negative,
+.pontoon-busted {
+    color: var(--wc-red);
+    font-weight: 800;
+}
+
+.score-neutral {
+    color: #666;
+    font-weight: 700;
+}
+
+.pontoon-winner {
+    color: var(--wc-gold);
+    font-weight: 900;
+}
+
 /* Status badges */
 
 .status-open {
     background: var(--wc-green);
-    color: white;
-    padding: 5px 12px;
     border-radius: 20px;
-    font-weight: 700;
+    color: var(--wc-white);
+    font-weight: 800;
+    padding: 5px 12px;
 }
 
 .status-locked {
     background: var(--wc-red);
-    color: white;
-    padding: 5px 12px;
     border-radius: 20px;
-    font-weight: 700;
+    color: var(--wc-white);
+    font-weight: 800;
+    padding: 5px 12px;
 }
-
-/* Score inputs */
-
-input[type="number"] {
-    width: 76px !important;
-    height: 54px;
-    border-radius: 50px;
-    border: 2px solid #d6dbe6;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--wc-dark);
-    background-color: white;
-}
-
-/* Remove number input arrows */
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    appearance: textfield;
-    -moz-appearance: textfield;
-}
-
-input[type="number"]:focus {
-    border-color: var(--wc-purple);
-    box-shadow: 0 0 0 0.2rem rgba(123, 0, 255, 0.15);
-    outline: none;
-}
-
-
-
 
 /* Mobile */
 
