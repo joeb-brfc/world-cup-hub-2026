@@ -93,6 +93,28 @@ h5 {
     transition: all 0.3s ease;
 }
 
+.wc-btn-danger {
+    display: inline-block;
+    background: linear-gradient(
+        90deg,
+        #ff4d4d,
+        #d90429
+    );
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.wc-btn-danger:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.35);
+}
+
 .btn-primary:hover,
 .btn-success:hover,
 .wc-btn-primary:hover {

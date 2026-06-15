@@ -11,11 +11,17 @@
 
       <p class="mb-1">Your prediction: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
 
-      <p class="mb-1">Points awarded: {{ prediction.points_awarded }}</p>
+      <p class="mb-1">
+        Points awarded: {% if prediction.points_awarded > 0 %}
+        <span class="score-positive"> {{ prediction.points_awarded }} </span>
+        {% else %}
+        <span class="score-neutral"> {{ prediction.points_awarded }} </span>
+        {% endif %}
+      </p>
 
       <p class="mb-0">Stage: {{ prediction.fixture.get_stage_display }}</p>
-      <a href="{% url 'create_prediction' prediction.fixture.id %}" class="btn wc-wc-btn-primary btn-sm mt-3"> Edit Prediction </a>
-      <a href="{% url 'delete_prediction' prediction.id %}" class="btn btn-danger btn-sm mt-3"> Delete </a>
+      <a href="{% url 'create_prediction' prediction.fixture.id %}" class="wc-btn-primary mt-3"> Edit Prediction </a>
+      <a href="{% url 'delete_prediction' prediction.id %}" class="wc-btn-danger mt-3"> Delete Prediction </a>
     </div>
   </div>
 
