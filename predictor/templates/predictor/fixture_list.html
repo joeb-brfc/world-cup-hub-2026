@@ -45,7 +45,7 @@
   <form method="POST" action="{% url 'save_all_predictions' %}">
     {% csrf_token %}
 
-    <button type="submit" class="btn wc-btn-success mb-4">Save All Predictions</button>
+    <button type="submit" class="wc-btn-primary mb-4">Save All Predictions</button>
 
     <div class="row">
       {% for fixture in fixtures %}
@@ -85,7 +85,7 @@
 
             <p class="text-danger mt-3 mb-0">Prediction status: Locked</p>
 
-            <a href="{% url 'fixture_predictions' fixture.id %}" class="btn btn-outline-secondary btn-sm mt-2"> View Everyone's Predictions </a>
+            <a href="{% url 'fixture_predictions' fixture.id %}" class="wc-btn-outline mt-2"> View Everyone's Predictions </a>
 
             {% else %}
 
@@ -111,7 +111,7 @@
       {% endfor %}
     </div>
 
-    <button type="submit" class="btn wc-btn-success mt-2">Save All Predictions</button>
+    <button type="submit" class="wc-btn-primary mb-4">Save All Predictions</button>
   </form>
 </section>
 

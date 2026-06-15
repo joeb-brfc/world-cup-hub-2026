@@ -102,6 +102,24 @@ h5 {
     box-shadow: 0 8px 20px rgba(123, 0, 255, 0.35);
 }
 
+.wc-btn-outline {
+    display: inline-block;
+    background: var(--wc-white);
+    border: 2px solid var(--wc-purple);
+    border-radius: 12px;
+    color: var(--wc-purple);
+    font-weight: 700;
+    padding: 0.55rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.wc-btn-outline:hover {
+    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
+    color: var(--wc-white);
+    transform: translateY(-2px);
+}
+
 .btn-outline-primary {
     background: var(--wc-white);
     border: 2px solid var(--wc-purple);
