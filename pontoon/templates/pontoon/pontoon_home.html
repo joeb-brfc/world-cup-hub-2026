@@ -1,125 +1,208 @@
-{% extends "base.html" %} {% load static %} {% block title %} Pontoon | World Cup Hub 2026 {% endblock %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Pontoon | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
 
 <section class="container py-5">
-  <h1 class="mb-4">World Cup Pontoon</h1>
 
-  <p>Choose a numbered football to reveal your team.</p>
+    <h1 class="mb-4">World Cup Pontoon</h1>
 
-  <div class="card mb-4 shadow-sm">
-    <div class="card-body">
-      <h2 class="h5">How Pontoon Works</h2>
+    <p>Choose a numbered football to reveal your team.</p>
 
-      <p>Choose one numbered football to reveal your hidden World Cup team. Once selected, you cannot change your football.</p>
-
-      <ul class="mb-0">
-        <li>Each goal scored by your team is worth 2 points.</li>
-        <li>Each goal conceded by your team deducts 1 point.</li>
-        <li>If your team goes over 21 points, you are bust.</li>
-        <li>First team to reach 21 points wins.</li>
-        <li>If no team reaches 21 points, the team closest to 21 points wins.</li>
-      </ul>
-    </div>
-  </div>
-
-  {% if selected_ball %}
-
-  <div class="alert alert-success">
-    <h2 class="h5">Your Pontoon Team</h2>
-
-    <p class="mb-1">
-      <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" class="me-2" />
-
-      {{ selected_ball.team }}
-    </p>
-
-    <p class="mb-0">Current Score: {{ selected_ball.score }}</p>
-
-    <p class="mb-0">Status: {% if selected_ball.busted %} Busted {% else %} Active {% endif %}</p>
-  </div>
-
-  {% endif %}
-
-  <div class="row">
-    {% for ball in balls %}
-
-    <div class="col-6 col-md-3 mb-3">
-      <div class="card text-center shadow-sm">
+    <div class="card mb-4 shadow-sm">
         <div class="card-body">
-          {% if ball.selected_by %}
 
-          <h2 class="h5">
-            <img src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg" alt="{{ ball.team.name }} flag" width="32" class="mb-2" />
+            <h2 class="h5">How Pontoon Works</h2>
 
-            <br />
+            <p>
+                Choose one numbered football to reveal your hidden World Cup team.
+                Once selected, you cannot change your football.
+            </p>
 
-            {{ ball.team }}
-          </h2>
+            <ul class="mb-0">
+                <li>Each goal scored by your team is worth 2 points.</li>
+                <li>Each goal conceded by your team deducts 1 point.</li>
+                <li>If your team goes over 21 points, you are bust.</li>
+                <li>First team to reach 21 points wins.</li>
+                <li>If no team reaches 21 points, the team closest to 21 points wins.</li>
+            </ul>
 
-          <p class="mb-0">Taken by {{ ball.selected_by.username }}</p>
-
-          {% else %}
-
-          <h2 class="display-6">⚽</h2>
-          <p>Number {{ ball.number }}</p>
-
-          <a href="{% url 'confirm_ball' ball.id %}" class="choose-football-btn"> Choose Football </a>
-
-          {% endif %}
         </div>
-      </div>
     </div>
 
-    {% endfor %}
-  </div>
+    {% if selected_ball %}
 
-  <h2 class="mt-5">Pontoon Leaderboard</h2>
+        <div class="pontoon-team-panel mb-4">
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Team</th>
-        <th>Score</th>
-        <th>Status</th>
-      </tr>
-    </thead>
+            <h2 class="h5">Your Pontoon Team</h2>
 
-    <tbody>
-      {% for ball in leaderboard_balls %}
-      <tr>
-        <td>{{ ball.selected_by.username }}</td>
-        <td>{{ ball.team }}</td>
-        <td>
-          {% if ball.score > 0 %}
-          <span class="score-positive"> +{{ ball.score }} </span>
+            <p class="mb-1">
+                <img
+                    src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg"
+                    alt="{{ selected_ball.team.name }} flag"
+                    width="32"
+                    class="me-2"
+                >
 
-          {% elif ball.score < 0 %}
-          <span class="score-negative"> {{ ball.score }} </span>
+                {{ selected_ball.team }}
+            </p>
 
-          {% else %}
-          <span class="score-neutral"> {{ ball.score }} </span>
+            <p class="mb-1">
+                Current Score:
 
-          {% endif %}
-        </td>
-        <td>
-          {% if ball.busted %}
+                {% if selected_ball.score > 0 %}
+                    <span class="score-positive">+{{ selected_ball.score }}</span>
+                {% elif selected_ball.score < 0 %}
+                    <span class="score-negative">{{ selected_ball.score }}</span>
+                {% else %}
+                    <span class="score-neutral">{{ selected_ball.score }}</span>
+                {% endif %}
+            </p>
 
-          <span class="pontoon-busted"> ✖ Busted </span>
+            <p class="mb-0">
+                Status:
 
-          {% else %}
+                {% if selected_ball.score == 21 %}
+                    <span class="pontoon-winner">👑 Winner</span>
+                {% elif selected_ball.busted %}
+                    <span class="pontoon-busted">✖ Busted</span>
+                {% else %}
+                    <span class="pontoon-active">✔ Active</span>
+                {% endif %}
+            </p>
 
-          <span class="pontoon-active"> ✔ Active </span>
+        </div>
 
-          {% endif %}
-        </td>
-      </tr>
-      {% empty %}
-      <tr>
-        <td colspan="4">No Pontoon teams have been selected yet.</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+    {% endif %}
+
+    <div class="row">
+
+        {% for ball in balls %}
+
+            <div class="col-6 col-md-3 mb-3">
+
+                <div class="card text-center shadow-sm h-100">
+
+                    <div class="card-body">
+
+                        {% if ball.selected_by %}
+
+                            <h2 class="h5">
+                                <img
+                                    src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg"
+                                    alt="{{ ball.team.name }} flag"
+                                    width="32"
+                                    class="mb-2"
+                                >
+
+                                <br>
+
+                                {{ ball.team }}
+                            </h2>
+
+                            <p class="mb-0">
+                                Taken by {{ ball.selected_by.username }}
+                            </p>
+
+                        {% else %}
+
+                            <h2 class="display-6">⚽</h2>
+
+                            <p>Number {{ ball.number }}</p>
+
+                            <a
+                                href="{% url 'confirm_ball' ball.id %}"
+                                class="choose-football-btn"
+                            >
+                                Choose Football
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <h2 class="mt-5">Pontoon Leaderboard</h2>
+
+    <div class="table-responsive">
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Team</th>
+                    <th>Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for ball in leaderboard_balls %}
+
+                    <tr>
+                        <td>{{ ball.selected_by.username }}</td>
+
+                        <td>
+                            <img
+                                src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg"
+                                alt="{{ ball.team.name }} flag"
+                                width="24"
+                                class="me-2"
+                            >
+
+                            {{ ball.team }}
+                        </td>
+
+                        <td>
+                            {% if ball.score > 0 %}
+                                <span class="score-positive">+{{ ball.score }}</span>
+                            {% elif ball.score < 0 %}
+                                <span class="score-negative">{{ ball.score }}</span>
+                            {% else %}
+                                <span class="score-neutral">{{ ball.score }}</span>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if ball.score == 21 %}
+                                <span class="pontoon-winner">👑 Winner</span>
+                            {% elif ball.busted %}
+                                <span class="pontoon-busted">✖ Busted</span>
+                            {% else %}
+                                <span class="pontoon-active">✔ Active</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                {% empty %}
+
+                    <tr>
+                        <td colspan="4">
+                            No Pontoon teams have been selected yet.
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
 </section>
 
 {% endblock %}
