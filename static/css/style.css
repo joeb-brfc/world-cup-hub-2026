@@ -43,8 +43,8 @@ main {
 .hero-section {
     background-image:
         linear-gradient(
-            rgba(21, 28, 44, 0.45),
-            rgba(21, 28, 44, 0.45)
+            rgba(21, 28, 44, 0.65),
+            rgba(21, 28, 44, 0.65)
         ),
         url("../images/world-cup-hero.png");
 
@@ -67,15 +67,34 @@ main {
 
 .hero-section h1 {
     color: var(--wc-white);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.65);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.85);
 }
 
 .hero-section .lead {
     color: var(--wc-white);
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0 auto;
     max-width: 700px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero-section .wc-btn-primary,
+.hero-section .pontoon-button {
+    background: linear-gradient(
+        90deg,
+        var(--wc-pitch-green),
+        var(--wc-gold)
+    ) !important;
+    border: 2px solid var(--wc-gold);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    color: var(--wc-white) !important;
+}
+
+.hero-section .wc-btn-primary:hover,
+.hero-section .pontoon-button:hover {
+    background: var(--wc-gold) !important;
+    color: var(--wc-dark) !important;
 }
 
 /* Typography */
@@ -439,5 +458,17 @@ section .card.border-0 {
     input[type="number"] {
         height: 50px;
         width: 70px !important;
+    }
+
+    .hero-section {
+        min-height: 320px;
+    }
+
+    .hero-overlay {
+        padding: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
     }
 }
