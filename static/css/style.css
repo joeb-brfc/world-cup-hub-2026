@@ -1,22 +1,31 @@
 :root {
     --wc-purple: #7b00ff;
     --wc-blue: #0066ff;
+
     --wc-red: #ff2b2b;
-    --wc-green: #00b050;
+
+    --wc-green: #00843d;
+    --wc-pitch-green: #0b6623;
+
     --wc-gold: #d4af37;
+    --wc-gold-light: #f5d76e;
+
     --wc-dark: #151c2c;
-    --wc-light: #f5f7fa;
+
+    --wc-light: #eef1ff;
+    --wc-card: #f8f9fc;
+
     --wc-white: #ffffff;
 }
 
 /* Global */
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #eef1ff 100%);
+    background: linear-gradient(135deg,
+            #f5f7fa 0%,
+            #eef1ff 100%);
     color: var(--wc-dark);
     font-family: "Roboto", Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
 main {
@@ -40,7 +49,13 @@ h5,
 /* Navbar */
 
 .navbar {
-    background: linear-gradient(90deg, var(--wc-dark), var(--wc-purple)) !important;
+    background: linear-gradient(90deg,
+            var(--wc-dark),
+            var(--wc-pitch-green),
+            var(--wc-purple)) !important;
+
+    border-bottom: 4px solid var(--wc-gold);
+
     padding: 1rem 0;
 }
 
@@ -98,11 +113,9 @@ h5,
 
 .wc-btn-danger {
     display: inline-block;
-    background: linear-gradient(
-        90deg,
-        #ff4d4d,
-        #d90429
-    );
+    background: linear-gradient(90deg,
+            #ff4d4d,
+            #d90429);
     color: white;
     border: none;
     border-radius: 12px;
