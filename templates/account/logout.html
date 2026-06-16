@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sign Out | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-md-6 col-lg-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body text-center p-4">
+
+                    <!-- Logout confirmation -->
+                    <h1 class="mb-3">
+                        Sign Out
+                    </h1>
+
+                    <p class="lead">
+                        Are you sure you want to sign out of
+                        World Cup Hub 2026?
+                    </p>
+
+                    <p class="text-muted">
+                        You will need to log in again to make predictions,
+                        view your account, or access Pontoon.
+                    </p>
+
+                    <!-- Logout actions -->
+                    <form method="post">
+
+                        {% csrf_token %}
+
+                        <button type="submit"
+                                class="wc-btn-danger">
+                            Sign Out
+                        </button>
+
+                        <a href="{% url 'home' %}"
+                           class="wc-btn-outline">
+                            Cancel
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
