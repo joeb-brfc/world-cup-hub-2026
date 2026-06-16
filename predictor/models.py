@@ -4,6 +4,7 @@ from django.utils import timezone
 from datetime import timedelta
 
 
+# Stores information about World Cup stadiums.
 class Stadium(models.Model):
     name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
@@ -13,6 +14,7 @@ class Stadium(models.Model):
         return self.name
 
 
+# Stores information about participating World Cup nations.
 class Team(models.Model):
     GROUP_CHOICES = [
         ('A', 'Group A'),
@@ -40,6 +42,7 @@ class Team(models.Model):
         return self.name
 
 
+# Stores fixture information and match results.
 class Fixture(models.Model):
     STAGE_CHOICES = [
         ('Group Stage', 'Group Stage'),
@@ -71,10 +74,12 @@ class Fixture(models.Model):
     )
 
     stage = models.CharField(max_length=20, choices=STAGE_CHOICES)
+
     matchday = models.PositiveIntegerField(
-    blank=True,
-    null=True
-)
+        blank=True,
+        null=True
+    )
+
     kickoff_time = models.DateTimeField()
     home_team_score = models.PositiveIntegerField(blank=True, null=True)
     away_team_score = models.PositiveIntegerField(blank=True, null=True)
@@ -85,10 +90,12 @@ class Fixture(models.Model):
     def __str__(self):
         return f"{self.home_team} vs {self.away_team}"
 
+    # Locks predictions 1 minute after kickoff time to prevent users from making predictions after the match has started.   
     def predictions_locked(self):
-        lock_time = self.kickoff_time + timedelta(hours=1)
+        lock_time = self.kickoff_time + timedelta(minutes=1)
         return timezone.now() >= lock_time
 
+    # Updates points for all predictions linked to this fixture.
     def update_prediction_points(self):
         predictions = self.predictions.all()
 
@@ -99,17 +106,17 @@ class Fixture(models.Model):
                 points_awarded=prediction.points_awarded
             )
 
+    # Recalculates prediction and Pontoon scores whenever results are saved.
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        # Recalculate prediction points when a fixture result is saved.
         self.update_prediction_points()
 
-        # Recalculate Pontoon scores when a fixture result is saved.
         from pontoon.models import update_all_pontoon_scores
         update_all_pontoon_scores()
 
 
+# Stores a user's prediction for a specific fixture.
 class Prediction(models.Model):
     user = models.ForeignKey(
         User,
@@ -135,9 +142,11 @@ class Prediction(models.Model):
     def __str__(self):
         return f"{self.user.username}'s prediction for {self.fixture}"
 
+    # Calculates points awarded for a prediction.
     def calculate_points(self):
         fixture = self.fixture
 
+        # No points can be awarded until a result exists.
         if (
             fixture.home_team_score is None or
             fixture.away_team_score is None
@@ -171,6 +180,7 @@ class Prediction(models.Model):
 
         return 0
 
+    # Automatically updates points whenever a prediction is saved.
     def save(self, *args, **kwargs):
         self.points_awarded = self.calculate_points()
         super().save(*args, **kwargs)
