@@ -1,34 +1,33 @@
+/* Colour variables */
+
 :root {
     --wc-purple: #7b00ff;
     --wc-blue: #0066ff;
     --wc-red: #ff2b2b;
+
     --wc-green: #00843d;
     --wc-pitch-green: #0b6623;
+
     --wc-gold: #d4af37;
     --wc-gold-light: #f5d76e;
+
     --wc-dark: #151c2c;
     --wc-light: #eef1ff;
     --wc-card: #f8f9fc;
     --wc-white: #ffffff;
 }
 
-/* Global */
+/* Global styles */
 
 body {
-    background: linear-gradient(135deg,
-            #f5f7fa 0%,
-            #eef1ff 100%);
+    background: linear-gradient(
+        135deg,
+        #d4dde8 0%,
+        #e6ebf8 50%,
+        #d8ead8 100%
+    );
     color: var(--wc-dark);
     font-family: "Roboto", Arial, sans-serif;
-}
-
-h1 {
-    color: var(--wc-gold);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
-}
-
-h2 {
-    color: var(--wc-dark);
 }
 
 main {
@@ -38,6 +37,8 @@ main {
 .container {
     max-width: 1100px;
 }
+
+/* Typography */
 
 h1,
 h2,
@@ -49,14 +50,36 @@ h5,
     letter-spacing: 0.02em;
 }
 
-/* Navbar */
+h1 {
+    color: var(--wc-gold);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+h2,
+h3,
+h4,
+h5 {
+    color: var(--wc-dark);
+}
+
+.fixture-help-card h2,
+.pontoon-team-panel h2,
+.card h2.h5 {
+    color: var(--wc-pitch-green);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
 
 .navbar {
-    background: linear-gradient(90deg,
-            var(--wc-dark),
-            var(--wc-pitch-green),
-            var(--wc-purple)) !important;
-
+    background: linear-gradient(
+        90deg,
+        var(--wc-dark),
+        var(--wc-pitch-green),
+        var(--wc-purple)
+    ) !important;
     border-bottom: 4px solid var(--wc-gold);
     padding: 1rem 0;
 }
@@ -78,9 +101,9 @@ h5,
     border: none;
     border-top: 4px solid var(--wc-gold);
     border-radius: 18px;
-    box-shadow:
-        0 8px 24px rgba(21, 28, 44, 0.08) !important;
+    box-shadow: 0 8px 24px rgba(21, 28, 44, 0.08) !important;
 }
+
 .card-body {
     padding: 1.5rem;
 }
@@ -104,95 +127,96 @@ h5,
 .btn-primary,
 .btn-success,
 .wc-btn-primary {
-    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue)) !important;
+    background: linear-gradient(
+        90deg,
+        var(--wc-purple),
+        var(--wc-blue)
+    ) !important;
     border: none !important;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(123, 0, 255, 0.25);
     color: var(--wc-white) !important;
     font-weight: 800;
     padding: 0.7rem 1.2rem;
-    box-shadow: 0 4px 12px rgba(123, 0, 255, 0.25);
     transition: all 0.3s ease;
-}
-
-.wc-btn-danger {
-    display: inline-block;
-    background: linear-gradient(90deg,
-            #ff4d4d,
-            #d90429);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 0.7rem 1.2rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.wc-btn-danger:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.35);
 }
 
 .btn-primary:hover,
 .btn-success:hover,
 .wc-btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.35);
     color: var(--wc-white) !important;
     opacity: 0.95;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.35);
 }
 
-.wc-btn-outline {
+.wc-btn-danger {
+    background: linear-gradient(
+        90deg,
+        #ff4d4d,
+        #d90429
+    );
+    border: none;
+    border-radius: 12px;
+    color: var(--wc-white);
     display: inline-block;
+    font-weight: 700;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.wc-btn-danger:hover {
+    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.35);
+    color: var(--wc-white);
+    transform: translateY(-2px);
+}
+
+.wc-btn-outline,
+.btn-outline-primary {
     background: var(--wc-white);
     border: 2px solid var(--wc-purple);
     border-radius: 12px;
     color: var(--wc-purple);
+    display: inline-block;
     font-weight: 700;
     padding: 0.55rem 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.wc-btn-outline:hover {
-    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
-    color: var(--wc-white);
-    transform: translateY(-2px);
-}
-
-.btn-outline-primary {
-    background: var(--wc-white);
-    border: 2px solid var(--wc-purple);
-    border-radius: 12px;
-    color: var(--wc-purple);
-    font-weight: 700;
-    padding: 0.45rem 0.75rem;
-}
-
+.wc-btn-outline:hover,
 .btn-outline-primary:hover {
-    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
+    background: linear-gradient(
+        90deg,
+        var(--wc-purple),
+        var(--wc-blue)
+    );
     border-color: var(--wc-purple);
     color: var(--wc-white);
     transform: translateY(-1px);
 }
 
-/* Fixtures page */
+/* Fixture and prediction styling */
 
 .fixture-help-card {
-    background: linear-gradient(135deg, #ffffff, #f3edff);
+    background: linear-gradient(
+        135deg,
+        #fff8df,
+        #f3edff
+    );
     border-left: 6px solid var(--wc-purple) !important;
     border-radius: 18px;
-}
-
-.fixture-help-card h2 {
-    color: var(--wc-purple);
-    font-weight: 800;
 }
 
 .fixture-card,
 .card.shadow-sm {
     border-left: 6px solid var(--wc-purple);
+}
+
+.prediction-detail {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
 }
 
 .text-success {
@@ -205,25 +229,9 @@ h5,
     font-weight: 800;
 }
 
-.fixture-help-card h2,
-.pontoon-team-panel h2,
-.card h2.h5 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--wc-pitch-green);
-    margin-bottom: 1rem;
-}
-
-.prediction-detail {
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-}
-
 /* Score inputs */
 
 input[type="number"] {
-    width: 76px !important;
-    height: 54px;
     appearance: textfield;
     -moz-appearance: textfield;
     background-color: var(--wc-white);
@@ -232,7 +240,9 @@ input[type="number"] {
     color: var(--wc-dark);
     font-size: 1.2rem;
     font-weight: 800;
+    height: 54px;
     text-align: center;
+    width: 76px !important;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -255,7 +265,8 @@ input[type="number"]:focus {
     overflow: hidden;
 }
 
-.table thead {
+.table thead,
+thead {
     background: linear-gradient(
         90deg,
         var(--wc-pitch-green),
@@ -269,33 +280,34 @@ tbody tr:hover {
     background-color: rgba(123, 0, 255, 0.06);
 }
 
-/* Pontoon */
+/* Pontoon game styling */
 
 .pontoon-team-panel {
     background: #eaf8ee;
-    box-shadow: 0 6px 20px rgba(0, 132, 61, 0.15);
     border-left: 6px solid var(--wc-pitch-green);
-    border-top: 4px solid var(--wc-gold);
     border-radius: 14px;
+    border-top: 4px solid var(--wc-gold);
+    box-shadow: 0 6px 20px rgba(0, 132, 61, 0.15);
     padding: 20px;
 }
 
 .premium-section,
 section .card.border-0 {
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8df,
-            #fff3c4
-        );
-
+    background: linear-gradient(
+        135deg,
+        #fff8df,
+        #fff3c4
+    );
     border-top: 6px solid var(--wc-gold);
 }
 
 .pontoon-button,
 .choose-football-btn {
-    background: linear-gradient(90deg, var(--wc-purple), var(--wc-blue));
+    background: linear-gradient(
+        90deg,
+        var(--wc-purple),
+        var(--wc-blue)
+    );
     border: none;
     border-radius: 50px;
     color: var(--wc-white);
@@ -308,9 +320,9 @@ section .card.border-0 {
 
 .pontoon-button:hover,
 .choose-football-btn:hover {
+    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.3);
     color: var(--wc-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.3);
 }
 
 /* Pontoon scores and statuses */
@@ -359,13 +371,13 @@ section .card.border-0 {
 
 .instruction-list {
     list-style: none;
-    padding-left: 0;
     margin-bottom: 0;
+    padding-left: 0;
 }
 
 .instruction-list li {
-    padding: 0.35rem 0;
     font-weight: 500;
+    padding: 0.35rem 0;
 }
 
 .instruction-list li::before {
@@ -373,7 +385,7 @@ section .card.border-0 {
     margin-right: 0.5rem;
 }
 
-/* Mobile */
+/* Mobile responsiveness */
 
 @media (max-width: 768px) {
     h1 {
@@ -385,7 +397,7 @@ section .card.border-0 {
     }
 
     input[type="number"] {
-        width: 70px !important;
         height: 50px;
+        width: 70px !important;
     }
 }
