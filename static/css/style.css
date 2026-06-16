@@ -28,6 +28,15 @@ body {
     font-family: "Roboto", Arial, sans-serif;
 }
 
+h1 {
+    color: var(--wc-gold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: var(--wc-dark);
+}
+
 main {
     min-height: 100vh;
 }
@@ -72,12 +81,17 @@ h5,
 /* Cards */
 
 .card {
-    background-color: rgba(255, 255, 255, 0.96);
-    border: none;
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(21, 28, 44, 0.08) !important;
-}
+    background: var(--wc-card);
 
+    border: none;
+
+    border-top: 4px solid var(--wc-gold);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 24px rgba(21, 28, 44, 0.08) !important;
+}
 .card-body {
     padding: 1.5rem;
 }
@@ -90,10 +104,13 @@ h5,
 /* Alerts */
 
 .alert-info {
-    background-color: #dff8ff;
-    border: 1px solid #87e3ff;
+    background: #fff8df;
+
+    border: 2px solid var(--wc-gold);
+
     border-radius: 14px;
-    color: #064b5c;
+
+    color: var(--wc-dark);
 }
 
 /* Buttons */
@@ -253,14 +270,27 @@ tbody tr:hover {
 
 .pontoon-team-panel {
     background: #eaf8ee;
-    border-left: 6px solid var(--wc-green);
+    box-shadow: 0 6px 20px rgba(0, 132, 61, 0.15);
+
+    border-left: 6px solid var(--wc-pitch-green);
+
+    border-top: 4px solid var(--wc-gold);
+
     border-radius: 14px;
+
     padding: 20px;
 }
 
 .premium-section,
 section .card.border-0 {
-    background: linear-gradient(135deg, #ffffff, #f2edff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8df,
+            #fff3c4
+        );
+
     border-top: 6px solid var(--wc-gold);
 }
 
