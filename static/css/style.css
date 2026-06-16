@@ -1,20 +1,14 @@
 :root {
     --wc-purple: #7b00ff;
     --wc-blue: #0066ff;
-
     --wc-red: #ff2b2b;
-
     --wc-green: #00843d;
     --wc-pitch-green: #0b6623;
-
     --wc-gold: #d4af37;
     --wc-gold-light: #f5d76e;
-
     --wc-dark: #151c2c;
-
     --wc-light: #eef1ff;
     --wc-card: #f8f9fc;
-
     --wc-white: #ffffff;
 }
 
@@ -64,7 +58,6 @@ h5,
             var(--wc-purple)) !important;
 
     border-bottom: 4px solid var(--wc-gold);
-
     padding: 1rem 0;
 }
 
@@ -82,13 +75,9 @@ h5,
 
 .card {
     background: var(--wc-card);
-
     border: none;
-
     border-top: 4px solid var(--wc-gold);
-
     border-radius: 18px;
-
     box-shadow:
         0 8px 24px rgba(21, 28, 44, 0.08) !important;
 }
@@ -105,11 +94,8 @@ h5,
 
 .alert-info {
     background: #fff8df;
-
     border: 2px solid var(--wc-gold);
-
     border-radius: 14px;
-
     color: var(--wc-dark);
 }
 
@@ -271,13 +257,9 @@ tbody tr:hover {
 .pontoon-team-panel {
     background: #eaf8ee;
     box-shadow: 0 6px 20px rgba(0, 132, 61, 0.15);
-
     border-left: 6px solid var(--wc-pitch-green);
-
     border-top: 4px solid var(--wc-gold);
-
     border-radius: 14px;
-
     padding: 20px;
 }
 
@@ -354,6 +336,24 @@ section .card.border-0 {
     color: var(--wc-white);
     font-weight: 800;
     padding: 5px 12px;
+}
+
+/* Instruction cards */
+
+.instruction-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.instruction-list li {
+    padding: 0.35rem 0;
+    font-weight: 500;
+}
+
+.instruction-list li::before {
+    content: "⚽";
+    margin-right: 0.5rem;
 }
 
 /* Mobile */
