@@ -23,7 +23,6 @@ class FixtureAdmin(admin.ModelAdmin):
     list_display = (
         "home_team",
         "away_team",
-        "stadium",
         "stage",
         "matchday",
         "kickoff_time",

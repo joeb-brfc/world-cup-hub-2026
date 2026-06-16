@@ -9,6 +9,7 @@
       <table class="table">
         <thead>
           <tr>
+            <th>Rank</th>
             <th>User</th>
             <th>Total Points</th>
           </tr>
@@ -18,6 +19,8 @@
           {% for user in leaderboard %}
 
           <tr>
+            <td>{% if forloop.counter == 1 %} 🥇 {% elif forloop.counter == 2 %} 🥈 {% elif forloop.counter == 3 %} 🥉 {% else %} {{ forloop.counter }}. {% endif %}</td>
+
             <td>{{ user.user__username }}</td>
 
             <td>{{ user.total_points }}</td>
@@ -26,7 +29,7 @@
           {% empty %}
 
           <tr>
-            <td colspan="2">No leaderboard data available.</td>
+            <td colspan="3">No leaderboard data available.</td>
           </tr>
 
           {% endfor %}
