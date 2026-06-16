@@ -1,44 +1,36 @@
 {% extends "base.html" %} {% load static %} {% block title %} Home | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
-  <!-- Project introduction -->
-  <div class="alert alert-info mb-4">
-    <h4>Welcome to World Cup Hub 2026</h4>
-
-    <p>Thank you for taking part in the World Cup Hub community. This project is currently under active development and new features are being added regularly.</p>
-
-    <p>You may occasionally encounter bugs, missing features, or unexpected behaviour while improvements are being made. Thank you for your patience and support.</p>
-
-    <p class="mb-0">Most importantly, enjoy the tournament, enjoy the competition, and let's experience the FIFA World Cup 2026 together.</p>
-  </div>
-
   <!-- Hero section -->
+  <section class="hero-section mb-5">
+    <div class="hero-overlay">
+      <h1 class="display-3">World Cup Hub 2026</h1>
+
+      <p class="lead">Predict matches, compete with friends and follow the biggest football tournament in the world.</p>
+
+      <div class="mt-4">
+        <a href="{% url 'fixtures' %}" class="wc-btn-primary me-2">
+          <i class="fa-solid fa-calendar-days"></i>
+          View Fixtures
+        </a>
+
+        <a href="{% url 'pontoon_home' %}" class="pontoon-button">
+          <i class="fa-solid fa-futbol"></i>
+          Play Pontoon
+        </a>
+      </div>
+    </div>
+  </section>
+
   <div class="row align-items-center">
     <div class="col-12 col-lg-7">
-      <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 mb-3 flex-wrap">
-        <img src="{% static 'images/flags/usa.svg' %}" alt="USA" width="60" height="40" />
-
-        <img src="{% static 'images/world-cup-trophy.png' %}" alt="World Cup Trophy" width="50" />
-
-        <h1 class="display-4 fw-bold mb-0">World Cup Hub 2026</h1>
-
-        <img src="{% static 'images/flags/mexico.svg' %}" alt="Mexico" width="60" height="40" />
-
-        <img src="{% static 'images/flags/canada.svg' %}" alt="Canada" width="60" height="40" />
-      </div>
+      <h2 class="display-5 fw-bold">Your World Cup companion</h2>
 
       <p class="lead">World Cup Hub 2026 is an interactive fan platform designed to bring supporters together throughout the tournament.</p>
 
-      <p>Predict match results, compete against friends, and track your progress on the leaderboard as the tournament unfolds.</p>
+      <p>Make fixture predictions, track your scores, compete on the leaderboard and take part in the premium Pontoon competition.</p>
 
-      <p>New features and content will continue to be added throughout the tournament, including expanded team fact files and additional statistics.</p>
-
-      <div class="mt-4">
-        <a href="{% url 'fixtures' %}" class="btn wc-btn-primary me-2">
-          <i class="fa-solid fa-calendar-days"></i>
-          View Fixtures & Make Predictions
-        </a>
-      </div>
+      <p>The platform brings together prediction gaming, tournament engagement and friendly competition in one place.</p>
     </div>
 
     <!-- Current and planned features -->
@@ -47,20 +39,48 @@
         <div class="card-body">
           <h2 class="h4">Current Features</h2>
 
-          <ul>
-            <li>World Cup fixtures</li>
-            <li>Free prediction game</li>
-            <li>Prediction leaderboard</li>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa-solid fa-calendar-days text-success me-2"></i>
+              World Cup fixtures
+            </li>
+            <li>
+              <i class="fa-solid fa-list-check text-success me-2"></i>
+              Free prediction game
+            </li>
+            <li>
+              <i class="fa-solid fa-trophy text-success me-2"></i>
+              Prediction leaderboard
+            </li>
+            <li>
+              <i class="fa-solid fa-futbol text-success me-2"></i>
+              World Cup Pontoon
+            </li>
           </ul>
 
           <h2 class="h5 mt-4">Coming Soon</h2>
 
-          <ul class="mb-0">
-            <li>Expanded team fact files</li>
-            <li>World Cup statistics</li>
-            <li>Tournament insights</li>
-            <li>Additional fan features</li>
-            <li>Premier League and Championship competitions for the 2026/27 season</li>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fa-solid fa-book-open me-2"></i>
+              Expanded team fact files
+            </li>
+            <li>
+              <i class="fa-solid fa-chart-column me-2"></i>
+              World Cup statistics
+            </li>
+            <li>
+              <i class="fa-solid fa-lightbulb me-2"></i>
+              Tournament insights
+            </li>
+            <li>
+              <i class="fa-solid fa-users me-2"></i>
+              Additional fan features
+            </li>
+            <li>
+              <i class="fa-solid fa-futbol me-2"></i>
+              Premier League and Championship competitions for the 2026/27 season
+            </li>
           </ul>
         </div>
       </div>
@@ -72,19 +92,40 @@
 <section class="container pb-5">
   <div class="card shadow-sm border-0">
     <div class="card-body text-center py-5">
-      <h2 class="display-6 fw-bold">World Cup Pontoon</h2>
+      <h2 class="display-6 fw-bold">
+        <i class="fa-solid fa-futbol"></i>
+        World Cup Pontoon
+      </h2>
 
       <p class="lead">Unlock the premium World Cup Pontoon competition.</p>
 
       <p>Choose one football, reveal a randomly assigned World Cup nation, and score points throughout the tournament.</p>
 
       <ul class="list-unstyled mb-4">
-        <li>Goals scored = +2 points</li>
-        <li>Goals conceded = -1 point</li>
-        <li>Go above 21 and you're bust</li>
-        <li>Closest to 21 wins</li>
-        <li>Compete against friends</li>
-        <li>£5 Entry</li>
+        <li>
+          <i class="fa-solid fa-plus text-success me-2"></i>
+          Goals scored = +2 points
+        </li>
+        <li>
+          <i class="fa-solid fa-minus text-danger me-2"></i>
+          Goals conceded = -1 point
+        </li>
+        <li>
+          <i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
+          Go above 21 and you're bust
+        </li>
+        <li>
+          <i class="fa-solid fa-crown text-warning me-2"></i>
+          Closest to 21 wins
+        </li>
+        <li>
+          <i class="fa-solid fa-users me-2"></i>
+          Compete against friends
+        </li>
+        <li>
+          <i class="fa-solid fa-sterling-sign me-2"></i>
+          £5 Entry
+        </li>
       </ul>
 
       <a href="{% url 'pontoon_home' %}" class="pontoon-button">
