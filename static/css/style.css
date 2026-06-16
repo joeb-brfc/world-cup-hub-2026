@@ -205,6 +205,20 @@ h5,
     font-weight: 800;
 }
 
+.fixture-help-card h2,
+.pontoon-team-panel h2,
+.card h2.h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--wc-pitch-green);
+    margin-bottom: 1rem;
+}
+
+.prediction-detail {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
 /* Score inputs */
 
 input[type="number"] {
@@ -236,14 +250,17 @@ input[type="number"]:focus {
 /* Tables */
 
 .table {
-    background-color: var(--wc-white);
-    border-radius: 12px;
+    background: var(--wc-card);
+    border-radius: 16px;
     overflow: hidden;
 }
 
-.table thead,
-thead {
-    background-color: var(--wc-dark);
+.table thead {
+    background: linear-gradient(
+        90deg,
+        var(--wc-pitch-green),
+        var(--wc-purple)
+    );
     color: var(--wc-white);
 }
 

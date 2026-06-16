@@ -10,7 +10,10 @@
     <div class="card-body">
       <h2 class="h5">{{ prediction.fixture.home_team }} vs {{ prediction.fixture.away_team }}</h2>
 
-      <p class="mb-1">Your prediction: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
+      <p class="prediction-detail">
+        Your prediction:
+        <strong> {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }} </strong>
+      </p>
 
       <!-- Display points earned for the prediction -->
       <p class="mb-1">
