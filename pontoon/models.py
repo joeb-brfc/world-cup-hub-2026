@@ -4,7 +4,9 @@ from predictor.models import Team
 from predictor.models import Fixture
 
 
+# Stores the numbered footballs used in the Pontoon game.
 class PontoonBall(models.Model):
+
     number = models.PositiveIntegerField(unique=True)
 
     team = models.OneToOneField(
@@ -13,12 +15,14 @@ class PontoonBall(models.Model):
         null=True,
         blank=True
     )
+
     selected_by = models.OneToOneField(
         User,
         on_delete=models.SET_NULL,
         null=True,
         blank=True
     )
+
     score = models.IntegerField(
         default=0
     )
@@ -26,8 +30,10 @@ class PontoonBall(models.Model):
     busted = models.BooleanField(
         default=False
     )
-    
+
+    # Calculates a team's Pontoon score based on completed fixtures.
     def calculate_score(self):
+
         if not self.team:
             return 0
 
@@ -41,6 +47,7 @@ class PontoonBall(models.Model):
 
         for fixture in fixtures:
 
+            # Ignore fixtures that do not yet have a result.
             if (
                 fixture.home_team_score is None
                 or
@@ -69,23 +76,31 @@ class PontoonBall(models.Model):
                 )
 
         return score
-    
+
+    # Updates the team's score and checks whether they are bust.
     def update_score(self):
         self.score = self.calculate_score()
+
         if self.score > 21:
             self.busted = True
         else:
             self.busted = False
+
         self.save()
-    
+
     def __str__(self):
         return f"Football {self.number}"
-    
+
+
+# Updates scores for all Pontoon teams.
 def update_all_pontoon_scores():
     for ball in PontoonBall.objects.all():
         ball.update_score()
 
+
+# Stores payment and access information for Pontoon users.
 class PontoonAccess(models.Model):
+
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,

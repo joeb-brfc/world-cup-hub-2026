@@ -5,6 +5,7 @@
 
   <h2 class="h4 mb-4">{{ fixture.home_team }} vs {{ fixture.away_team }}</h2>
 
+  <!-- Display predictions once the fixture has kicked off -->
   {% if fixture.predictions_locked %}
 
   <div class="card shadow-sm">
@@ -23,6 +24,7 @@
 
   {% else %}
 
+  <!-- Hide predictions before kickoff to prevent copying -->
   <div class="alert alert-warning">Predictions are hidden until this fixture is locked.</div>
 
   {% endif %}

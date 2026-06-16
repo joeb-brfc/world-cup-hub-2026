@@ -2,26 +2,37 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.pontoon_home, name="pontoon_home"),
+
+    # Pontoon game routes
     path(
-    "select/<int:ball_id>/",
-    views.select_ball,
-    name="select_ball",
-),
+        "",
+        views.pontoon_home,
+        name="pontoon_home",
+    ),
+
     path(
-    "confirm/<int:ball_id>/",
-    views.confirm_ball,
-    name="confirm_ball",
-),
+        "select/<int:ball_id>/",
+        views.select_ball,
+        name="select_ball",
+    ),
+
     path(
-    "checkout/",
-    views.pontoon_checkout,
-    name="pontoon_checkout",
-),
+        "confirm/<int:ball_id>/",
+        views.confirm_ball,
+        name="confirm_ball",
+    ),
+
+    # Payment routes
     path(
-    "payment-success/",
-    views.pontoon_payment_success,
-    name="pontoon_payment_success",
-),
-    
+        "checkout/",
+        views.pontoon_checkout,
+        name="pontoon_checkout",
+    ),
+
+    path(
+        "payment-success/",
+        views.pontoon_payment_success,
+        name="pontoon_payment_success",
+    ),
+
 ]

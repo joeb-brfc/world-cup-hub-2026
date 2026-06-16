@@ -115,4 +115,129 @@
   </form>
 </section>
 
+{% endblock %} {% extends "base.html" %} {% load static %} {% block title %} Fixtures | World Cup Hub 2026 {% endblock %} {% block content %}
+
+<section class="container py-5">
+  <h1 class="mb-4">World Cup Fixtures</h1>
+
+  <!-- Fixture filters -->
+  <div class="mb-4">
+    <a href="{% url 'fixtures' %}" class="btn btn-sm mb-2 {% if selected_stage == 'all' %}wc-btn-primary{% else %}btn-outline-primary{% endif %}"> All Fixtures </a>
+
+    <h2 class="h5 mt-3">Group Stage</h2>
+
+    <a href="{% url 'fixtures_by_matchday' 1 %}" class="btn btn-sm mb-2 {% if selected_matchday == 1 %}wc-btn-primary{% else %}btn-outline-primary{% endif %}"> Matchday 1 </a>
+
+    <a href="{% url 'fixtures_by_matchday' 2 %}" class="btn btn-sm mb-2 {% if selected_matchday == 2 %}wc-btn-primary{% else %}btn-outline-primary{% endif %}"> Matchday 2 </a>
+
+    <a href="{% url 'fixtures_by_matchday' 3 %}" class="btn btn-sm mb-2 {% if selected_matchday == 3 %}wc-btn-primary{% else %}btn-outline-primary{% endif %}"> Matchday 3 </a>
+
+    <h2 class="h5 mt-3">Knockout Stage</h2>
+
+    {% for stage_value, stage_label in stages %} {% if stage_value != "Group Stage" %}
+
+    <a href="{% url 'fixtures_by_stage' stage_value %}" class="btn btn-sm mb-2 {% if selected_stage == stage_value %}wc-btn-primary{% else %}btn-outline-primary{% endif %}"> {{ stage_label }} </a>
+
+    {% endif %} {% endfor %}
+  </div>
+
+  <!-- Prediction scoring information -->
+  <div class="card mb-4 fixture-help-card">
+    <div class="card-body">
+      <h2 class="h5">How Predictions Work</h2>
+
+      <p class="mb-2">
+        Enter your predicted score for each fixture, then click
+        <strong>Save All Predictions</strong>.
+      </p>
+
+      <ul class="mb-0">
+        <li><strong>3 points</strong> for the exact correct score.</li>
+        <li><strong>1 point</strong> for the correct result.</li>
+        <li><strong>0 points</strong> for an incorrect result.</li>
+        <li>Predictions lock once the fixture kicks off.</li>
+        <li>Leaderboard updates in real-time as predictions are submitted.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bulk prediction form -->
+  <form method="POST" action="{% url 'save_all_predictions' %}">
+    {% csrf_token %}
+
+    <button type="submit" class="wc-btn-primary mb-4">Save All Predictions</button>
+
+    <!-- Fixture cards -->
+    <div class="row">
+      {% for fixture in fixtures %}
+
+      <!-- Individual fixture -->
+      <div class="col-12 mb-4" id="fixture-{{ fixture.id }}">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 d-flex align-items-center flex-wrap gap-2">
+              <img src="{% static 'images/flags/' %}{{ fixture.home_team.name|slugify }}.svg" alt="{{ fixture.home_team.name }} flag" width="32" />
+
+              <span>{{ fixture.home_team }}</span>
+
+              <span>vs</span>
+
+              <span>{{ fixture.away_team }}</span>
+
+              <img src="{% static 'images/flags/' %}{{ fixture.away_team.name|slugify }}.svg" alt="{{ fixture.away_team.name }} flag" width="32" />
+            </h2>
+
+            <p class="mb-1">Stage: {{ fixture.get_stage_display }}</p>
+
+            {% if fixture.matchday %}
+            <p class="mb-1">Matchday: {{ fixture.matchday }}</p>
+            {% endif %}
+
+            <p class="mb-1">Stadium: {{ fixture.stadium }}</p>
+
+            <p class="mb-0">Kickoff: {{ fixture.kickoff_time }}</p>
+
+            <!-- Existing prediction -->
+            {% if fixture.user_prediction %}
+
+            <p class="mt-3 mb-0 text-success">Your prediction: {{ fixture.user_prediction.predicted_home_score }} - {{ fixture.user_prediction.predicted_away_score }}</p>
+
+            {% endif %}
+
+            <!-- Locked fixtures cannot be edited -->
+            {% if fixture.predictions_locked %}
+
+            <p class="text-danger mt-3 mb-0">Prediction status: Locked</p>
+
+            <a href="{% url 'fixture_predictions' fixture.id %}" class="wc-btn-outline mt-2"> View Everyone's Predictions </a>
+
+            {% else %}
+
+            <p class="text-success mt-3 mb-1">Prediction status: Open</p>
+
+            <!-- Prediction input fields -->
+            <div class="d-flex align-items-center gap-2 mt-3">
+              <input type="number" name="home_{{ fixture.id }}" min="0" max="20" class="form-control" style="width: 90px" placeholder="0" value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_home_score }}{% endif %}" />
+
+              <span>-</span>
+
+              <input type="number" name="away_{{ fixture.id }}" min="0" max="20" class="form-control" style="width: 90px" placeholder="0" value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_away_score }}{% endif %}" />
+            </div>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% empty %}
+
+      <p>No fixtures available.</p>
+
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="wc-btn-primary mb-4">Save All Predictions</button>
+  </form>
+</section>
+
 {% endblock %}

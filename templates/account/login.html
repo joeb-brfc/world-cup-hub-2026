@@ -1,46 +1,31 @@
-{% extends "base.html" %}
-
-{% block title %}
-Login | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Login | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-5">
+      <!-- Login card -->
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h1 class="h3 mb-3 text-center">Login</h1>
 
-            <div class="card shadow-sm">
-                <div class="card-body p-4">
+          <p class="text-center text-muted">Sign in to make predictions and play Pontoon.</p>
 
-                    <h1 class="h3 mb-3 text-center">Login</h1>
+          <!-- User login form -->
+          <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %} {{ form.as_p }}
 
-                    <p class="text-center text-muted">
-                        Sign in to make predictions and play Pontoon.
-                    </p>
+            <button type="submit" class="btn wc-btn-primary w-100">Login</button>
+          </form>
 
-                    <form method="POST" action="{% url 'account_login' %}">
-                        {% csrf_token %}
+          <p class="text-center mt-3 mb-0">
+            No account yet?
 
-                        {{ form.as_p }}
-
-                        <button type="submit" class="btn wc-btn-primary w-100">
-                            Login
-                        </button>
-                    </form>
-
-                    <p class="text-center mt-3 mb-0">
-                        No account yet?
-                        <a href="{% url 'account_signup' %}">
-                            Sign up here
-                        </a>
-                    </p>
-
-                </div>
-            </div>
-
+            <a href="{% url 'account_signup' %}"> Sign up here </a>
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 {% endblock %}

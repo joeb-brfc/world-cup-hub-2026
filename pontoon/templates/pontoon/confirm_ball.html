@@ -1,31 +1,17 @@
-{% extends "base.html" %}
-
-{% block title %}
-Confirm Football | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Confirm Football | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5 text-center">
+  <h1 class="mb-4">Are You Sure?</h1>
 
-    <h1 class="mb-4">Are You Sure?</h1>
+  <p class="lead">You are about to select Football Number {{ ball.number }}.</p>
 
-    <p class="lead">
-        You are about to select Football Number {{ ball.number }}.
-    </p>
+  <!-- Selection warning -->
+  <div class="alert alert-warning">Once you confirm, you will be locked to this football and cannot change it.</div>
 
-    <div class="alert alert-warning">
-        Once you confirm, you will be locked to this football and cannot change it.
-    </div>
+  <!-- Selection actions -->
+  <a href="{% url 'select_ball' ball.id %}" class="btn wc-wc-btn-primary"> Yes, choose this football </a>
 
-    <a href="{% url 'select_ball' ball.id %}" class="btn wc-wc-btn-primary">
-        Yes, choose this football
-    </a>
-
-    <a href="{% url 'pontoon_home' %}" class="btn btn-secondary">
-        No, go back
-    </a>
-
+  <a href="{% url 'pontoon_home' %}" class="btn btn-secondary"> No, go back </a>
 </section>
 
 {% endblock %}

@@ -1,19 +1,23 @@
 from django.contrib import admin
 from .models import Fixture, Prediction, Stadium, Team
 
+
+# Admin configuration for stadium records
 @admin.register(Stadium)
 class StadiumAdmin(admin.ModelAdmin):
     list_display = ('name', 'city', 'capacity')
     search_fields = ('name', 'city')
 
-# Register your models here.
 
+# Admin configuration for participating teams
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('name', 'group', 'manager', 'captain')
     list_filter = ('group',)
     search_fields = ('name', 'manager', 'captain')
 
+
+# Admin configuration for World Cup fixtures
 @admin.register(Fixture)
 class FixtureAdmin(admin.ModelAdmin):
     list_display = (
@@ -38,8 +42,23 @@ class FixtureAdmin(admin.ModelAdmin):
         "away_team__name",
     )
 
+
+# Admin configuration for user predictions
 @admin.register(Prediction)
 class PredictionAdmin(admin.ModelAdmin):
-    list_display = ('user', 'fixture', 'predicted_home_score', 'predicted_away_score', 'points_awarded')
-    list_filter = ('fixture','user')
-    search_fields = ('user__username',)
+    list_display = (
+        'user',
+        'fixture',
+        'predicted_home_score',
+        'predicted_away_score',
+        'points_awarded'
+    )
+
+    list_filter = (
+        'fixture',
+        'user'
+    )
+
+    search_fields = (
+        'user__username',
+    )

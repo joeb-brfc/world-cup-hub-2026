@@ -1,68 +1,39 @@
-{% extends "base.html" %}
-
-{% block title %}
-Leaderboard | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Leaderboard | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <h1 class="mb-4">Leaderboard</h1>
 
-    <h1 class="mb-4">
-        Leaderboard
-    </h1>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <!-- Prediction leaderboard -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Total Points</th>
+          </tr>
+        </thead>
 
-    <div class="card shadow-sm">
+        <tbody>
+          {% for user in leaderboard %}
 
-        <div class="card-body">
+          <tr>
+            <td>{{ user.user__username }}</td>
 
-            <table class="table">
+            <td>{{ user.total_points }}</td>
+          </tr>
 
-                <thead>
+          {% empty %}
 
-                    <tr>
-                        <th>User</th>
-                        <th>Total Points</th>
-                    </tr>
+          <tr>
+            <td colspan="2">No leaderboard data available.</td>
+          </tr>
 
-                </thead>
-
-                <tbody>
-
-                    {% for user in leaderboard %}
-
-                    <tr>
-
-                        <td>
-                            {{ user.user__username }}
-                        </td>
-
-                        <td>
-                            {{ user.total_points }}
-                        </td>
-
-                    </tr>
-
-                    {% empty %}
-
-                    <tr>
-
-                        <td colspan="2">
-                            No leaderboard data available.
-                        </td>
-
-                    </tr>
-
-                    {% endfor %}
-
-                </tbody>
-
-            </table>
-
-        </div>
-
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-
+  </div>
 </section>
 
 {% endblock %}

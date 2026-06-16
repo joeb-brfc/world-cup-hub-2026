@@ -1,45 +1,27 @@
-{% extends "base.html" %}
-
-{% block title %}
-Make Prediction | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Make Prediction | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <h1 class="mb-4">Make Prediction</h1>
 
-    <h1 class="mb-4">Make Prediction</h1>
+  <!-- Fixture information -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h2 class="h5">{{ fixture.home_team }} vs {{ fixture.away_team }}</h2>
 
-    <div class="card shadow-sm mb-4">
-        <div class="card-body">
-            <h2 class="h5">
-                {{ fixture.home_team }} vs {{ fixture.away_team }}
-            </h2>
+      <p class="mb-1">Stage: {{ fixture.get_stage_display }}</p>
 
-            <p class="mb-1">
-                Stage: {{ fixture.get_stage_display }}
-            </p>
-
-            <p class="mb-0">
-                Kickoff: {{ fixture.kickoff }}
-            </p>
-        </div>
+      <p class="mb-0">Kickoff: {{ fixture.kickoff }}</p>
     </div>
+  </div>
 
-    <form method="POST">
-        {% csrf_token %}
+  <!-- Prediction form -->
+  <form method="POST">
+    {% csrf_token %} {{ form.as_p }}
 
-        {{ form.as_p }}
+    <button type="submit" class="btn wc-wc-btn-primary">Save Prediction</button>
 
-        <button type="submit" class="btn wc-wc-btn-primary">
-            Save Prediction
-        </button>
-
-        <a href="{% url 'my_predictions' %}" class="btn btn-outline-secondary">
-            Back to Predictions
-        </a>
-    </form>
-
+    <a href="{% url 'my_predictions' %}" class="btn btn-outline-secondary"> Back to Predictions </a>
+  </form>
 </section>
 
 {% endblock %}

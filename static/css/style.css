@@ -14,7 +14,9 @@
 body {
     background: linear-gradient(135deg, #f5f7fa 0%, #eef1ff 100%);
     color: var(--wc-dark);
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 main {
@@ -29,9 +31,10 @@ h1,
 h2,
 h3,
 h4,
-h5 {
-    color: var(--wc-dark);
-    font-weight: 800;
+h5,
+.navbar-brand {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.02em;
 }
 
 /* Navbar */
