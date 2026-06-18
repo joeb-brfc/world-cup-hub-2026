@@ -4,9 +4,11 @@ const stripe = Stripe(stripePublicKey);
 // Create Stripe Elements for secure card handling.
 const elements = stripe.elements();
 
-const card = elements.create("card");
-card.mount("#card-element");
+const card = elements.create("card", {
+    hidePostalCode: true
+});
 
+card.mount("#card-element");
 
 // Display validation errors while the user enters card details.
 card.addEventListener("change", function(event) {

@@ -1,17 +1,32 @@
 {% extends "base.html" %} {% block title %} Confirm Football | World Cup Hub 2026 {% endblock %} {% block content %}
 
-<section class="container py-5 text-center">
-  <h1 class="mb-4">Are You Sure?</h1>
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-sm text-center">
+        <div class="card-body p-4">
+          <h1 class="mb-4">Are You Sure?</h1>
 
-  <p class="lead">You are about to select Football Number {{ ball.number }}.</p>
+          <p class="lead">
+            You are about to select
+            <strong>Football Number {{ ball.number }}</strong>.
+          </p>
 
-  <!-- Selection warning -->
-  <div class="alert alert-warning">Once you confirm, you will be locked to this football and cannot change it.</div>
+          <div class="alert alert-warning my-4">Once you confirm, you will be locked to this football and cannot change it.</div>
 
-  <!-- Selection actions -->
-  <a href="{% url 'select_ball' ball.id %}" class="btn wc-wc-btn-primary"> Yes, choose this football </a>
+          <a href="{% url 'select_ball' ball.id %}" class="wc-btn-primary me-2">
+            <i class="fa-solid fa-check"></i>
+            Yes, choose this football
+          </a>
 
-  <a href="{% url 'pontoon_home' %}" class="btn btn-secondary"> No, go back </a>
+          <a href="{% url 'pontoon_home' %}" class="wc-btn-outline">
+            <i class="fa-solid fa-arrow-left"></i>
+            No, go back
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock %}

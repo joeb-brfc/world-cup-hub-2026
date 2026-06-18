@@ -14,7 +14,6 @@ def pontoon_home(request):
         has_access=True
     ).exists()
 
-    # Redirect users to payment if they have not unlocked Pontoon.
     if not access:
         return redirect("pontoon_checkout")
 

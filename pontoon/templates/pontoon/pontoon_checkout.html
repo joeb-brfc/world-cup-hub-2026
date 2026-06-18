@@ -10,6 +10,11 @@
 
           <p class="text-center">Pay once to unlock access to the Pontoon game. After payment, you can choose one football and reveal your assigned World Cup team.</p>
 
+          <p class="text-center mb-4">
+            <strong>£5 One-Time Payment</strong><br />
+            Unlock your World Cup team and compete in Pontoon.
+          </p>
+
           <!-- Stripe payment form -->
           <form id="payment-form">
             <div class="mb-3">
@@ -20,10 +25,16 @@
 
             <div id="card-errors" class="text-danger mb-3" role="alert"></div>
 
-            <button id="submit-button" class="btn wc-wc-btn-primary w-100">Pay to Play Pontoon</button>
+            <button id="submit-button" type="submit" class="wc-btn-primary w-100">
+              <i class="fa-solid fa-credit-card"></i>
+              Pay to Play Pontoon
+            </button>
           </form>
 
-          <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100 mt-3"> Back to Home </a>
+          <a href="{% url 'home' %}" class="wc-btn-outline w-100 text-center mt-3">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Home
+          </a>
         </div>
       </div>
     </div>

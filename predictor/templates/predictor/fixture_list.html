@@ -89,11 +89,11 @@
 
             <!-- Prediction input fields -->
             <div class="d-flex align-items-center gap-2 mt-3">
-              <input type="number" name="home_{{ fixture.id }}" min="0" max="20" class="form-control" placeholder="0" value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_home_score }}{% endif %}" />
+              <input type="number" name="home_{{ fixture.id }}" min="0" max="20" class="form-control" placeholder="-" value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_home_score }}{% endif %}" />
 
               <span>-</span>
 
-              <input type="number" name="away_{{ fixture.id }}" min="0" max="20" class="form-control" placeholder="0" value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_away_score }}{% endif %}" />
+              <input type="number" name="away_{{ fixture.id }}" min="0" max="20" class="form-control" placeholder="-" value="{% if fixture.user_prediction %}{{ fixture.user_prediction.predicted_away_score }}{% endif %}" />
             </div>
             {% endif %}
           </div>
