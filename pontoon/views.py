@@ -40,7 +40,6 @@ def pontoon_home(request):
 # Assigns a football to the logged-in user.
 @login_required
 def select_ball(request, ball_id):
-
     ball = get_object_or_404(
         PontoonBall,
         id=ball_id
@@ -80,7 +79,30 @@ def select_ball(request, ball_id):
 # Shows a confirmation page before the football is selected.
 @login_required
 def confirm_ball(request, ball_id):
-    ball = get_object_or_404(PontoonBall, id=ball_id)
+    ball = get_object_or_404(
+        PontoonBall,
+        id=ball_id
+    )
+
+    # Prevent the confirmation page showing for a football already taken.
+    if ball.selected_by:
+        messages.error(
+            request,
+            "That football has already been taken."
+        )
+        return redirect("pontoon_home")
+
+    already_selected = PontoonBall.objects.filter(
+        selected_by=request.user
+    ).exists()
+
+    # Prevent users who already have a football reaching the confirmation page.
+    if already_selected:
+        messages.error(
+            request,
+            "You have already selected a football."
+        )
+        return redirect("pontoon_home")
 
     return render(
         request,
