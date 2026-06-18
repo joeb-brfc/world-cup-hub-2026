@@ -182,6 +182,50 @@ h5 {
     color: var(--wc-dark);
 }
 
+/* Custom message alerts */
+
+.alert {
+    background: linear-gradient(
+        135deg,
+        #fff8df,
+        #f3edff
+    );
+    border: 2px solid var(--wc-gold);
+    border-left: 6px solid var(--wc-pitch-green);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(21, 28, 44, 0.12);
+    color: var(--wc-dark);
+    font-weight: 600;
+}
+
+.alert-success {
+    background: linear-gradient(
+        135deg,
+        #eaf8ee,
+        #fff8df
+    );
+    border-color: var(--wc-gold);
+    border-left-color: var(--wc-pitch-green);
+    color: var(--wc-dark);
+}
+
+.alert-danger,
+.alert-error {
+    background: linear-gradient(
+        135deg,
+        #ffecec,
+        #fff8df
+    );
+    border-color: var(--wc-red);
+    border-left-color: var(--wc-red);
+    color: var(--wc-dark);
+}
+
+.btn-close {
+    filter: none;
+    opacity: 0.75;
+}
+
 /* Buttons */
 
 .btn-primary,
@@ -443,6 +487,31 @@ section .card.border-0 {
 .instruction-list li::before {
     content: "⚽";
     margin-right: 0.5rem;
+}
+
+/* Auth and payment pages */
+
+.auth-panel {
+    background: linear-gradient(135deg, #fff8df, #f3edff);
+    border-top: 5px solid var(--wc-gold);
+    border-left: 6px solid var(--wc-pitch-green);
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(21, 28, 44, 0.15);
+    padding: 2rem;
+}
+
+.auth-panel h1 {
+    color: var(--wc-pitch-green);
+}
+
+.auth-panel p {
+    font-weight: 500;
+}
+
+.auth-icon {
+    color: var(--wc-gold);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Mobile responsiveness */

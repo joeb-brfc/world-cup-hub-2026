@@ -1,61 +1,33 @@
-{% extends "base.html" %}
-
-{% block title %}
-Sign Out | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+```html {% extends "base.html" %} {% block title %} Sign Out | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-5">
+      <div class="auth-panel text-center">
+        <i class="fa-solid fa-right-from-bracket auth-icon"></i>
 
-    <div class="row justify-content-center">
+        <h1 class="mb-3">Sign Out</h1>
 
-        <div class="col-12 col-md-6 col-lg-5">
+        <p class="lead">Are you sure you want to sign out of World Cup Hub 2026?</p>
 
-            <div class="card shadow-sm">
+        <p class="mb-4">You will need to log in again to make predictions, view your account and access Pontoon.</p>
 
-                <div class="card-body text-center p-4">
+        <form method="post">
+          {% csrf_token %}
 
-                    <!-- Logout confirmation -->
-                    <h1 class="mb-3">
-                        Sign Out
-                    </h1>
+          <button type="submit" class="wc-btn-danger me-2">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+          </button>
 
-                    <p class="lead">
-                        Are you sure you want to sign out of
-                        World Cup Hub 2026?
-                    </p>
-
-                    <p class="text-muted">
-                        You will need to log in again to make predictions,
-                        view your account, or access Pontoon.
-                    </p>
-
-                    <!-- Logout actions -->
-                    <form method="post">
-
-                        {% csrf_token %}
-
-                        <button type="submit"
-                                class="wc-btn-danger">
-                            Sign Out
-                        </button>
-
-                        <a href="{% url 'home' %}"
-                           class="wc-btn-outline">
-                            Cancel
-                        </a>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
+          <a href="{% url 'home' %}" class="wc-btn-outline">
+            <i class="fa-solid fa-house"></i>
+            Cancel
+          </a>
+        </form>
+      </div>
     </div>
-
+  </div>
 </section>
 
-{% endblock %}
+{% endblock %} ```

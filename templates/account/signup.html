@@ -1,31 +1,31 @@
-{% extends "base.html" %} {% block title %} Sign Up | World Cup Hub 2026 {% endblock %} {% block content %}
+```html {% extends "base.html" %} {% block title %} Sign Up | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-6 col-lg-5">
-      <!-- Registration card -->
-      <div class="card shadow-sm">
-        <div class="card-body p-4">
-          <h1 class="h3 mb-3 text-center">Create Account</h1>
+      <div class="auth-panel text-center">
+        <i class="fa-solid fa-user-plus auth-icon"></i>
 
-          <p class="text-center text-muted">Create an account to save predictions and join the World Cup games.</p>
+        <h1 class="h3 mb-3">Create Account</h1>
 
-          <!-- User registration form -->
-          <form method="POST" action="{% url 'account_signup' %}">
-            {% csrf_token %} {{ form.as_p }}
+        <p class="mb-4">Create an account to save predictions, compete on the leaderboard and play World Cup Pontoon.</p>
 
-            <button type="submit" class="btn wc-btn-primary w-100">Sign Up</button>
-          </form>
+        <form method="POST" action="{% url 'account_signup' %}">
+          {% csrf_token %} {{ form.as_p }}
 
-          <p class="text-center mt-3 mb-0">
-            Already have an account?
+          <button type="submit" class="wc-btn-primary w-100 mt-3">Sign Up</button>
+        </form>
 
-            <a href="{% url 'account_login' %}"> Login here </a>
-          </p>
-        </div>
+        <hr />
+
+        <p class="mb-0">
+          Already have an account?
+
+          <a href="{% url 'account_login' %}"> Login here </a>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-{% endblock %}
+{% endblock %} ```
