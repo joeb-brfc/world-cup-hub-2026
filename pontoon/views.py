@@ -149,9 +149,12 @@ def pontoon_payment_success(request):
     access.stripe_pid = payment_intent
     access.save()
 
-    messages.success(
-        request,
-        "Payment successful. Pontoon access has been unlocked."
-    )
+    context = {
+        "payment_intent": payment_intent,
+    }
 
-    return redirect("pontoon_home")
+    return render(
+        request,
+        "pontoon/pontoon_payment_success.html",
+        context
+    )

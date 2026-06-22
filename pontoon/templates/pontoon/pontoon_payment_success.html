@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+Payment Successful | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-md-7 col-lg-6">
+
+            <div class="auth-panel text-center">
+
+                <i class="fa-solid fa-circle-check auth-icon"></i>
+
+                <h1 class="mb-3">
+                    Payment Successful
+                </h1>
+
+                <p class="lead">
+                    Your World Cup Pontoon access has been unlocked.
+                </p>
+
+                <p class="mb-4">
+                    You can now choose one numbered football and reveal your assigned World Cup team.
+                </p>
+
+                {% if payment_intent %}
+
+                <p class="small text-muted">
+                    Payment reference: {{ payment_intent }}
+                </p>
+
+                {% endif %}
+
+                <a href="{% url 'pontoon_home' %}"
+                   class="wc-btn-primary">
+                    <i class="fa-solid fa-futbol"></i>
+                    Continue to Pontoon
+                </a>
+
+                <a href="{% url 'home' %}"
+                   class="wc-btn-outline mt-3">
+                    <i class="fa-solid fa-house"></i>
+                    Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
