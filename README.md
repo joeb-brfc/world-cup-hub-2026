@@ -368,7 +368,162 @@ Code was written following PEP8 guidelines where possible.
 
 ---
 
-# Testing
+# Improvements Implemented During Development
+
+## Improvements Implemented During Development
+
+Although the project began with a defined set of user stories, several improvements were identified and implemented throughout development as testing progressed.
+
+### Expanded Fixture Filtering
+
+#### Original Plan
+
+The original fixture page displayed all fixtures together on a single page.
+
+#### Improvement Implemented
+
+As the number of fixtures increased, navigation became more difficult. Matchday filtering was introduced to improve usability.
+
+Users can now filter fixtures by:
+
+* Matchday 1
+* Matchday 2
+* Matchday 3
+* Round of 32
+* Round of 16
+* Quarter Finals
+* Semi Finals
+* Final
+
+#### Benefit
+
+This significantly improved navigation and reduced the amount of scrolling required to find fixtures.
+
+---
+
+### Persistent Fixture Filters
+
+#### Original Behaviour
+
+After saving predictions, users were returned to the default fixture page.
+
+#### Improvement Implemented
+
+The application now remembers the user's selected filter and returns them to the same matchday or knockout stage after saving predictions.
+
+#### Benefit
+
+This creates a smoother user experience when entering large numbers of predictions.
+
+---
+
+### Enhanced Payment Confirmation Experience
+
+#### Original Behaviour
+
+After completing a Stripe payment, users were immediately redirected to the Pontoon page with a standard success message.
+
+#### Improvement Implemented
+
+A dedicated payment confirmation page was introduced.
+
+The page now:
+
+* Confirms successful payment.
+* Explains that Pontoon access has been unlocked.
+* Provides a clear button to continue to the Pontoon game.
+* Displays the Stripe payment reference.
+
+#### Benefit
+
+This provides reassurance that payment was successful and creates a more professional user experience.
+
+---
+
+### Improved Pontoon Selection Validation
+
+#### Original Behaviour
+
+Users who had already selected a football could still reach the confirmation screen before being prevented from selecting another team.
+
+#### Improvement Implemented
+
+Validation was moved earlier in the process so users are immediately informed if they have already selected a football.
+
+#### Benefit
+
+This removes unnecessary steps and provides clearer feedback.
+
+---
+
+### Leaderboard Medal System
+
+#### Original Plan
+
+Leaderboards displayed only numerical positions.
+
+#### Improvement Implemented
+
+Gold, Silver and Bronze medals were added for the top three positions.
+
+#### Benefit
+
+This improves visual appeal and makes leaderboard rankings easier to understand.
+
+---
+
+### Authentication Page Redesign
+
+#### Original Behaviour
+
+Login, registration and logout pages used standard Bootstrap card styling.
+
+#### Improvement Implemented
+
+Custom World Cup themed authentication panels were introduced using project branding, custom colours and Font Awesome icons.
+
+#### Benefit
+
+This created a more consistent visual identity throughout the application.
+
+---
+
+### Pontoon Score Visual Indicators
+
+#### Original Behaviour
+
+All positive scores used the same styling.
+
+#### Improvement Implemented
+
+Additional visual feedback was added:
+
+* Gold styling for winning scores.
+* Red styling for busted scores.
+* Clear status indicators for Winner, Active and Busted teams.
+
+#### Benefit
+
+Users can understand game status more quickly without reading additional information.
+
+### Mobile Hero Button Optimisation
+
+#### Original Behaviour
+
+During responsive testing, the two call-to-action buttons displayed on the homepage hero section were positioned side-by-side on all screen sizes.
+
+Testing revealed that on smaller mobile devices (approximately 400px width and below), the buttons began to overlap, reducing usability and negatively affecting the user experience.
+
+#### Improvement Implemented
+
+A dedicated responsive breakpoint was introduced for smaller mobile devices. Below 420px screen width, the hero buttons automatically stack vertically rather than remaining side-by-side.
+
+#### Benefit
+
+This ensures that users on smaller mobile devices can clearly view and interact with both buttons without overlap or layout issues. The improvement increases accessibility, usability, and overall mobile responsiveness.
+
+
+---
 
 # Testing
 
