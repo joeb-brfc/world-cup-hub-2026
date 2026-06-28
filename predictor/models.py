@@ -50,7 +50,8 @@ class Fixture(models.Model):
         ('Round of 16', 'Round of 16'),
         ('Quarterfinals', 'Quarterfinals'),
         ('Semifinals', 'Semifinals'),
-        ('Final', 'Final'),
+        ("Third Place", "Third Place Play-Off"),
+        ("Final", "Final")
     ]
 
     home_team = models.ForeignKey(
