@@ -1,6 +1,3 @@
-from decimal import Decimal
-
-from django.contrib.auth.models import User
 from django.http import HttpResponse
 
 from .models import PontoonAccess
@@ -26,50 +23,17 @@ class StripeWH_Handler:
 
     def handle_payment_intent_succeeded(self, event):
         """
-        Grants Pontoon access when Stripe confirms a successful payment.
+        Handles successful payment events from Stripe.
         """
 
         intent = event.data.object
 
-        payment_intent_id = intent.id
-        user_id = intent.metadata.get("user_id")
-        product = intent.metadata.get("product")
-
-        if product != "World Cup Pontoon Access":
-            return HttpResponse(
-                content="Webhook ignored: not Pontoon access.",
-                status=200
-            )
-
-        if not user_id:
-            return HttpResponse(
-                content="Webhook ignored: missing user_id metadata.",
-                status=200
-            )
-
-        try:
-            user = User.objects.get(id=user_id)
-
-        except User.DoesNotExist:
-            return HttpResponse(
-                content="Webhook ignored: user not found.",
-                status=200
-            )
-
-        access, created = PontoonAccess.objects.get_or_create(
-            user=user
-        )
-
-        access.has_access = True
-        access.stripe_pid = payment_intent_id
-
-        amount = getattr(intent, "amount_received", None) or intent.amount
-        access.amount_paid = Decimal(amount) / Decimal("100")
-
-        access.save()
+        print("PaymentIntent succeeded:")
+        print(intent.id)
+        print(intent.metadata)
 
         return HttpResponse(
-            content="Pontoon access granted from Stripe webhook.",
+            content="Webhook received: payment_intent.succeeded",
             status=200
         )
 

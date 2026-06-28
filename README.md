@@ -268,6 +268,19 @@ All relationships behaved as expected and enforced the intended business rules.
 - Additional football competitions
 - Improved payment flow with customer details
 - Enhanced Pontoon analytics
+- Complete webhook-driven access management so Stripe payments update user access without relying on the success redirect.
+- Add automatic email confirmations after successful purchases.
+- Allow multiple Pontoon competitions to run simultaneously.
+- Introduce administrator controls for opening and closing Pontoon competitions.
+- Add countdown timers for upcoming fixtures.
+- Display live match scores using a football data API.
+- Allow users to edit profile information and upload avatars.
+- Provide historical leaderboards from previous tournaments.
+- Add achievement badges and statistics for prediction accuracy.
+- Expand payment options beyond Stripe.
+- Improve accessibility further through additional ARIA labels and keyboard navigation enhancements.
+- Introduce a dark mode theme.
+
 
 # Data Model
 
@@ -772,6 +785,23 @@ The application was deployed to Heroku using a PostgreSQL production database. A
 | Prediction locking after kickoff | Fixtures lock automatically once kickoff time has passed | Pass |
 | Matchday filtering | Fixtures filter correctly by Matchday 1, 2 and 3 | Pass |
 | Knockout stage filtering | Fixtures filter correctly by competition stage | Pass |
+
+### Stripe Payment Testing
+
+Stripe Checkout was implemented to provide paid access to the World Cup Pontoon game.
+
+Testing included:
+
+- Successful payments using Stripe test cards.
+- Redirect to the custom payment success page.
+- Creation of a `PontoonAccess` record after payment.
+- Prevention of unauthorised users accessing the Pontoon game.
+- Stripe CLI webhook testing using `stripe listen` and `stripe trigger`.
+- Verification that webhook events such as `payment_intent.created`, `payment_intent.succeeded`, `charge.succeeded` and `charge.updated` were successfully received.
+
+The application currently grants Pontoon access through the payment success view after Stripe redirects the user back to the application. Webhook verification has been implemented and tested, with full webhook-driven database updates identified as a future enhancement.
+
+---
 
 ### Deployment Challenges Encountered
 
