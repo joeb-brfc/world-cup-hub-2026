@@ -1,9 +1,11 @@
 from django.conf import settings
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from .webhook_handler import StripeWH_Handler
 import stripe
 
 
+@csrf_exempt
 def webhook(request):
     """
     Receives webhook events from Stripe.
