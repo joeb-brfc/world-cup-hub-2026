@@ -1,4 +1,6 @@
 from django.urls import path
+
+from pontoon import webhooks
 from . import views
 
 urlpatterns = [
@@ -34,5 +36,11 @@ urlpatterns = [
         views.pontoon_payment_success,
         name="pontoon_payment_success",
     ),
+
+    path(
+    "wh/",
+    webhooks.webhook,
+    name="webhook",
+),
 
 ]
