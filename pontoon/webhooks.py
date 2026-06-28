@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.http import HttpResponse
+from .webhook_handler import StripeWH_Handler
 import stripe
 
 
@@ -26,4 +27,6 @@ def webhook(request):
 
     print("Webhook verified")
 
-    return HttpResponse(status=200)
+    handler = StripeWH_Handler(request)
+
+    return handler.handle_event(event)
