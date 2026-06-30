@@ -156,36 +156,13 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ---
 
-## Fixtures Wireframe
+![Fixtures Wireframe](./static/images/wireframes/fixtures.png)
 
-![Fixtures Wireframe](static/images/wireframes/fixtures.png)
+![Prediction Page Wireframe](./static/images/wireframes/my-predictions.png)
 
-*Figure 2: Fixtures page wireframe showing fixture filtering and prediction entry.*
+![Pontoon Wireframe](./static/images/wireframes/pontoon.png)
 
----
-
-## Prediction Page Wireframe
-
-![Prediction Page Wireframe](static/images/wireframes/my-predictions.png)
-
-*Figure 3: My Predictions page wireframe displaying saved predictions.*
-
----
-
-## Pontoon Game Wireframe
-
-![Pontoon Wireframe](static/images/wireframes/pontoon.png)
-
-*Figure 4: Pontoon game wireframe showing the numbered football selection grid.*
-
----
-
-## Prediction Leaderboard Wireframe
-
-![Prediction Leaderboard Wireframe](static/images/wireframes/prediction-leaderboard.png)
-
-*Figure 5: Prediction leaderboard wireframe displaying user rankings and points.*
-
+![Prediction Leaderboard Wireframe](./static/images/wireframes/prediction-leaderboard.png)
 ---
 
 ## Mobile Wireframe
