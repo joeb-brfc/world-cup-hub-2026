@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Fixture, Prediction
+from .models import Fixture, Prediction, Team
 from .forms import PredictionForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -244,5 +244,37 @@ def fixture_predictions(request, fixture_id):
     return render(
         request,
         "predictor/fixture_predictions.html",
+        context,
+    )
+
+# Displays all World Cup teams.
+def team_list(request):
+    teams = Team.objects.all().order_by("name")
+
+    context = {
+        "teams": teams,
+    }
+
+    return render(
+        request,
+        "predictor/team_list.html",
+        context,
+    )
+
+
+# Displays one World Cup team fact file.
+def team_detail(request, team_id):
+    team = get_object_or_404(
+        Team,
+        id=team_id,
+    )
+
+    context = {
+        "team": team,
+    }
+
+    return render(
+        request,
+        "predictor/team_detail.html",
         context,
     )

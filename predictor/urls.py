@@ -59,4 +59,17 @@ urlpatterns = [
         views.fixture_list,
         name="fixtures_by_stage",
     ),
+
+        # Team fact files
+    path(
+        "teams/",
+        views.team_list,
+        name="team_list",
+    ),
+
+    path(
+        "teams/<int:team_id>/",
+        views.team_detail,
+        name="team_detail",
+    ),
 ]
