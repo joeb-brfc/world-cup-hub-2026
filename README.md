@@ -2,47 +2,44 @@
 
 ## Live Link
 
-https://world-cup-hub-2026-861092c83eef.herokuapp.com
+<https://world-cup-hub-2026-861092c83eef.herokuapp.com>
 
 ---
 
 # Introduction
 
-World Cup Hub 2026 is a Full Stack Django web application based on the FIFA World Cup 2026 tournament. The platform allows users to make score predictions, compete on leaderboards, participate in a World Cup-themed Pontoon game, and explore information about competing nations.
+World Cup Hub 2026 is a Full Stack Django web application created for football supporters following the FIFA World Cup 2026. The platform combines a traditional score prediction game with a unique World Cup Pontoon competition, allowing users to compete with friends while following every match from the group stage through to the final.
 
----
+The aim of the project was to create something different from a typical football prediction website. While score predictions provide a familiar way for users to compete throughout the tournament, the premium Pontoon game offers a fresh challenge inspired by a competition I first encountered in a local pub.
 
-# Project Overview
+Rather than using playing cards, each participant selects a numbered football which is randomly assigned one of the qualified World Cup nations. The scoring system was adapted specifically for international football, where teams earn two points for every goal scored and lose one point for every goal conceded. The objective is to finish as close to 21 points as possible without exceeding it, creating genuine jeopardy throughout the tournament, as even successful teams can exceed 21 points and be eliminated from the competition.
 
-The application combines football predictions, automated scoring, leaderboards, and interactive game features into a single platform. Users can follow tournament fixtures, compare their performance against others, and engage with the competition throughout the World Cup.
+Alongside both games, users can browse information about every competing nation, including current managers, captains and each country's best World Cup achievement, providing a useful reminder of teams that may not have appeared at recent tournaments.
 
----
+The project demonstrates a range of Full Stack development skills, including:
 
-# Project Purpose
-
-The purpose of the project is to provide football fans with an engaging and interactive way to follow the FIFA World Cup 2026 tournament while demonstrating Full Stack web development skills including:
-
-* Django development
-* Relational databases
-* CRUD functionality
-* User authentication
-* Automated scoring systems
-* Responsive design
+- Django development
+- Relational database design
+- CRUD functionality
+- User authentication and authorisation
+- Stripe payment integration
+- Automated scoring systems
+- Responsive web design
+- Deployment using Heroku and PostgreSQL
 
 ---
 
 # Target Users
 
-The application is aimed at:
+World Cup Hub 2026 has been designed for:
 
-* Football fans
-* World Cup followers
-* Prediction game enthusiasts
-* Friends and workplace competitions
-* Users interested in football statistics and team information
+- Football supporters following the FIFA World Cup.
+- Friends, families and workplace prediction competitions.
+- Users who enjoy football prediction games.
+- Fans looking for a fresh alternative to traditional prediction platforms.
+- Supporters wanting quick access to tournament information, including managers, captains and historical World Cup achievements.
 
-The platform has been designed to be accessible across desktop, tablet, and mobile devices.
-
+The interface uses a vibrant World Cup-inspired colour palette featuring gold, green and purple branding to create an engaging football atmosphere while remaining fully responsive across desktop, tablet and mobile devices.
 
 # User Stories
 
@@ -50,10 +47,10 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Visitor User Stories
 
-* As a visitor, I want to understand the purpose of the application immediately so that I can decide whether to register.
-* As a visitor, I want clear information about the Predictor and Pontoon games so that I understand how they work.
-* As a visitor, I want to see current and planned features so that I know what functionality is available.
-* As a visitor, I want a visually appealing football-themed design so that the platform feels engaging and professional.
+- As a visitor, I want to understand the purpose of the application immediately so that I can decide whether to register.
+- As a visitor, I want clear information about the Predictor and Pontoon games so that I understand how they work.
+- As a visitor, I want to see current and planned features so that I know what functionality is available.
+- As a visitor, I want a visually appealing football-themed design so that the platform feels engaging and professional.
 
 ---
 
@@ -61,10 +58,9 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Registered User Stories
 
-* As a user, I want to create an account so that I can participate in the games.
-* As a user, I want to log in securely so that my predictions and Pontoon selections are saved.
-* As a user, I want to reset my password if I forget it so that I can regain access to my account.
-* As a user, I want restricted areas of the website protected so that only authorised users can access game functionality.
+- As a user, I want to create an account so that I can participate in the games.
+- As a user, I want to log in securely so that my predictions and Pontoon selections are saved.
+- As a user, I want to reset my password if I forget it so that I can regain access to my account.
 
 ---
 
@@ -72,20 +68,19 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Predictor User Stories
 
-* As a user, I want to view all World Cup fixtures so that I can make predictions.
-* As a user, I want fixtures organised by stage and matchday so that I can navigate large numbers of games easily.
-* As a user, I want to see fixture dates and kickoff times so that I know when predictions close.
-* As a user, I want to submit score predictions so that I can compete against other users.
-* As a user, I want to save multiple predictions at once so that entering predictions is quick and efficient.
-* As a user, I want confirmation that my prediction has been saved so that I know my submission was successful.
-* As a user, I want to view my submitted predictions so that I can track my performance.
-* As a user, I want to edit or delete predictions before kickoff so that I can change my mind.
-* As a user, I want predictions to lock automatically after kickoff so that the competition remains fair.
-* As a user, I want to view other users' predictions after a fixture has started so that I can compare my choices with competitors.
-* As a user, I want to understand how points are awarded so that scoring is transparent.
-* As a user, I want to see my total score so that I can track my position in the competition.
-* As a user, I want to see the current leaderboard so that I know who is winning.
-* As a user, I want to know how many points separate me from the leader so that I understand what is required to catch up.
+- As a user, I want to view all World Cup fixtures so that I can make predictions.
+- As a user, I want fixtures organised by stage and matchday so that I can navigate large numbers of games easily.
+- As a user, I want to see fixture dates and kickoff times so that I know when predictions close.
+- As a user, I want to save multiple predictions at once so that entering predictions is quick and efficient.
+- As a user, I want confirmation that my prediction has been saved so that I know my submission was successful.
+- As a user, I want to view my submitted predictions so that I can track my performance.
+- As a user, I want to edit or delete predictions before kickoff so that I can change my mind.
+- As a user, I want predictions to lock automatically after kickoff so that the competition remains fair.
+- As a user, I want to view other users' predictions after a fixture has started so that I can compare my choices with competitors.
+- As a user, I want to understand how points are awarded so that scoring is transparent.
+- As a user, I want to see my total score so that I can track my position in the competition.
+- As a user, I want to see the current leaderboard so that I know who is winning.
+- As a user, I want to know how many points separate me from the leader so that I understand what is required to catch up.
 
 ---
 
@@ -93,17 +88,17 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Pontoon User Stories
 
-* As a user, I want to see clear instructions explaining how Pontoon works so that I understand the rules before playing.
-* As a user, I want to know the scoring system so that I understand how points are earned and lost.
-* As a user, I want to see which footballs have already been selected so that I can choose from the remaining options.
-* As a user, I want confirmation before selecting a football so that I do not accidentally commit to a team.
-* As a user, I want to know that I can only select one football so that the game remains fair.
-* As a user, I want my assigned team displayed clearly so that I always know who I am supporting.
-* As a user, I want national flags displayed alongside team names so that teams are easy to identify.
-* As a user, I want my Pontoon score displayed clearly so that I can monitor my progress.
-* As a user, I want to know whether my team is Active or Busted so that I understand my status in the competition.
-* As a user, I want to see the Pontoon leaderboard so that I know who is currently winning.
-* As a user, I want to see how many points I need to catch the leader so that I understand my chances of winning.
+- As a user, I want to see clear instructions explaining how Pontoon works so that I understand the rules before playing.
+- As a user, I want to know the scoring system so that I understand how points are earned and lost.
+- As a user, I want to see which footballs have already been selected so that I can choose from the remaining options.
+- As a user, I want confirmation before selecting a football so that I do not accidentally commit to a team.
+- As a user, I want to know that I can only select one football so that the game remains fair.
+- As a user, I want my assigned team displayed clearly so that I always know who I am supporting.
+- As a user, I want national flags displayed alongside team names so that teams are easy to identify.
+- As a user, I want my Pontoon score displayed clearly so that I can monitor my progress.
+- As a user, I want to know whether my team is Active or Busted so that I understand my status in the competition.
+- As a user, I want to see the Pontoon leaderboard so that I know who is currently winning.
+- As a user, I want to see how many points I need to catch the leader so that I understand my chances of winning.
 
 ---
 
@@ -111,10 +106,10 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Fact File User Stories
 
-* As a user, I want to browse all competing nations so that I can learn more about the tournament participants.
-* As a user, I want to view team managers and captains so that I can learn more about each nation.
-* As a user, I want to view each nation's best World Cup performance so that I can compare historical achievements.
-* As a user, I want to see national flags so that countries are easy to identify.
+- As a user, I want to browse all competing nations so that I can learn more about the tournament participants.
+- As a user, I want to view team managers and captains so that I can learn more about each nation.
+- As a user, I want to view each nation's best World Cup performance so that I can compare historical achievements.
+- As a user, I want to see national flags so that countries are easy to identify.
 
 ---
 
@@ -122,10 +117,14 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Premium User Stories
 
-* As a user, I want a secure payment process so that I can purchase premium access safely.
-* As a user, I want confirmation that my payment has been successful so that I know premium access has been activated.
-* As a user, I want clear information about what premium access includes so that I understand what I am paying for.
-* As a user, I want premium functionality restricted to paying users so that the feature retains value.
+- As a user, I want a secure Stripe payment process so that I can purchase Pontoon access safely.
+- As a user, I want to understand exactly what Pontoon access includes before making a payment.
+- As a user, I want clear confirmation that my payment has been successful so that I know my purchase has been completed.
+- As a user, I want a dedicated payment confirmation page so that I can review my purchase before continuing to the Pontoon game.
+- As a user, I want my Pontoon access to remain active after a successful payment so that I do not need to purchase access again.
+- As a user, I want premium functionality restricted to paying users so that the competition remains fair.
+- As a user, I want my payment to be processed securely using Stripe so that my financial information is protected.
+- As a user, I want payment events to be verified by the application so that my purchase can still be recognised if my internet connection drops or my browser closes after payment.
 
 ---
 
@@ -133,20 +132,18 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ### Admin User Stories
 
-* As an administrator, I want to create and manage teams so that tournament information remains accurate.
-* As an administrator, I want to create and manage fixtures so that users can make predictions.
-* As an administrator, I want to enter fixture results so that prediction scores update automatically.
-* As an administrator, I want Pontoon scores to update automatically from fixture results so that standings remain accurate.
-* As an administrator, I want teams assigned to Pontoon footballs randomly so that selections remain fair.
-* As an administrator, I want only one user to be assigned to each football so that duplicate selections are prevented.
-* As an administrator, I want only one team assigned to each football so that teams cannot be duplicated.
-* As an administrator, I want users to be marked as Busted when their score exceeds 21 so that Pontoon rules are enforced.
-* As an administrator, I want Pontoon scores to support negative values so that goals conceded can reduce scores correctly.
-* As an administrator, I want leaderboard positions ordered automatically by score so that the current leader always appears at the top.
+- As an administrator, I want to create and manage teams so that tournament information remains accurate.
+- As an administrator, I want to create and manage fixtures so that users can make predictions.
+- As an administrator, I want to enter fixture results so that prediction scores update automatically.
+- As an administrator, I want Pontoon scores to update automatically from fixture results so that standings remain accurate.
+- As an administrator, I want teams assigned to Pontoon footballs randomly so that selections remain fair.
+- As an administrator, I want only one user to be assigned to each football so that duplicate selections are prevented.
+- As an administrator, I want only one team assigned to each football so that teams cannot be duplicated.
+- As an administrator, I want users to be marked as Busted when their score exceeds 21 so that Pontoon rules are enforced.
+- As an administrator, I want Pontoon scores to support negative values so that goals conceded can reduce scores correctly.
+- As an administrator, I want leaderboard positions ordered automatically by score so that the current leader always appears at the top.
 
 ---
-
-# Wireframes
 
 # Wireframes
 
@@ -171,154 +168,212 @@ The platform has been designed to be accessible across desktop, tablet, and mobi
 
 ---
 
-# Relationships
-
-## Current Relationship Testing
-
-The application uses a relational database structure to minimise data duplication and maintain consistency across the platform.
-
-### Team and Fixture Relationships
-
-The `Fixture` model uses foreign key relationships to connect fixtures to teams.
-
-Each fixture has:
-
-* One home team
-* One away team
-
-This allows a single team record to be reused across multiple fixtures without duplicating information. For example, Mexico can appear in several fixtures while only existing once within the Team table.
-
-### Fixture and Prediction Relationships
-
-The `Prediction` model uses foreign key relationships to connect users and fixtures.
-
-This means:
-
-* One fixture can have many predictions
-* One user can create many predictions
-
-This allows multiple users to predict the same fixture while maintaining individual prediction records.
-
-### User and Pontoon Relationships
-
-The `PontoonBall` model uses a one-to-one relationship with both users and teams.
-
-This ensures:
-
-* One user can only select one Pontoon football
-* One football can only be assigned to one user
-* One team can only be assigned to one football
-
-These restrictions help maintain fairness within the Pontoon game and prevent duplicate team assignments.
-
-### User and Premium Access Relationships
-
-The `PontoonAccess` model uses a one-to-one relationship with users.
-
-This means:
-
-* One user can have one Pontoon access record
-* Each access record belongs to a single user
-
-The relationship is used to control premium access after successful Stripe payment.
-
-## Relationship Testing
-
-Relationships were manually tested through the Django administration panel and application interface.
-
-The following relationships were verified:
-
-* One Team can appear in many Fixtures.
-* One Fixture can have many Predictions.
-* One User can create many Predictions.
-* One User can only select one Pontoon football.
-* One Team can only be assigned to one Pontoon football.
-* One User can only have one Pontoon access record.
-* One User can only participate in Pontoon after access has been granted.
-
-All relationships behaved as expected and enforced the intended business rules.
-
----
-
 # Features
 
 ## Home Page
 
-## Authentication
-
-## Predictor Game
-
-## Prediction Leaderboard
-
-## Pontoon Game
-
-## Pontoon Leaderboard
-
-## Stripe Payments
-
-## Responsive Design
+The homepage introduces World Cup Hub 2026 and provides a clear overview of both the free Predictor game and the premium Pontoon competition. A custom World Cup hero image, vibrant colour scheme and clear call-to-action buttons help users navigate the platform.
 
 ---
 
-# Future Features
+## Authentication
 
-- Password reset functionality
-- Team fact files
-- Expanded World Cup statistics
-- Tournament insights
-- Additional football competitions
-- Improved payment flow with customer details
-- Enhanced Pontoon analytics
-- Complete webhook-driven access management so Stripe payments update user access without relying on the success redirect.
-- Add automatic email confirmations after successful purchases.
-- Allow multiple Pontoon competitions to run simultaneously.
-- Introduce administrator controls for opening and closing Pontoon competitions.
+User registration and authentication are handled using Django Allauth. Registered users can securely sign up, log in and log out, with protected areas ensuring only authenticated users can access game functionality.
+
+---
+
+## Predictor Game
+
+Users can predict the score of every World Cup fixture before kick-off. Fixtures can be filtered by group matchday and knockout stage, making large numbers of matches easier to navigate. Predictions automatically lock once a fixture has started to ensure fair competition.
+
+---
+
+## Prediction Leaderboard
+
+Prediction scores are calculated automatically after results are entered. Users earn points for correct outcomes and exact scorelines, with an automatically updated leaderboard displaying medal positions for the top three competitors.
+
+---
+
+## World Cup Pontoon
+
+Pontoon is a premium competition inspired by a traditional pub game and adapted specifically for the FIFA World Cup. Users purchase access through Stripe, select one numbered football and are randomly assigned a World Cup nation. Teams score two points for every goal scored and lose one point for every goal conceded, with the aim of finishing as close to 21 points as possible without going bust.
+
+---
+
+## Pontoon Leaderboard
+
+The Pontoon leaderboard displays each player's assigned nation, current score and status, clearly identifying active teams, busted teams and the current competition leader.
+
+---
+
+## Stripe Integration
+
+Stripe Checkout provides secure online payments for premium Pontoon access. Following successful payment, users receive a dedicated confirmation page before entering the competition. Webhook verification has also been implemented and tested to support future payment reliability improvements.
+
+---
+
+## Responsive Design
+
+The application has been designed using Bootstrap alongside custom CSS to provide a consistent experience across desktop, tablet and mobile devices. Additional responsive enhancements were introduced throughout development to improve usability on smaller screens.
+
+---
+
+# Future Improvements
+
+Several ideas were identified throughout development that could further improve the platform:
+
+- Complete webhook-driven payment handling so premium access can be granted even if users do not return from Stripe.
+- Introduce password reset functionality.
+- Expand the existing team fact files with squad information, FIFA rankings and historical statistics.
+- Display live scores and match statistics using a football data API.
 - Add countdown timers for upcoming fixtures.
-- Display live match scores using a football data API.
-- Allow users to edit profile information and upload avatars.
-- Provide historical leaderboards from previous tournaments.
-- Add achievement badges and statistics for prediction accuracy.
-- Expand payment options beyond Stripe.
-- Improve accessibility further through additional ARIA labels and keyboard navigation enhancements.
-- Introduce a dark mode theme.
+- Allow users to upload profile pictures and personalise their accounts.
+- Introduce prediction achievements, badges and detailed player statistics.
+- Support additional football competitions such as the Premier League, Championship and UEFA Champions League.
+- Add administrator controls to create and manage multiple Pontoon competitions.
+- Improve accessibility further through additional ARIA labels, keyboard navigation and enhanced colour contrast.
+- Introduce optional dark mode.
 
+---
 
-# Data Model
+# Database Design
 
-At this stage of development, the following core models have been created in the `predictor` app:
+World Cup Hub 2026 uses a relational PostgreSQL database to minimise data duplication, maintain data integrity and enforce the business rules of both the Predictor and Pontoon applications.
 
-Fixture
-Prediction
-PontoonBall
-Team
-PontoonAccess
+The database consists of five core models:
 
-These models form the core relational structure of the application.
+- Team
+- Fixture
+- Prediction
+- PontoonBall
+- PontoonAccess
 
-The `Prediction` model connects authenticated users to fixtures, allowing score predictions to be stored in the database.
+Together these models manage tournament information, user predictions, Pontoon gameplay and premium access.
 
-## Team Model
+---
 
-- team_name
+## Entity Relationship Diagram (ERD)
+
+The Entity Relationship Diagram below illustrates the relationships between the application's core models.
+
+```mermaid
+erDiagram
+    USER ||--o{ PREDICTION : creates
+    USER ||--o| PONTOON_ACCESS : has
+    USER ||--o| PONTOON_BALL : selects
+
+    TEAM ||--o{ FIXTURE : home_team
+    TEAM ||--o{ FIXTURE : away_team
+    TEAM ||--o| PONTOON_BALL : assigned_to
+
+    FIXTURE ||--o{ PREDICTION : receives
+
+    USER {
+        int id
+        string username
+        string email
+        string password
+    }
+
+    TEAM {
+        int id
+        string name
+        string group
+        string manager
+        string captain
+        string best_world_cup_finish
+        int best_world_cup_year
+    }
+
+    FIXTURE {
+        int id
+        int home_team_id
+        int away_team_id
+        string stage
+        int matchday
+        datetime kickoff_time
+        int home_team_score
+        int away_team_score
+    }
+
+    PREDICTION {
+        int id
+        int user_id
+        int fixture_id
+        int predicted_home_score
+        int predicted_away_score
+        int points_awarded
+    }
+
+    PONTOON_BALL {
+        int id
+        int number
+        int team_id
+        int selected_by_id
+        int score
+        boolean busted
+    }
+
+    PONTOON_ACCESS {
+        int id
+        int user_id
+        boolean has_access
+        string stripe_pid
+        decimal amount_paid
+        datetime created_at
+    }
+```
+
+The ERD shows how the application's models interact through one-to-many and one-to-one relationships. The `Prediction` model links users to fixtures, `PontoonBall` ensures each football and team can only be assigned once, and `PontoonAccess` manages premium access following successful Stripe payments.
+
+---
+
+## Team
+
+Stores information about each qualified World Cup nation.
+
+**Main fields**
+
+- name
 - group
-- flag
 - manager
 - captain
 - best_world_cup_finish
-- best_finish_year
+- best_world_cup_year
 
-## Fixture Model
+**Relationships**
 
+- One Team can appear in many Fixtures.
+- One Team can only be assigned to one PontoonBall.
+
+---
+
+## Fixture
+
+Stores every World Cup fixture and its official result.
+
+**Main fields**
 
 - home_team
 - away_team
-- date
-- time
-- tournament_stage
-- home_score
-- away_score
+- stage
+- matchday
+- kickoff_time
+- home_team_score
+- away_team_score
 
-## Prediction Model
+**Relationships**
+
+- Each Fixture references one home Team and one away Team.
+- One Fixture can receive many Predictions.
+
+---
+
+## Prediction
+
+Stores a user's prediction for an individual fixture.
+
+**Main fields**
 
 - user
 - fixture
@@ -326,10 +381,18 @@ The `Prediction` model connects authenticated users to fixtures, allowing score 
 - predicted_away_score
 - points_awarded
 
+**Relationships**
 
-## PontoonBall Model
+- One User can create many Predictions.
+- One Fixture can have many Predictions.
 
-Suggested fields:
+---
+
+## PontoonBall
+
+Represents a numbered football within the premium Pontoon competition.
+
+**Main fields**
 
 - number
 - team
@@ -337,7 +400,20 @@ Suggested fields:
 - score
 - busted
 
-## PontoonAccess Model
+**Relationships**
+
+- One User can only select one PontoonBall.
+- One Team can only be assigned to one PontoonBall.
+
+These one-to-one relationships ensure every football and every nation can only be used once, maintaining fairness throughout the competition.
+
+---
+
+## PontoonAccess
+
+Stores premium access information for users who purchase entry to the Pontoon competition.
+
+**Main fields**
 
 - user
 - has_access
@@ -345,46 +421,88 @@ Suggested fields:
 - amount_paid
 - created_at
 
----
+**Relationships**
 
-# Entity Relationship Diagram (ERD)
+- One User can have one PontoonAccess record.
 
-TO BE PROVIDED
+This model manages premium access following successful Stripe payments.
 
 ---
 
 # Technologies Used
 
-## Languages
+## Programming Languages
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 - Python
 
-## Frameworks & Libraries
+---
+
+## Frameworks and Libraries
 
 - Django
 - Bootstrap 5
-- Stripe
 - Django Allauth
+- Stripe
 - Font Awesome
 - Google Fonts
+
+---
+
+## Database
+
+- SQLite (Development)
+- PostgreSQL (Production)
+
+---
+
+## Deployment and Supporting Packages
+
+- Heroku
 - WhiteNoise
 - dj-database-url
-- PostgreSQL
+- Gunicorn
+- Psycopg
+
+---
+
+## Development Tools
+
+- Git
+- GitHub
+- Visual Studio Code
+- Balsamiq (Wireframes)
+- Google Chrome Developer Tools
+- Stripe CLI
+
+---
+
+## External Resources
+
+- **Flag Icons by Lipis** – National flag SVG icons used throughout the application.
+- **Mermaid** – Used to generate the Entity Relationship Diagram (ERD) within this README.
+- **Google Fonts** – Typography used throughout the application.
+- **Font Awesome** – Icons used throughout the user interface.
+- **FIFA** – Fixture information, tournament structure and participating nation data.
 
 ---
 
 # Code Standards
 
-Code was written following PEP8 guidelines where possible.
+The project was developed using consistent coding conventions to improve readability and maintainability.
+
+- Python code follows **PEP 8** style guidelines where possible.
+- Meaningful variable, function and model names have been used throughout.
+- Views and models contain descriptive comments and docstrings where appropriate.
+- HTML templates use consistent indentation and Django template syntax.
+- Bootstrap utility classes were combined with custom CSS to maintain a consistent visual style.
+- Git was used throughout development with small, logical commits documenting the project's progression.
 
 ---
 
 # Improvements Implemented During Development
-
-## Improvements Implemented During Development
 
 Although the project began with a defined set of user stories, several improvements were identified and implemented throughout development as testing progressed.
 
@@ -400,14 +518,14 @@ As the number of fixtures increased, navigation became more difficult. Matchday 
 
 Users can now filter fixtures by:
 
-* Matchday 1
-* Matchday 2
-* Matchday 3
-* Round of 32
-* Round of 16
-* Quarter Finals
-* Semi Finals
-* Final
+- Matchday 1
+- Matchday 2
+- Matchday 3
+- Round of 32
+- Round of 16
+- Quarter Finals
+- Semi Finals
+- Final
 
 #### Benefit
 
@@ -443,10 +561,10 @@ A dedicated payment confirmation page was introduced.
 
 The page now:
 
-* Confirms successful payment.
-* Explains that Pontoon access has been unlocked.
-* Provides a clear button to continue to the Pontoon game.
-* Displays the Stripe payment reference.
+- Confirms successful payment.
+- Explains that Pontoon access has been unlocked.
+- Provides a clear button to continue to the Pontoon game.
+- Displays the Stripe payment reference.
 
 #### Benefit
 
@@ -512,9 +630,9 @@ All positive scores used the same styling.
 
 Additional visual feedback was added:
 
-* Gold styling for winning scores.
-* Red styling for busted scores.
-* Clear status indicators for Winner, Active and Busted teams.
+- Gold styling for winning scores.
+- Red styling for busted scores.
+- Clear status indicators for Winner, Active and Busted teams.
 
 #### Benefit
 
@@ -536,10 +654,25 @@ A dedicated responsive breakpoint was introduced for smaller mobile devices. Bel
 
 This ensures that users on smaller mobile devices can clearly view and interact with both buttons without overlap or layout issues. The improvement increases accessibility, usability, and overall mobile responsiveness.
 
-
 ---
 
 # Testing
+
+## Relationship Testing
+
+The relationships defined within the application's database models were manually tested using both the Django administration panel and the application interface to ensure data integrity and enforce the intended business rules.
+
+| Relationship Tested | Expected Outcome | Result |
+|---------------------|------------------|--------|
+| One Team can appear in multiple Fixtures | Team records reused across fixtures | ✅ Pass |
+| One Fixture can contain multiple Predictions | Multiple users can predict the same fixture | ✅ Pass |
+| One User can create multiple Predictions | Users can predict every fixture | ✅ Pass |
+| One User can only select one Pontoon football | Second selection prevented | ✅ Pass |
+| One Team can only be assigned to one Pontoon football | Duplicate team assignments prevented | ✅ Pass |
+| One User can only have one Pontoon access record | Duplicate access records prevented | ✅ Pass |
+| Only users with Pontoon access can enter the game | Non-paying users redirected to checkout | ✅ Pass |
+
+The relationship testing confirmed that all database relationships behaved as expected and successfully enforced the application's business rules.
 
 ## Manual Testing
 
@@ -844,160 +977,6 @@ During deployment several issues were identified and resolved:
 
 ---
 
-# Screenshots
-
-## Home Page
-
-The Home Page introduces users to World Cup Hub 2026 and provides access to the Predictor and Pontoon games.
-
-![Home Page](documentation/screenshots/home-page.png)
-
----
-
-## Hero Section
-
-The homepage hero section provides World Cup branding and visual impact using a custom World Cup image.
-
-![Hero Section](documentation/screenshots/hero-section.png)
-
----
-
-## Fixtures Page
-
-The Fixtures page displays all World Cup fixtures and allows users to submit score predictions.
-
-![Fixtures Page](documentation/screenshots/fixtures-page.png)
-
----
-
-## Matchday Filtering
-
-Users can filter group stage fixtures by Matchday 1, Matchday 2 and Matchday 3.
-
-![Matchday Filtering](documentation/screenshots/matchday-filtering.png)
-
----
-
-## Knockout Stage Filtering
-
-Users can filter fixtures by tournament stage including the Round of 32, Round of 16, Quarter Finals, Semi Finals and Final.
-
-![Knockout Stage Filtering](documentation/screenshots/knockout-stage-filtering.png)
-
----
-
-## Prediction Submission
-
-Users can enter score predictions and save multiple predictions simultaneously.
-
-![Prediction Submission](documentation/screenshots/prediction-submission.png)
-
----
-
-## Prediction Locked
-
-Once a fixture has kicked off, predictions become locked and can no longer be edited.
-
-![Prediction Locked](documentation/screenshots/prediction-locked.png)
-
----
-
-## My Predictions
-
-Users can review, edit and delete their saved predictions before fixtures lock.
-
-![My Predictions](documentation/screenshots/my-predictions.png)
-
----
-
-## Prediction Leaderboard
-
-The leaderboard ranks users based on their total prediction points.
-
-![Prediction Leaderboard](documentation/screenshots/prediction-leaderboard.png)
-
----
-
-## Login Page
-
-Users can log into existing accounts.
-
-![Login Page](documentation/screenshots/login-page.png)
-
----
-
-## Sign Up Page
-
-New users can create an account to participate in the games.
-
-![Sign Up Page](documentation/screenshots/sign-up-page.png)
-
----
-
-## Logout Page
-
-Users can securely log out of their account.
-
-![Logout Page](documentation/screenshots/logout-page.png)
-
----
-
-## Pontoon Home Page
-
-The Pontoon game allows users to select a football and reveal a randomly assigned World Cup nation.
-
-![Pontoon Home](documentation/screenshots/pontoon-home.png)
-
----
-
-## Pontoon Team Selection
-
-Users must confirm their football selection before proceeding.
-
-![Pontoon Team Selection](documentation/screenshots/pontoon-confirm-selection.png)
-
----
-
-## Pontoon Team Display
-
-After selecting a football, users can view their assigned team and current score.
-
-![Pontoon Team Display](documentation/screenshots/pontoon-team-display.png)
-
----
-
-## Pontoon Leaderboard
-
-The Pontoon leaderboard displays rankings, scores and player status.
-
-![Pontoon Leaderboard](documentation/screenshots/pontoon-leaderboard.png)
-
----
-
-## Pontoon Payment Page
-
-Users can purchase access to the Pontoon game through Stripe.
-
-![Pontoon Payment](documentation/screenshots/pontoon-payment-page.png)
-
----
-
-## Admin Panel
-
-The Django administration panel allows fixtures, teams and results to be managed.
-
-![Admin Panel](documentation/screenshots/admin-panel.png)
-
----
-
-## Mobile Responsive Design
-
-The application has been tested across mobile devices and remains fully responsive.
-
-![Mobile Responsive Design](documentation/screenshots/mobile-responsive-design.png)
-
----
-
 # Challenges Faced & Solutions
 
 ## Initial Database Setup
@@ -1196,6 +1175,7 @@ Users can now view:
 - Round of 16
 - Quarter Finals
 - Semi Finals
+- Third/Fourth play off
 - Final
 
 ### Learning Outcome
@@ -1268,26 +1248,6 @@ This demonstrated how visual design choices can significantly improve usability 
 
 ---
 
-## Hero Image Not Displaying
-
-### Challenge
-
-After implementing the World Cup hero image, the image appeared to be missing despite existing within the static files directory.
-
-### Cause
-
-The browser was serving a cached version of the stylesheet rather than the updated CSS.
-
-### Solution
-
-The static file path was verified and a hard refresh was performed to clear the browser cache.
-
-### Learning Outcome
-
-This highlighted the importance of browser caching when working with static assets.
-
----
-
 ## Duplicate Template Block Error
 
 ### Challenge
@@ -1324,60 +1284,26 @@ This reinforced the importance of carefully reviewing templates when merging lar
 
 ---
 
-## Removing Unused Stadium Functionality
+## README Wireframe Images
 
 ### Challenge
 
-The fixtures page displayed:
-
-```text
-Stadium: None
-```
-
-for every fixture.
+After adding wireframe images to the README, GitHub displayed broken image icons instead of the images, despite the Markdown paths appearing to be correct.
 
 ### Cause
 
-Although a Stadium model existed from an earlier design iteration, stadium information was no longer being used within the project.
+The wireframe images were referenced using the correct Markdown paths, however the PNG files had been saved in `static/images/` instead of the intended `static/images/wireframes/` directory. As a result, GitHub could not locate the files and displayed broken image links in the README.
 
 ### Solution
 
-The stadium display was removed from fixture templates.
+The image file locations were verified using the terminal. After confirming that the `wireframes` folder was empty, the PNG files were moved into the correct directory:
 
-```html
-<p>Stadium: {{ fixture.stadium }}</p>
+```text
+static/images/wireframes/
 ```
+
+Using **Reveal in File Explorer** within VS Code helped confirm the actual file locations before committing the changes to GitHub.
 
 ### Learning Outcome
 
-This demonstrated the importance of simplifying applications by removing unused functionality and reducing visual clutter.
-
----
-
-## Font Integration and Branding
-
-### Challenge
-
-The original typography relied entirely on default Bootstrap styling and lacked a unique visual identity.
-
-### Solution
-
-Google Fonts were introduced:
-
-- Oswald
-- Roboto
-
-Font Awesome icons were added throughout the application including:
-
-```html
-<i class="fa-solid fa-house"></i>
-<i class="fa-solid fa-trophy"></i>
-<i class="fa-solid fa-futbol"></i>
-```
-
-### Learning Outcome
-
-This demonstrated how third-party resources can improve branding and usability while maintaining responsiveness.
-
----
-
+This reinforced the importance of verifying the physical location of files rather than relying solely on the VS Code Explorer. It also highlighted how GitHub resolves relative file paths in Markdown and demonstrated the value of using terminal commands such as `dir` and `git ls-files` to diagnose file path issues.
