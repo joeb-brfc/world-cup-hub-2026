@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ team.name }} Fact File | World Cup Hub 2026
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <a href="{% url 'team_list' %}" class="wc-btn-outline mb-4">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Teams
+    </a>
+
+    <div class="card shadow-sm">
+        <div class="card-body text-center p-4">
+
+            <img src="{% static 'images/flags/' %}{{ team.name|slugify }}.svg"
+                 alt="{{ team.name }} flag"
+                 width="96"
+                 class="mb-3">
+
+            <h1>{{ team.name }}</h1>
+
+            <p class="lead mb-0">
+                Group {{ team.group }}
+            </p>
+
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
