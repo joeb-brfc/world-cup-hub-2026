@@ -15,6 +15,7 @@
     </a>
 
     <div class="card shadow-sm">
+
         <div class="card-body text-center p-4">
 
             <img src="{% static 'images/flags/' %}{{ team.name|slugify }}.svg"
@@ -24,11 +25,36 @@
 
             <h1>{{ team.name }}</h1>
 
-            <p class="lead mb-0">
+            <p class="lead mb-4">
                 Group {{ team.group }}
             </p>
 
+            <div class="row text-start">
+
+                <div class="col-12 col-md-6 mb-3">
+                    <h2 class="h5">Manager</h2>
+                    <p>{{ team.manager|default:"To be confirmed" }}</p>
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                    <h2 class="h5">Captain</h2>
+                    <p>{{ team.captain|default:"To be confirmed" }}</p>
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                    <h2 class="h5">Best World Cup Finish</h2>
+                    <p>{{ team.best_world_cup_finish|default:"To be confirmed" }}</p>
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                    <h2 class="h5">Best Finish Year</h2>
+                    <p>{{ team.best_world_cup_year|default:"To be confirmed" }}</p>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 
 </section>
