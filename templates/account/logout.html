@@ -1,4 +1,4 @@
-```html {% extends "base.html" %} {% block title %} Sign Out | World Cup Hub 2026 {% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %} Sign Out | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
   <div class="row justify-content-center">
@@ -15,19 +15,21 @@
         <form method="post">
           {% csrf_token %}
 
-          <button type="submit" class="wc-btn-danger me-2">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign Out
-          </button>
+          <div class="mobile-button-stack">
+            <button type="submit" class="wc-btn-danger me-sm-2">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </button>
 
-          <a href="{% url 'home' %}" class="wc-btn-outline">
-            <i class="fa-solid fa-house"></i>
-            Cancel
-          </a>
+            <a href="{% url 'home' %}" class="wc-btn-outline">
+              <i class="fa-solid fa-house"></i>
+              Cancel
+            </a>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-{% endblock %} ```
+{% endblock %}

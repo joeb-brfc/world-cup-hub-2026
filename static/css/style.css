@@ -561,3 +561,83 @@ section .card.border-0 {
         margin: 0 !important;
     }
 }
+
+/* Mobile polish */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .card,
+    .wc-card {
+        margin-bottom: 1.25rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2,
+    .h4,
+    .h5 {
+        overflow-wrap: anywhere;
+    }
+
+    .pontoon-team-name,
+    .team-name {
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.15rem;
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+    }
+
+    .fixture-prediction-row,
+    .prediction-user-row {
+        overflow-wrap: anywhere;
+    }
+
+    .mobile-button-stack .btn,
+    .mobile-button-stack .wc-btn-primary,
+    .mobile-button-stack .wc-btn-outline,
+    .mobile-button-stack .wc-btn-danger,
+    .mobile-button-stack .pontoon-button,
+    .mobile-button-stack .choose-football-btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+
+    .mobile-button-stack .btn:last-child,
+    .mobile-button-stack .wc-btn-primary:last-child,
+    .mobile-button-stack .wc-btn-outline:last-child,
+    .mobile-button-stack .wc-btn-danger:last-child,
+    .mobile-button-stack .pontoon-button:last-child,
+    .mobile-button-stack .choose-football-btn:last-child {
+        margin-bottom: 0;
+    }
+
+    .auth-panel .wc-btn-primary,
+    .auth-panel .wc-btn-outline,
+    .auth-panel .wc-btn-danger {
+        display: block;
+        width: 100%;
+        margin-top: 0.75rem;
+        text-align: center;
+    }
+
+    .table-responsive-mobile {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
