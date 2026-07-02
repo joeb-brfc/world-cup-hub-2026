@@ -640,4 +640,14 @@ section .card.border-0 {
         width: 100%;
         overflow-x: auto;
     }
+
+    .prediction-actions {
+        align-items: flex-start;
+    }
+
+    .prediction-actions a {
+        width: 220px;
+        max-width: 100%;
+        text-align: center;
+    }
 }

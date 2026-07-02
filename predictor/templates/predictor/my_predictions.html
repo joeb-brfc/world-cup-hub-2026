@@ -30,9 +30,11 @@
 
       <p class="mb-0">Stage: {{ prediction.fixture.get_stage_display }}</p>
 
-      <a href="{% url 'create_prediction' prediction.fixture.id %}" class="wc-btn-primary mt-3"> Edit Prediction </a>
+      <div class="d-flex flex-column flex-sm-row gap-2 mt-3 prediction-actions">
+        <a href="{% url 'create_prediction' prediction.fixture.id %}" class="wc-btn-primary"> Edit Prediction </a>
 
-      <a href="{% url 'delete_prediction' prediction.id %}" class="wc-btn-danger mt-3"> Delete Prediction </a>
+        <a href="{% url 'delete_prediction' prediction.id %}" class="wc-btn-danger"> Delete Prediction </a>
+      </div>
     </div>
   </div>
 

@@ -13,41 +13,21 @@
       <p>Choose one numbered football to reveal your hidden World Cup team. Once selected, you cannot change your football.</p>
 
       <ul class="instruction-list mb-0">
-        <li>
-          <i class="fa-solid fa-plus text-success me-2"></i>
-          Each goal scored by your team is worth 2 points.
-        </li>
-
-        <li>
-          <i class="fa-solid fa-minus text-danger me-2"></i>
-          Each goal conceded by your team deducts 1 point.
-        </li>
-
-        <li>
-          <i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
-          If your team goes over 21 points, you are bust.
-        </li>
-
-        <li>
-          <i class="fa-solid fa-crown text-warning me-2"></i>
-          First team to reach 21 points wins.
-        </li>
-
-        <li>
-          <i class="fa-solid fa-trophy text-warning me-2"></i>
-          If no team reaches 21 points, the team closest to 21 points wins.
-        </li>
+        <li><i class="fa-solid fa-plus text-success me-2"></i>Each goal scored by your team is worth 2 points.</li>
+        <li><i class="fa-solid fa-minus text-danger me-2"></i>Each goal conceded by your team deducts 1 point.</li>
+        <li><i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>If your team goes over 21 points, you are bust.</li>
+        <li><i class="fa-solid fa-crown text-warning me-2"></i>First team to reach 21 points wins.</li>
+        <li><i class="fa-solid fa-trophy text-warning me-2"></i>If no team reaches 21 points, the team closest to 21 points wins.</li>
       </ul>
     </div>
   </div>
 
   <!-- Selected team summary -->
   {% if selected_ball %}
-
   <div class="pontoon-team-panel mb-4">
     <h2 class="h5">Your Pontoon Team</h2>
 
-    <p class="mb-1">
+    <p class="mb-1 pontoon-team-name">
       <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" class="me-2" />
 
       {{ selected_ball.team }}
@@ -77,23 +57,19 @@
       {% endif %}
     </p>
   </div>
-
   {% endif %}
 
   <!-- Available footballs -->
   <div class="row">
     {% for ball in balls %}
 
-    <!-- Individual football card -->
     <div class="col-6 col-md-3 mb-3">
       <div class="card text-center shadow-sm h-100">
         <div class="card-body">
           {% if ball.selected_by %}
 
-          <h2 class="h5">
+          <h2 class="h5 pontoon-team-name">
             <img src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg" alt="{{ ball.team.name }} flag" width="32" class="mb-2" />
-
-            <br />
 
             {{ ball.team }}
           </h2>
@@ -119,7 +95,61 @@
   <!-- Pontoon leaderboard -->
   <h2 class="mt-5">Pontoon Leaderboard</h2>
 
-  <div class="table-responsive">
+  <!-- Mobile leaderboard cards -->
+  <div class="d-md-none">
+    {% for ball in leaderboard_balls %}
+
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <h3 class="h5 mb-3">{% if forloop.counter == 1 %} 🥇 {% elif forloop.counter == 2 %} 🥈 {% elif forloop.counter == 3 %} 🥉 {% else %} {{ forloop.counter }}. {% endif %} {{ ball.selected_by.username }}</h3>
+
+        <p class="mb-2">
+          <strong>Team:</strong>
+
+          <img src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg" alt="{{ ball.team.name }} flag" width="24" class="me-2" />
+
+          {{ ball.team }}
+        </p>
+
+        <p class="mb-2">
+          <strong>Score:</strong>
+
+          {% if ball.busted %}
+          <span class="score-negative">+{{ ball.score }}</span>
+          {% elif ball.score == 21 %}
+          <span class="pontoon-winner">+{{ ball.score }}</span>
+          {% elif ball.score > 0 %}
+          <span class="score-positive">+{{ ball.score }}</span>
+          {% elif ball.score < 0 %}
+          <span class="score-negative">{{ ball.score }}</span>
+          {% else %}
+          <span class="score-neutral">{{ ball.score }}</span>
+          {% endif %}
+        </p>
+
+        <p class="mb-0">
+          <strong>Status:</strong>
+
+          {% if ball.score == 21 %}
+          <span class="pontoon-winner">👑 Winner</span>
+          {% elif ball.busted %}
+          <span class="pontoon-busted">✖ Busted</span>
+          {% else %}
+          <span class="pontoon-active">✔ Active</span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    {% empty %}
+
+    <div class="alert alert-info">No Pontoon teams have been selected yet.</div>
+
+    {% endfor %}
+  </div>
+
+  <!-- Desktop leaderboard table -->
+  <div class="table-responsive d-none d-md-block">
     <table class="table">
       <thead>
         <tr>
