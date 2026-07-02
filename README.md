@@ -853,6 +853,12 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 | Tablet | Layout adjusted correctly |
 | Mobile | Content remained readable and responsive |
 
+### Mobile Responsive Layout
+
+![Mobile Responsive Layout](static/images/testing-screenshots/mobile-alt.png)
+
+*Figure 17: Mobile layout demonstrating responsive navigation, Pontoon game cards and the mobile-friendly Pontoon leaderboard.*
+
 ---
 
 ## Browser Compatibility Testing
