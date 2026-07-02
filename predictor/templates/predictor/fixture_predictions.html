@@ -12,7 +12,7 @@
     <div class="card-body">
       {% for prediction in predictions %}
 
-      <p>{{ prediction.user.username }}: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
+      <p class="prediction-user-row mb-3"><strong>{{ prediction.user.username }}</strong>: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
 
       {% empty %}
 
