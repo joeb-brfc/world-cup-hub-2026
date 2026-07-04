@@ -1,77 +1,56 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-My Predictions | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block title %} My Predictions | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
-    <h1 class="mb-4">My Predictions</h1>
+  <h1 class="mb-4">My Predictions</h1>
 
-    <!-- User prediction history -->
-    {% for prediction in predictions %}
+  <!-- User prediction history -->
+  {% for prediction in predictions %}
 
-    <div class="card mb-3 shadow-sm">
-        <div class="card-body">
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h2 class="h5 d-flex align-items-center flex-wrap gap-2">
+        <img src="{% static 'images/flags/' %}{{ prediction.fixture.home_team.name|slugify }}.svg" alt="{{ prediction.fixture.home_team }} flag" width="28" />
 
-            <h2 class="h5">
-                <img src="{% static 'images/flags/' %}{{ prediction.fixture.home_team.name|slugify }}.svg"
-                     alt="{{ prediction.fixture.home_team }} flag"
-                     width="28"
-                     class="me-2">
+        <span>{{ prediction.fixture.home_team }}</span>
 
-                {{ prediction.fixture.home_team }}
+        <span>vs</span>
 
-                <span class="mx-2">vs</span>
+        <span>{{ prediction.fixture.away_team }}</span>
 
-                <img src="{% static 'images/flags/' %}{{ prediction.fixture.away_team.name|slugify }}.svg"
-                     alt="{{ prediction.fixture.away_team }} flag"
-                     width="28"
-                     class="me-2">
+        <img src="{% static 'images/flags/' %}{{ prediction.fixture.away_team.name|slugify }}.svg" alt="{{ prediction.fixture.away_team }} flag" width="28" />
+      </h2>
 
-                {{ prediction.fixture.away_team }}
-            </h2>
+      <p class="mb-1">
+        Result: {% if prediction.fixture.home_team_score is not None and prediction.fixture.away_team_score is not None %}
+        <strong> {{ prediction.fixture.home_team_score }} - {{ prediction.fixture.away_team_score }} </strong>
+        {% else %}
+        <span class="score-neutral">TBC</span>
+        {% endif %}
+      </p>
 
-            <p class="prediction-detail">
-                Your prediction:
-                <strong>
-                    {{ prediction.predicted_home_score }} -
-                    {{ prediction.predicted_away_score }}
-                </strong>
-            </p>
+      <p class="mb-1">
+        Points awarded: {% if prediction.points_awarded > 0 %}
+        <span class="score-positive">{{ prediction.points_awarded }}</span>
+        {% else %}
+        <span class="score-neutral">{{ prediction.points_awarded }}</span>
+        {% endif %}
+      </p>
 
-            <p class="mb-1">
-                Points awarded:
+      <p class="mb-0">Stage: {{ prediction.fixture.get_stage_display }}</p>
 
-                {% if prediction.points_awarded > 0 %}
-                    <span class="score-positive">{{ prediction.points_awarded }}</span>
-                {% else %}
-                    <span class="score-neutral">{{ prediction.points_awarded }}</span>
-                {% endif %}
-            </p>
+      <div class="d-flex flex-column flex-sm-row gap-2 mt-3 prediction-actions">
+        <a href="{% url 'create_prediction' prediction.fixture.id %}" class="wc-btn-primary"> Edit Prediction </a>
 
-            <p class="mb-0">Stage: {{ prediction.fixture.get_stage_display }}</p>
-
-            <div class="d-flex flex-column flex-sm-row gap-2 mt-3 prediction-actions">
-                <a href="{% url 'create_prediction' prediction.fixture.id %}" class="wc-btn-primary">
-                    Edit Prediction
-                </a>
-
-                <a href="{% url 'delete_prediction' prediction.id %}" class="wc-btn-danger">
-                    Delete Prediction
-                </a>
-            </div>
-
-        </div>
+        <a href="{% url 'delete_prediction' prediction.id %}" class="wc-btn-danger"> Delete Prediction </a>
+      </div>
     </div>
+  </div>
 
-    {% empty %}
+  {% empty %}
 
-    <p>You have not made any predictions yet.</p>
+  <p>You have not made any predictions yet.</p>
 
-    {% endfor %}
+  {% endfor %}
 </section>
 
 {% endblock %}

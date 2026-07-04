@@ -73,7 +73,15 @@
             <p class="mb-1">Matchday: {{ fixture.matchday }}</p>
             {% endif %}
 
-            <p class="mb-0">Kickoff: {{ fixture.kickoff_time }}</p>
+            <p class="mb-1">Kickoff: {{ fixture.kickoff_time }}</p>
+
+            <p class="mb-0">
+              Result: {% if fixture.home_team_score is not None and fixture.away_team_score is not None %}
+              <strong>{{ fixture.home_team_score }} - {{ fixture.away_team_score }}</strong>
+              {% else %}
+              <span class="score-neutral">TBC</span>
+              {% endif %}
+            </p>
 
             <!-- Existing prediction -->
             {% if fixture.user_prediction %}

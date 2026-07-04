@@ -28,9 +28,9 @@
     <h2 class="h5">Your Pontoon Team</h2>
 
     <p class="mb-1 pontoon-team-name">
-      <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" class="me-2" />
+      <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" />
 
-      {{ selected_ball.team }}
+      <span>{{ selected_ball.team }}</span>
     </p>
 
     <p class="mb-1">
@@ -69,9 +69,9 @@
           {% if ball.selected_by %}
 
           <h2 class="h5 pontoon-team-name">
-            <img src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg" alt="{{ ball.team.name }} flag" width="32" class="mb-2" />
+            <img src="{% static 'images/flags/' %}{{ ball.team.name|slugify }}.svg" alt="{{ ball.team.name }} flag" width="32" />
 
-            {{ ball.team }}
+            <span>{{ ball.team }}</span>
           </h2>
 
           <p class="mb-0">Taken by {{ ball.selected_by.username }}</p>
