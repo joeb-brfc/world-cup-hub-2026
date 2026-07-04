@@ -20,6 +20,11 @@
         <img src="{% static 'images/flags/' %}{{ prediction.fixture.away_team.name|slugify }}.svg" alt="{{ prediction.fixture.away_team }} flag" width="28" />
       </h2>
 
+      <p class="prediction-detail">
+        Your prediction:
+        <strong> {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }} </strong>
+      </p>
+
       <p class="mb-1">
         Result: {% if prediction.fixture.home_team_score is not None and prediction.fixture.away_team_score is not None %}
         <strong> {{ prediction.fixture.home_team_score }} - {{ prediction.fixture.away_team_score }} </strong>
@@ -30,9 +35,9 @@
 
       <p class="mb-1">
         Points awarded: {% if prediction.points_awarded > 0 %}
-        <span class="score-positive">{{ prediction.points_awarded }}</span>
+        <span class="score-positive"> {{ prediction.points_awarded }} </span>
         {% else %}
-        <span class="score-neutral">{{ prediction.points_awarded }}</span>
+        <span class="score-neutral"> {{ prediction.points_awarded }} </span>
         {% endif %}
       </p>
 
