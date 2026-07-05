@@ -333,6 +333,56 @@ h5 {
     font-weight: 800;
 }
 
+/* Fixture status and prediction feedback */
+
+.fixture-score {
+    color: var(--wc-pitch-green);
+    font-weight: 900;
+}
+
+.fixture-status,
+.prediction-feedback {
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 800;
+    padding: 0.4rem 0.8rem;
+}
+
+.status-open {
+    background: #eaf8ee;
+    color: var(--wc-green);
+}
+
+.status-live {
+    background: #fff3cd;
+    color: #9a6b00;
+}
+
+.status-complete {
+    background: #e8f0ff;
+    color: var(--wc-blue);
+}
+
+.feedback-exact {
+    background: #fff8df;
+    color: var(--wc-gold);
+}
+
+.feedback-correct {
+    background: #eaf8ee;
+    color: var(--wc-green);
+}
+
+.feedback-incorrect {
+    background: #ffecec;
+    color: var(--wc-red);
+}
+
+.feedback-awaiting {
+    background: #eeeeee;
+    color: #666;
+}
+
 /* Score inputs */
 
 input[type="number"] {
