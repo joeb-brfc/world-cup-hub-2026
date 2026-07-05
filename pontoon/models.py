@@ -79,12 +79,14 @@ class PontoonBall(models.Model):
 
     # Updates the team's score and checks whether they are bust.
     def update_score(self):
+        # Once a team is bust, its score should stay fixed.
+        if self.busted:
+            return
+
         self.score = self.calculate_score()
 
         if self.score > 21:
             self.busted = True
-        else:
-            self.busted = False
 
         self.save()
 
