@@ -233,7 +233,7 @@ The homepage introduces World Cup Hub 2026 and provides a clear overview of both
 
 ## Authentication
 
-User registration and authentication are handled using Django Allauth. Registered users can securely sign up, log in and log out, with protected areas ensuring only authenticated users can access game functionality.
+User registration and authentication are handled using Django Allauth. Registered users can securely sign up, log in, log out and reset their password using an email-based password reset flow. Protected areas ensure only authenticated users can access game functionality.
 
 ---
 
@@ -949,7 +949,7 @@ The leaderboard automatically recalculated and displayed the correct rankings.
 
 *Figure 5: Fixture page displaying available fixtures and prediction inputs.*
 
-![Fixture Filtering](static/images/testing-screenshots/filteres-fixtures-1.png)
+![Fixture Filtering](static/images/testing-screenshots/filtered-fixtures-1.png)
 
 *Figure 6: Matchday filtering displaying selected fixtures only.*
 
