@@ -3,28 +3,23 @@ from django.http import HttpResponse
 from .models import PontoonAccess
 
 
+# Handles incoming Stripe webhook events.
 class StripeWH_Handler:
-    """
-    Handles Stripe webhook events.
-    """
 
     def __init__(self, request):
+        # Store the incoming webhook request.
         self.request = request
 
+    # Handles webhook events that do not have a dedicated handler.
     def handle_event(self, event):
-        """
-        Handles generic or unexpected webhook events.
-        """
 
         return HttpResponse(
             content=f"Unhandled webhook received: {event['type']}",
             status=200
         )
 
+    # Handles successful Stripe payments.
     def handle_payment_intent_succeeded(self, event):
-        """
-        Handles successful payment events from Stripe.
-        """
 
         intent = event.data.object
 
@@ -37,10 +32,8 @@ class StripeWH_Handler:
             status=200
         )
 
+    # Handles failed Stripe payment attempts.
     def handle_payment_intent_payment_failed(self, event):
-        """
-        Handles failed payment events.
-        """
 
         return HttpResponse(
             content="Webhook received: payment_intent.payment_failed",

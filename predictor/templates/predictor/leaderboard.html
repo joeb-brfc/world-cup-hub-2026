@@ -16,9 +16,11 @@
         </thead>
 
         <tbody>
+          <!-- Display users in descending points order -->
           {% for user in leaderboard %}
 
           <tr>
+            <!-- Award medal icons to the top three users -->
             <td>{% if forloop.counter == 1 %} 🥇 {% elif forloop.counter == 2 %} 🥈 {% elif forloop.counter == 3 %} 🥉 {% else %} {{ forloop.counter }}. {% endif %}</td>
 
             <td>{{ user.user__username }}</td>
@@ -28,6 +30,7 @@
 
           {% empty %}
 
+          <!-- Displayed if no prediction data exists -->
           <tr>
             <td colspan="3">No leaderboard data available.</td>
           </tr>

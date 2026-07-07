@@ -1,56 +1,33 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-Team Fact Files | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block title %} Team Fact Files | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <!-- Page heading -->
+  <h1 class="mb-4">Team Fact Files</h1>
 
-    <h1 class="mb-4">Team Fact Files</h1>
+  <p class="lead">Browse the qualified World Cup nations and view key tournament information.</p>
 
-    <p class="lead">
-        Browse the qualified World Cup nations and view key tournament information.
-    </p>
+  <div class="row">
+    <!-- Display a card for each qualified team -->
+    {% for team in teams %}
 
-    <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-sm h-100 text-center">
+        <div class="card-body">
+          <!-- Team flag and summary -->
+          <img src="{% static 'images/flags/' %}{{ team.name|slugify }}.svg" alt="{{ team.name }} flag" width="64" class="mb-3" />
 
-        {% for team in teams %}
+          <h2 class="h4">{{ team.name }}</h2>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <p class="mb-2">Group {{ team.group }}</p>
 
-            <div class="card shadow-sm h-100 text-center">
-
-                <div class="card-body">
-
-                    <img src="{% static 'images/flags/' %}{{ team.name|slugify }}.svg"
-                         alt="{{ team.name }} flag"
-                         width="64"
-                         class="mb-3">
-
-                    <h2 class="h4">{{ team.name }}</h2>
-
-                    <p class="mb-2">
-                        Group {{ team.group }}
-                    </p>
-
-                    <a href="{% url 'team_detail' team.id %}"
-                       class="wc-btn-primary">
-                        View Fact File
-                    </a>
-
-                </div>
-
-            </div>
-
+          <!-- Link to the team's fact file -->
+          <a href="{% url 'team_detail' team.id %}" class="wc-btn-primary"> View Fact File </a>
         </div>
-
-        {% endfor %}
-
+      </div>
     </div>
 
+    {% endfor %}
+  </div>
 </section>
 
 {% endblock %}

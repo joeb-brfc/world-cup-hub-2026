@@ -6,24 +6,31 @@ from django.contrib import messages
 from .models import PontoonBall, PontoonAccess
 
 
-# Displays the Pontoon game page for users with access.
+# Displays the Pontoon game.
+# Only users who have purchased access can enter the game.
 @login_required
 def pontoon_home(request):
+
+    # Check whether the logged-in user has paid for Pontoon access.
     access = PontoonAccess.objects.filter(
         user=request.user,
         has_access=True
     ).exists()
 
+    # Redirect users without access to the checkout page.
     if not access:
         return redirect("pontoon_checkout")
 
+    # Display all footballs in numerical order.
     balls = PontoonBall.objects.all().order_by("number")
 
-    # Leaderboard only includes footballs that have been selected.
+    # Build the Pontoon leaderboard using footballs that have been selected.
+    # Active teams are shown first, followed by busted teams.
     leaderboard_balls = PontoonBall.objects.filter(
         selected_by__isnull=False
     ).order_by("busted", "-score")
 
+    # Retrieve the football selected by the current user, if one exists.
     selected_ball = PontoonBall.objects.filter(
         selected_by=request.user
     ).first()
@@ -37,15 +44,17 @@ def pontoon_home(request):
     return render(request, "pontoon/pontoon_home.html", context)
 
 
-# Assigns a football to the logged-in user.
+# Allows a user to select one numbered football.
 @login_required
 def select_ball(request, ball_id):
+
+    # Retrieve the selected football.
     ball = get_object_or_404(
         PontoonBall,
         id=ball_id
     )
 
-    # Prevent users selecting a football that has already been taken.
+    # Prevent users selecting a football that has already been claimed.
     if ball.selected_by:
         messages.error(
             request,
@@ -65,6 +74,7 @@ def select_ball(request, ball_id):
         )
         return redirect("pontoon_home")
 
+    # Assign the football to the logged-in user.
     ball.selected_by = request.user
     ball.save()
 
@@ -76,15 +86,16 @@ def select_ball(request, ball_id):
     return redirect("pontoon_home")
 
 
-# Shows a confirmation page before the football is selected.
+# Displays the countdown and confirmation page before revealing a football.
 @login_required
 def confirm_ball(request, ball_id):
+
     ball = get_object_or_404(
         PontoonBall,
         id=ball_id
     )
 
-    # Prevent the confirmation page showing for a football already taken.
+    # Prevent users accessing the confirmation page for an already selected football.
     if ball.selected_by:
         messages.error(
             request,
@@ -96,7 +107,7 @@ def confirm_ball(request, ball_id):
         selected_by=request.user
     ).exists()
 
-    # Prevent users who already have a football reaching the confirmation page.
+    # Prevent users who already own a football from accessing this page.
     if already_selected:
         messages.error(
             request,
@@ -113,11 +124,14 @@ def confirm_ball(request, ball_id):
     )
 
 
-# Creates a Stripe PaymentIntent for Pontoon access.
+# Creates a Stripe PaymentIntent for premium Pontoon access.
 @login_required
 def pontoon_checkout(request):
+
+    # Use the Stripe secret key stored in the project's settings.
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
+    # Create a PaymentIntent ready for Stripe Checkout.
     intent = stripe.PaymentIntent.create(
         amount=settings.STRIPE_PONTOON_PRICE,
         currency="gbp",
@@ -136,15 +150,18 @@ def pontoon_checkout(request):
     return render(request, "pontoon/pontoon_checkout.html", context)
 
 
-# Grants Pontoon access after a successful payment redirect.
+# Grants access to the Pontoon game after a successful payment.
 @login_required
 def pontoon_payment_success(request):
+
     payment_intent = request.GET.get("payment_intent")
 
+    # Create an access record if one does not already exist.
     access, created = PontoonAccess.objects.get_or_create(
         user=request.user
     )
 
+    # Mark the user as having access and store the Stripe payment reference.
     access.has_access = True
     access.stripe_pid = payment_intent
     access.save()

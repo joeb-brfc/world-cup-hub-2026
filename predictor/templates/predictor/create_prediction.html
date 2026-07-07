@@ -3,14 +3,14 @@
 <section class="container py-5">
   <h1 class="mb-4">Make Prediction</h1>
 
-  <!-- Fixture information -->
+  <!-- Selected fixture -->
   <div class="card shadow-sm mb-4">
     <div class="card-body">
       <h2 class="h5">{{ fixture.home_team }} vs {{ fixture.away_team }}</h2>
 
       <p class="mb-1">Stage: {{ fixture.get_stage_display }}</p>
 
-      <p class="mb-0">Kickoff: {{ fixture.kickoff }}</p>
+      <p class="mb-0">Kickoff: {{ fixture.kickoff_time|date:"D d M Y H:i" }}</p>
     </div>
   </div>
 
@@ -20,6 +20,7 @@
 
     <button type="submit" class="btn wc-wc-btn-primary">Save Prediction</button>
 
+    <!-- Return to the user's prediction list -->
     <a href="{% url 'my_predictions' %}" class="btn btn-outline-secondary"> Back to Predictions </a>
   </form>
 </section>

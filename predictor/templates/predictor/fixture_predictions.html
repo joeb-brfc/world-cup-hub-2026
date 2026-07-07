@@ -3,13 +3,15 @@
 <section class="container py-5">
   <h1 class="mb-4">Fixture Predictions</h1>
 
+  <!-- Selected fixture -->
   <h2 class="h4 mb-4">{{ fixture.home_team }} vs {{ fixture.away_team }}</h2>
 
-  <!-- Display predictions once the fixture has kicked off -->
+  <!-- Display predictions once the fixture is locked -->
   {% if fixture.predictions_locked %}
 
   <div class="card shadow-sm">
     <div class="card-body">
+      <!-- List all submitted predictions -->
       {% for prediction in predictions %}
 
       <p class="prediction-user-row mb-3"><strong>{{ prediction.user.username }}</strong>: {{ prediction.predicted_home_score }} - {{ prediction.predicted_away_score }}</p>
@@ -24,11 +26,12 @@
 
   {% else %}
 
-  <!-- Hide predictions before kickoff to prevent copying -->
+  <!-- Prevent users from viewing predictions before kick-off -->
   <div class="alert alert-warning">Predictions are hidden until this fixture is locked.</div>
 
   {% endif %}
 
+  <!-- Return to the fixture list -->
   <a href="{% url 'fixtures' %}" class="btn btn-secondary mt-4"> Back to Fixtures </a>
 </section>
 

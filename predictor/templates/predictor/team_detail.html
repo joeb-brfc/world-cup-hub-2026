@@ -1,62 +1,45 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-{{ team.name }} Fact File | World Cup Hub 2026
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block title %} {{ team.name }} Fact File | World Cup Hub 2026 {% endblock %} {% block content %}
 
 <section class="container py-5">
+  <!-- Return to the team directory -->
+  <a href="{% url 'team_list' %}" class="wc-btn-outline mb-4">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back to Teams
+  </a>
 
-    <a href="{% url 'team_list' %}" class="wc-btn-outline mb-4">
-        <i class="fa-solid fa-arrow-left"></i>
-        Back to Teams
-    </a>
+  <div class="card shadow-sm">
+    <div class="card-body text-center p-4">
+      <!-- Team flag and basic information -->
+      <img src="{% static 'images/flags/' %}{{ team.name|slugify }}.svg" alt="{{ team.name }} flag" width="96" class="mb-3" />
 
-    <div class="card shadow-sm">
+      <h1>{{ team.name }}</h1>
 
-        <div class="card-body text-center p-4">
+      <p class="lead mb-4">Group {{ team.group }}</p>
 
-            <img src="{% static 'images/flags/' %}{{ team.name|slugify }}.svg"
-                 alt="{{ team.name }} flag"
-                 width="96"
-                 class="mb-3">
-
-            <h1>{{ team.name }}</h1>
-
-            <p class="lead mb-4">
-                Group {{ team.group }}
-            </p>
-
-            <div class="row text-start">
-
-                <div class="col-12 col-md-6 mb-3">
-                    <h2 class="h5">Manager</h2>
-                    <p>{{ team.manager|default:"To be confirmed" }}</p>
-                </div>
-
-                <div class="col-12 col-md-6 mb-3">
-                    <h2 class="h5">Captain</h2>
-                    <p>{{ team.captain|default:"To be confirmed" }}</p>
-                </div>
-
-                <div class="col-12 col-md-6 mb-3">
-                    <h2 class="h5">Best World Cup Finish</h2>
-                    <p>{{ team.best_world_cup_finish|default:"To be confirmed" }}</p>
-                </div>
-
-                <div class="col-12 col-md-6 mb-3">
-                    <h2 class="h5">Best Finish Year</h2>
-                    <p>{{ team.best_world_cup_year|default:"To be confirmed" }}</p>
-                </div>
-
-            </div>
-
+      <!-- Team fact file -->
+      <div class="row text-start">
+        <div class="col-12 col-md-6 mb-3">
+          <h2 class="h5">Manager</h2>
+          <p>{{ team.manager|default:"To be confirmed" }}</p>
         </div>
 
-    </div>
+        <div class="col-12 col-md-6 mb-3">
+          <h2 class="h5">Captain</h2>
+          <p>{{ team.captain|default:"To be confirmed" }}</p>
+        </div>
 
+        <div class="col-12 col-md-6 mb-3">
+          <h2 class="h5">Best World Cup Finish</h2>
+          <p>{{ team.best_world_cup_finish|default:"To be confirmed" }}</p>
+        </div>
+
+        <div class="col-12 col-md-6 mb-3">
+          <h2 class="h5">Best Finish Year</h2>
+          <p>{{ team.best_world_cup_year|default:"To be confirmed" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock %}

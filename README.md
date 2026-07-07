@@ -29,6 +29,58 @@ The project demonstrates a range of Full Stack development skills, including:
 
 ---
 
+# Table of Contents
+
+- [Live Application](#live-application)
+- [Introduction](#introduction)
+- [Target Users](#target-users)
+- [User Stories](#user-stories)
+  - [Home Page](#home-page)
+  - [Authentication](#authentication)
+  - [Predictor Game](#predictor-game)
+  - [Pontoon Game](#pontoon-game)
+  - [Team Fact Files](#team-fact-files)
+  - [Premium Features and Payments](#premium-features-and-payments)
+  - [Administration](#administration)
+- [Wireframes](#wireframes)
+- [Features](#features)
+  - [Home Page](#home-page-1)
+  - [Authentication](#authentication-1)
+  - [Predictor Game](#predictor-game-1)
+  - [Prediction Leaderboard](#prediction-leaderboard)
+  - [World Cup Pontoon](#world-cup-pontoon)
+  - [Pontoon Leaderboard](#pontoon-leaderboard)
+  - [Stripe Integration](#stripe-integration)
+  - [Responsive Design](#responsive-design)
+- [Future Improvements](#future-improvements)
+- [Database Design](#database-design)
+  - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
+  - [Team](#team)
+  - [Fixture](#fixture)
+  - [Prediction](#prediction)
+  - [PontoonBall](#pontoonball)
+  - [PontoonAccess](#pontoonaccess)
+- [Technologies Used](#technologies-used)
+  - [Programming Languages](#programming-languages)
+  - [Frameworks and Libraries](#frameworks-and-libraries)
+  - [Database](#database)
+  - [Deployment and Supporting Packages](#deployment-and-supporting-packages)
+  - [Development Tools](#development-tools)
+  - [External Resources](#external-resources)
+- [Code Standards](#code-standards)
+- [Improvements Implemented During Development](#improvements-implemented-during-development)
+- [Testing](#testing)
+  - [Relationship Testing](#relationship-testing)
+  - [Manual Testing](#manual-testing)
+  - [Responsive Testing](#responsive-testing)
+  - [Browser Compatibility Testing](#browser-compatibility-testing)
+  - [Validation Testing](#validation-testing)
+  - [Lighthouse Testing](#lighthouse-testing)
+  - [Production Deployment Testing](#production-deployment-testing)
+- [Challenges Faced & Solutions](#challenges-faced--solutions)
+
+---
+
 # Target Users
 
 World Cup Hub 2026 has been designed for:

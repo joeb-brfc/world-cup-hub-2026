@@ -333,10 +333,17 @@ h5 {
     font-weight: 800;
 }
 
+.prediction-summary {
+    border-top: 1px solid #e5e5e5;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
 /* Fixture status and prediction feedback */
 
 .fixture-score {
     color: var(--wc-pitch-green);
+    font-size: 1.15rem;
     font-weight: 900;
 }
 
@@ -346,6 +353,7 @@ h5 {
     display: inline-block;
     font-weight: 800;
     padding: 0.4rem 0.8rem;
+    margin-top: 0.35rem;
 }
 
 .status-open {
@@ -501,24 +509,6 @@ section .card.border-0 {
 .pontoon-winner {
     color: var(--wc-gold);
     font-weight: 900;
-}
-
-/* Status badges */
-
-.status-open {
-    background: var(--wc-green);
-    border-radius: 20px;
-    color: var(--wc-white);
-    font-weight: 800;
-    padding: 5px 12px;
-}
-
-.status-locked {
-    background: var(--wc-red);
-    border-radius: 20px;
-    color: var(--wc-white);
-    font-weight: 800;
-    padding: 5px 12px;
 }
 
 /* Instruction cards */

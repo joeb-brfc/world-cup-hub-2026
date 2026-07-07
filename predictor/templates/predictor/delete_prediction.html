@@ -3,7 +3,7 @@
 <section class="container py-5">
   <h1 class="mb-4">Delete Prediction</h1>
 
-  <!-- Prediction details -->
+  <!-- Prediction summary -->
   <div class="card shadow-sm">
     <div class="card-body">
       <h2 class="h5">{{ prediction.fixture.home_team }} vs {{ prediction.fixture.away_team }}</h2>
@@ -12,12 +12,13 @@
 
       <p class="text-danger">Are you sure you want to delete this prediction?</p>
 
-      <!-- Delete confirmation form -->
+      <!-- Confirmation form -->
       <form method="POST">
         {% csrf_token %}
 
         <button type="submit" class="btn btn-danger">Delete Prediction</button>
 
+        <!-- Return without deleting -->
         <a href="{% url 'my_predictions' %}" class="btn btn-secondary"> Cancel </a>
       </form>
     </div>
