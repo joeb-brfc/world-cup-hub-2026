@@ -487,6 +487,32 @@ section .card.border-0 {
     transform: translateY(-2px);
 }
 
+.pontoon-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.pontoon-winner-summary {
+    border-left: 3px solid var(--wc-gold);
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .pontoon-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .pontoon-winner-summary {
+        border-left: none;
+        border-top: 1px solid #ccc;
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+}
+
 /* Pontoon scores and statuses */
 
 .score-positive,

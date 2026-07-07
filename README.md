@@ -541,6 +541,156 @@ This model manages premium access following successful Stripe payments.
 
 ---
 
+# Deployment
+
+World Cup Hub 2026 was developed locally using Visual Studio Code before being deployed to Heroku with a PostgreSQL production database.
+
+---
+
+## Local Development
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/world-cup-hub-2026.git
+```
+
+Navigate into the project directory:
+
+```bash
+cd world-cup-hub-2026
+```
+
+---
+
+### Create a Virtual Environment
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment.
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+---
+
+### Install Dependencies
+
+Install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Environment Variables
+
+Create an `env.py` file (or configure environment variables within your IDE) containing the required secrets.
+
+The application requires the following variables:
+
+```text
+SECRET_KEY
+DATABASE_URL
+STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY
+STRIPE_WH_SECRET
+```
+
+These values should never be committed to GitHub.
+
+---
+
+### Database Migrations
+
+Apply the migrations:
+
+```bash
+python manage.py migrate
+```
+
+---
+
+### Create a Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+---
+
+### Run the Development Server
+
+```bash
+python manage.py runserver
+```
+
+The application will then be available at:
+
+```
+http://127.0.0.1:8000/
+```
+
+---
+
+# Heroku Deployment
+
+The application was deployed using Heroku with a PostgreSQL production database.
+
+Deployment steps:
+
+1. Create a Heroku application.
+2. Attach a PostgreSQL database.
+3. Configure the required Config Vars.
+4. Connect the GitHub repository.
+5. Enable automatic or manual deployments.
+6. Deploy the main branch.
+7. Run database migrations.
+8. Create a production superuser.
+9. Verify that static files load correctly.
+
+---
+
+## Required Heroku Config Vars
+
+| Variable | Purpose |
+|-----------|---------|
+| SECRET_KEY | Django secret key |
+| DATABASE_URL | PostgreSQL connection |
+| STRIPE_PUBLIC_KEY | Stripe publishable key |
+| STRIPE_SECRET_KEY | Stripe secret key |
+| STRIPE_WH_SECRET | Stripe webhook signing secret |
+
+---
+
+## Static Files
+
+Static files are served using WhiteNoise.
+
+Before deployment:
+
+```bash
+python manage.py collectstatic
+```
+
+---
+
+## Live Application
+
+The deployed application is available at:
+
+https://world-cup-hub-2026-861092c83eef.herokuapp.com
+
+---
+
 # Code Standards
 
 The project was developed using consistent coding conventions to improve readability and maintainability.

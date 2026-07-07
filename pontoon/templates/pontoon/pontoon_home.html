@@ -25,37 +25,59 @@
   <!-- Selected team summary -->
   {% if selected_ball %}
   <div class="pontoon-team-panel mb-4">
-    <h2 class="h5">Your Pontoon Team</h2>
+    <div class="pontoon-summary-grid">
+      <div class="pontoon-summary-main">
+        <h2 class="h5">Your Pontoon Team</h2>
 
-    <p class="mb-1 pontoon-team-name">
-      <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" />
+        <p class="mb-1 pontoon-team-name">
+          <img src="{% static 'images/flags/' %}{{ selected_ball.team.name|slugify }}.svg" alt="{{ selected_ball.team.name }} flag" width="32" />
+          <span>{{ selected_ball.team }}</span>
+        </p>
 
-      <span>{{ selected_ball.team }}</span>
-    </p>
+        <p class="mb-1">
+          Current Score: {% if selected_ball.busted %}
+          <span class="score-negative">+{{ selected_ball.score }}</span>
+          {% elif selected_ball.score == 21 %}
+          <span class="pontoon-winner">+{{ selected_ball.score }}</span>
+          {% elif selected_ball.score > 0 %}
+          <span class="score-positive">+{{ selected_ball.score }}</span>
+          {% elif selected_ball.score < 0 %}
+          <span class="score-negative">{{ selected_ball.score }}</span>
+          {% else %}
+          <span class="score-neutral">{{ selected_ball.score }}</span>
+          {% endif %}
+        </p>
 
-    <p class="mb-1">
-      Current Score: {% if selected_ball.busted %}
-      <span class="score-negative">+{{ selected_ball.score }}</span>
-      {% elif selected_ball.score == 21 %}
-      <span class="pontoon-winner">+{{ selected_ball.score }}</span>
-      {% elif selected_ball.score > 0 %}
-      <span class="score-positive">+{{ selected_ball.score }}</span>
-      {% elif selected_ball.score < 0 %}
-      <span class="score-negative">{{ selected_ball.score }}</span>
-      {% else %}
-      <span class="score-neutral">{{ selected_ball.score }}</span>
+        <p class="mb-0">
+          Status: {% if selected_ball.score == 21 %}
+          <span class="pontoon-winner">👑 Winner</span>
+          {% elif selected_ball.busted %}
+          <span class="pontoon-busted">✖ Busted</span>
+          {% else %}
+          <span class="pontoon-active">✔ Active</span>
+          {% endif %}
+        </p>
+      </div>
+
+      {% if winner_ball %}
+      <div class="pontoon-winner-summary">
+        <h2 class="h5">🏆 Pontoon Champion</h2>
+
+        <p class="mb-1"><strong>Player:</strong> {{ winner_ball.selected_by.username }}</p>
+
+        <p class="mb-1">
+          <strong>Team:</strong>
+          <img src="{% static 'images/flags/' %}{{ winner_ball.team.name|slugify }}.svg" alt="{{ winner_ball.team.name }} flag" width="24" class="me-2" />
+          {{ winner_ball.team }}
+        </p>
+
+        <p class="mb-0">
+          <strong>Points:</strong>
+          <span class="pontoon-winner">+{{ winner_ball.score }}</span>
+        </p>
+      </div>
       {% endif %}
-    </p>
-
-    <p class="mb-0">
-      Status: {% if selected_ball.score == 21 %}
-      <span class="pontoon-winner">👑 Winner</span>
-      {% elif selected_ball.busted %}
-      <span class="pontoon-busted">✖ Busted</span>
-      {% else %}
-      <span class="pontoon-active">✔ Active</span>
-      {% endif %}
-    </p>
+    </div>
   </div>
   {% endif %}
 

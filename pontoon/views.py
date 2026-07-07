@@ -35,14 +35,21 @@ def pontoon_home(request):
         selected_by=request.user
     ).first()
 
+    # Retrieve the current winning Pontoon team, if one has reached exactly 21.
+    winner_ball = PontoonBall.objects.filter(
+        selected_by__isnull=False,
+        score=21,
+        busted=False
+    ).first()
+
     context = {
         "balls": balls,
         "leaderboard_balls": leaderboard_balls,
         "selected_ball": selected_ball,
+        "winner_ball": winner_ball,
     }
 
     return render(request, "pontoon/pontoon_home.html", context)
-
 
 # Allows a user to select one numbered football.
 @login_required
