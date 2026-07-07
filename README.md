@@ -67,6 +67,9 @@ The project demonstrates a range of Full Stack development skills, including:
   - [Deployment and Supporting Packages](#deployment-and-supporting-packages)
   - [Development Tools](#development-tools)
   - [External Resources](#external-resources)
+- [Deployment](#deployment)
+  - [Local Development](#local-development)
+  - [Heroku Deployment](#heroku-deployment)
 - [Code Standards](#code-standards)
 - [Improvements Implemented During Development](#improvements-implemented-during-development)
 - [Testing](#testing)
@@ -275,7 +278,6 @@ The application has been designed using Bootstrap alongside custom CSS to provid
 Several ideas were identified throughout development that could further improve the platform:
 
 - Complete webhook-driven payment handling so premium access can be granted even if users do not return from Stripe.
-- Introduce password reset functionality.
 - Expand the existing team fact files with squad information, FIFA rankings and historical statistics.
 - Display live scores and match statistics using a football data API.
 - Add countdown timers for upcoming fixtures.
@@ -889,6 +891,9 @@ The relationship testing confirmed that all database relationships behaved as ex
 | Logged-out user attempts to access Pontoon | Redirected to login page | Pass | login.png |
 | User can log out successfully | Session terminated and user logged out | Pass | signout.png |
 | Logout confirmation displayed | User prompted before logging out | Pass | signout-confirmation.png |
+| User can request password reset | Reset email generated successfully | Pass | password-reset.png |
+| User can access reset link | Password reset form displayed | Pass | password-reset-email.png |
+| User can set new password | Password updated successfully | Pass | password-reset-complete.png |
 
 #### Authentication Screenshots
 
@@ -915,7 +920,7 @@ The relationship testing confirmed that all database relationships behaved as ex
 | Test | Expected Outcome | Result | Evidence |
 |--------|-----------------|---------|---------|
 | View all fixtures | Fixtures display correctly | Pass | all-fixtures.png |
-| Matchday 1 filter | Only Matchday 1 fixtures displayed | Pass | filteres-fixtures-1.png |
+| Matchday 1 filter | Only Matchday 1 fixtures displayed | Pass | filtered-fixtures-1.png |
 | Matchday 2 filter | Only Matchday 2 fixtures displayed | Pass | filtered-fixtures-2.png |
 | Knockout stage filter | Only knockout fixtures displayed | Pass | filtered-fixtures-2.png |
 | Save prediction | Prediction saved successfully | Pass | all-fixtures.png |
