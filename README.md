@@ -913,6 +913,18 @@ The relationship testing confirmed that all database relationships behaved as ex
 
 *Figure 4: Successful logout process.*
 
+![Password Reset Request](static/images/testing-screenshots/password-reset.png)
+
+*Figure 5: Password reset request page.*
+
+![Password Reset Email](static/images/testing-screenshots/password-reset-email.png)
+
+*Figure 6: Password reset email generated in the development terminal.*
+
+![Password Reset Complete](static/images/testing-screenshots/password-reset-complete.png)
+
+*Figure 7: Successful password reset confirmation.*
+
 ---
 
 ### Predictor Testing
@@ -947,23 +959,23 @@ The leaderboard automatically recalculated and displayed the correct rankings.
 
 ![All Fixtures](static/images/testing-screenshots/all-fixtures.png)
 
-*Figure 5: Fixture page displaying available fixtures and prediction inputs.*
+*Figure 8: Fixture page displaying available fixtures and prediction inputs.*
 
 ![Fixture Filtering](static/images/testing-screenshots/filtered-fixtures-1.png)
 
-*Figure 6: Matchday filtering displaying selected fixtures only.*
+*Figure 9: Matchday filtering displaying selected fixtures only.*
 
 ![Prediction Locking](static/images/testing-screenshots/lock-after-kickoff.png)
 
-*Figure 7: Locked fixture preventing further prediction changes.*
+*Figure 10: Locked fixture preventing further prediction changes.*
 
 ![Competitor Predictions](static/images/testing-screenshots/load-competitors-fixtures.png)
 
-*Figure 8: Competitor predictions visible after kickoff.*
+*Figure 11: Competitor predictions visible after kickoff.*
 
 ![Prediction Leaderboard](static/images/testing-screenshots/predictions-after-two-games.png)
 
-*Figure 9: Prediction leaderboard showing automatic scoring and medal rankings.*
+*Figure 12: Prediction leaderboard showing automatic scoring and medal rankings.*
 
 ---
 
@@ -1009,23 +1021,23 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Pre Ball Selection](static/images/testing-screenshots/pre-ball-select.png)
 
-*Figure 10: Available footballs before a selection has been made.*
+*Figure 13: Available footballs before a selection has been made.*
 
 ![Post Ball Selection](static/images/testing-screenshots/post-ball-select.png)
 
-*Figure 11: Successful football selection and team assignment.*
+*Figure 14: Successful football selection and team assignment.*
 
 ![Duplicate Selection Prevention](static/images/testing-screenshots/unable-to-select-second-team.png)
 
-*Figure 12: Validation preventing duplicate football selection.*
+*Figure 15: Validation preventing duplicate football selection.*
 
 ![Pontoon Leaderboard](static/images/testing-screenshots/pontoon-after-2-games.png)
 
-*Figure 13: Pontoon leaderboard after completed fixtures.*
+*Figure 16: Pontoon leaderboard after completed fixtures.*
 
 ![Pontoon Completion](static/images/testing-screenshots/pontoon-complete.png)
 
-*Figure 14: Winner and Busted status applied correctly.*
+*Figure 17: Winner and Busted status applied correctly.*
 
 ---
 
@@ -1044,11 +1056,11 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Pre Payment](static/images/testing-screenshots/pre-payment.png)
 
-*Figure 15: Stripe checkout page before payment submission.*
+*Figure 18: Stripe checkout page before payment submission.*
 
-![Post Payment](static/images/testing-screenshots/post-payment.png)
+![Stripe Dashboard Payment](static/images/testing-screenshots/stripe-dashboard-payment-events.png)
 
-*Figure 16: Successful Stripe payment confirmation and Pontoon access granted.*
+*Figure 19: Stripe dashboard confirming successful payment and webhook events during production testing.*
 
 ---
 
@@ -1064,7 +1076,7 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Mobile Responsive Layout](static/images/testing-screenshots/mobile-alt.png)
 
-*Figure 17: Mobile layout demonstrating responsive navigation, Pontoon game cards and the mobile-friendly Pontoon leaderboard.*
+*Figure 20: Mobile layout demonstrating responsive navigation, Pontoon game cards and the mobile-friendly Pontoon leaderboard.*
 
 ---
 
@@ -1082,25 +1094,25 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![HTML Validation](static/images/testing-screenshots/html-validation.png)
 
-*Figure 11: W3C HTML validation results.*
+*Figure 21: W3C HTML validation results.*
 
 ### CSS Validation
 
 ![CSS Validation](static/images/testing-screenshots/css-validation.png)
 
-*Figure 12: W3C CSS validation results.*
+*Figure 22: W3C CSS validation results.*
 
 ### JavaScript Validation
 
 ![JavaScript Validation](static/images/testing-screenshots/javascript-validation.png)
 
-*Figure 13: JavaScript validation results.*
+*Figure 23: JavaScript validation results.*
 
 ### Python Validation
 
 ![Python Validation](static/images/testing-screenshots/python-validation.png)
 
-*Figure 14: Python validation results.*
+*Figure 24: Python validation results.*
 
 ---
 
@@ -1108,7 +1120,7 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Lighthouse Testing](static/images/testing-screenshots/lighthouse-testing.png)
 
-*Figure 15: Lighthouse performance, accessibility, best practices and SEO results.*
+*Figure 25: Lighthouse performance, accessibility, best practices and SEO results.*
 
 ## Production Deployment Testing
 
@@ -1166,27 +1178,19 @@ During deployment several issues were identified and resolved:
 
 #### Heroku Application
 
-![Heroku Deployment](static/images/testing-screenshots/heroku-deployment.png)
+![Heroku Dashboard](static/images/testing-screenshots/heroku-dashboard.png)
 
-*Figure 16: World Cup Hub 2026 successfully deployed on Heroku.*
+*Figure 26: Heroku dashboard showing the deployed application, active web dyno and attached PostgreSQL database.*
 
-#### PostgreSQL Database
+![Heroku Resources](static/images/testing-screenshots/heroku-resources.png)
 
-![PostgreSQL Database](static/images/testing-screenshots/postgresql-database.png)
-
-*Figure 17: Production PostgreSQL database connected successfully.*
-
-#### Production Fixture Locking
-
-![Production Fixture Locking](static/images/testing-screenshots/production-fixture-locking.png)
-
-*Figure 18: Fixture automatically locked after kickoff in production environment.*
+*Figure 27: Heroku Resources page showing the application connected to a PostgreSQL production database and running web dyno.*
 
 #### Production Stripe Payment
 
 ![Production Stripe Payment](static/images/testing-screenshots/production-stripe-payment.png)
 
-*Figure 19: Stripe payment system operating successfully in production.*
+*Figure 28: Stripe payment system operating successfully in production.*
 
 ---
 
