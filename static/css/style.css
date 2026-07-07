@@ -654,30 +654,46 @@ section .card.border-0 {
         overflow-wrap: anywhere;
     }
 
+    /* Selected Pontoon team summary */
+    .pontoon-selected-team {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.6rem;
+        text-align: left;
+    }
+
+    .pontoon-selected-team img {
+        flex-shrink: 0;
+    }
+
+    .pontoon-selected-team span {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    /* Pontoon football card team names */
     .pontoon-team-name {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    text-align: center;
-    line-height: 1.15;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        text-align: left;
+        line-height: 1.2;
     }
 
     .pontoon-team-name img {
-    display: block;
-    margin-bottom: 0.25rem;
+        flex-shrink: 0;
     }
 
     .pontoon-team-name span {
-    font-size: 1.15rem;
-    line-height: 1.15;
-    overflow-wrap: anywhere;
-    word-break: normal;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
     }
 
     .team-name {
-    overflow-wrap: anywhere;
+        overflow-wrap: anywhere;
     }
 
     .fixture-prediction-row,

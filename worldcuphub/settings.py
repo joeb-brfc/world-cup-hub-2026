@@ -161,6 +161,12 @@ LOGOUT_REDIRECT_URL = "home"
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_LOGIN_METHODS = {"username"}
-ACCOUNT_SIGNUP_FIELDS = ["username*", "password1*", "password2*"]
+ACCOUNT_SIGNUP_FIELDS = ["username*", "email*", "password1*", "password2*"]
 
 ACCOUNT_SIGNUP_REDIRECT_URL = "home"
+
+# Email settings
+# In development, password reset emails are printed in the terminal.
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+DEFAULT_FROM_EMAIL = "World Cup Hub 2026 <noreply@worldcuphub2026.com>"
