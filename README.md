@@ -267,6 +267,28 @@ Stripe Checkout provides secure online payments for premium Pontoon access. Foll
 
 ---
 
+## Administrator Workflow
+
+World Cup Hub 2026 is managed by a single administrator through Django Admin. The administrator is responsible for maintaining tournament data and supporting users where necessary.
+
+The main administrative tasks are:
+
+- Adding and updating World Cup teams information
+- Creating fixtures and assigning the home team, away team, tournament stage, matchday and kickoff time.
+- Entering final fixture scores after matches have been completed.
+- Reviewing user accounts, predictions and Pontoon access records.
+- Supporting less confident users by entering a prediction on their behalf when required.
+
+When a fixture result is saved, the application automatically recalculates:
+
+- Prediction points for every user who submitted a prediction for that fixture.
+- Pontoon scores for any team involved in the completed match.
+- Winner, Active and Busted status within the Pontoon competition.
+
+Django Admin is restricted to the site administrator and is not available to standard registered users.
+
+---
+
 ## Responsive Design
 
 The application has been designed using Bootstrap alongside custom CSS to provide a consistent experience across desktop, tablet and mobile devices. Additional responsive enhancements were introduced throughout development to improve usability on smaller screens.
@@ -377,6 +399,8 @@ erDiagram
         datetime created_at
     }
 ```
+
+The Django `User` model represents all registered accounts. Standard users interact with the application through the public interface, while the project owner uses a Django superuser account to access Django Admin and manage fixtures, results, teams, predictions and Pontoon records. A separate administrator model was not required because Django's built-in authentication and permission system provides this functionality.
 
 The ERD shows how the application's models interact through one-to-many and one-to-one relationships. The `Prediction` model links users to fixtures, `PontoonBall` ensures each football and team can only be assigned once, and `PontoonAccess` manages premium access following successful Stripe payments.
 
@@ -857,6 +881,69 @@ A dedicated responsive breakpoint was introduced for smaller mobile devices. Bel
 #### Benefit
 
 This ensures that users on smaller mobile devices can clearly view and interact with both buttons without overlap or layout issues. The improvement increases accessibility, usability, and overall mobile responsiveness.
+
+---
+
+# Administrative Data Management
+
+## Adding a Fixture
+
+Fixtures are added through Django Admin.
+
+The administrator:
+
+1. Opens the `Fixtures` section.
+2. Selects `Add Fixture`.
+3. Chooses the home and away teams.
+4. Selects the tournament stage.
+5. Adds the group-stage matchday where applicable.
+6. Enters the timezone-aware kickoff date and time.
+7. Saves the fixture.
+
+Once saved, the fixture becomes available on the main fixture page and can be filtered by stage or matchday.
+
+---
+
+## Updating a Fixture Result
+
+After a match has finished, the administrator opens the fixture in Django Admin and enters:
+
+- Home team score.
+- Away team score.
+
+Saving the result automatically triggers the application's custom scoring logic.
+
+Prediction points are recalculated as follows:
+
+- 3 points for an exact score.
+- 1 point for the correct match outcome.
+- 0 points for an incorrect outcome.
+
+Pontoon scores are also recalculated using:
+
+- 2 points for every goal scored.
+- Minus 1 point for every goal conceded.
+
+---
+
+## Adding a Prediction for a User
+
+Most users submit and manage their own predictions through the front end.
+
+However, some older or less technically confident family members and friends may ask the administrator to submit a prediction on their behalf.
+
+In this situation, the administrator can:
+
+1. Open the `Predictions` section in Django Admin.
+2. Select `Add Prediction`.
+3. Choose the correct user.
+4. Choose the fixture.
+5. Enter the predicted home and away scores.
+6. Save the prediction.
+
+The database prevents the same user from having more than one prediction for the same fixture.
+
+This administrative support is used only when requested and does not replace the normal user-facing prediction process.
 
 ---
 
