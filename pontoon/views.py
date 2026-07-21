@@ -157,21 +157,12 @@ def pontoon_checkout(request):
     return render(request, "pontoon/pontoon_checkout.html", context)
 
 
-# Grants access to the Pontoon game after a successful payment.
+# Displays the payment success page after a successful Stripe payment.
+# User access is granted by the Stripe webhook, not by this view.
 @login_required
 def pontoon_payment_success(request):
 
     payment_intent = request.GET.get("payment_intent")
-
-    # Create an access record if one does not already exist.
-    access, created = PontoonAccess.objects.get_or_create(
-        user=request.user
-    )
-
-    # Mark the user as having access and store the Stripe payment reference.
-    access.has_access = True
-    access.stripe_pid = payment_intent
-    access.save()
 
     context = {
         "payment_intent": payment_intent,
@@ -180,5 +171,5 @@ def pontoon_payment_success(request):
     return render(
         request,
         "pontoon/pontoon_payment_success.html",
-        context
+        context,
     )
