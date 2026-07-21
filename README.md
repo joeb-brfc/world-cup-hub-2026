@@ -51,6 +51,7 @@ The project demonstrates a range of Full Stack development skills, including:
   - [World Cup Pontoon](#world-cup-pontoon)
   - [Pontoon Leaderboard](#pontoon-leaderboard)
   - [Stripe Integration](#stripe-integration)
+  - [Administrator Workflow](#administrator-workflow)
   - [Responsive Design](#responsive-design)
 - [Future Improvements](#future-improvements)
 - [Database Design](#database-design)
@@ -72,6 +73,10 @@ The project demonstrates a range of Full Stack development skills, including:
   - [Heroku Deployment](#heroku-deployment)
 - [Code Standards](#code-standards)
 - [Improvements Implemented During Development](#improvements-implemented-during-development)
+  - [Administrative Data Management](#administrative-data-management)
+  - [Adding a Fixture](#adding-a-fixture)
+  - [Updating a Fixture Result](#updating-a-fixture-result)
+  - [Adding a Prediction for a User](#adding-a-prediction-for-a-user)
 - [Testing](#testing)
   - [Relationship Testing](#relationship-testing)
   - [Manual Testing](#manual-testing)
@@ -263,7 +268,7 @@ The Pontoon leaderboard displays each player's assigned nation, current score an
 
 ## Stripe Integration
 
-Stripe Checkout provides secure online payments for premium Pontoon access. Following successful payment, users receive a dedicated confirmation page before entering the competition. Webhook verification has also been implemented and tested to support future payment reliability improvements.
+Stripe Checkout provides secure online payments for premium Pontoon access. Following successful payment, users receive a dedicated confirmation page before entering the competition. Stripe webhooks verify successful payments and automatically create or update the user's PontoonAccess record, ensuring premium access is granted even if the user closes their browser before returning to the application.
 
 ---
 
@@ -299,7 +304,6 @@ The application has been designed using Bootstrap alongside custom CSS to provid
 
 Several ideas were identified throughout development that could further improve the platform:
 
-- Complete webhook-driven payment handling so premium access can be granted even if users do not return from Stripe.
 - Expand the existing team fact files with squad information, FIFA rankings and historical statistics.
 - Display live scores and match statistics using a football data API.
 - Add countdown timers for upcoming fixtures.
@@ -1151,6 +1155,39 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ---
 
+### Webhook Testing
+
+Stripe webhooks were tested locally using the Stripe CLI before deployment.
+
+During development three terminal windows were used simultaneously:
+
+- **Terminal 1** – Django development server (`python manage.py runserver`)
+- **Terminal 2** – `stripe listen` forwarding webhook events to the local application.
+- **Terminal 3** – `stripe trigger payment_intent.succeeded` used to simulate successful payments.
+
+This allowed webhook requests, Stripe events and Django responses to be monitored in real time while debugging.
+
+The following webhook events were successfully received and processed:
+
+- payment_intent.created
+- payment_intent.succeeded
+- charge.succeeded
+- charge.updated
+
+Successful webhook processing automatically:
+
+- verified the Stripe signature
+- created or updated the user's PontoonAccess record
+- granted Pontoon access
+- stored the Payment Intent ID
+- stored the payment amount
+
+![Webhook Testing](static/images/testing-screenshots/webhook-testing.png)
+
+*Figure 20: Local Stripe webhook testing using the Django development server, Stripe CLI and Django Administration panel.*
+
+---
+
 ## Responsive Testing
 
 | Device | Result |
@@ -1163,7 +1200,7 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Mobile Responsive Layout](static/images/testing-screenshots/mobile-alt.png)
 
-*Figure 20: Mobile layout demonstrating responsive navigation, Pontoon game cards and the mobile-friendly Pontoon leaderboard.*
+*Figure 21: Mobile layout demonstrating responsive navigation, Pontoon game cards and the mobile-friendly Pontoon leaderboard.*
 
 ---
 
@@ -1181,25 +1218,25 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![HTML Validation](static/images/testing-screenshots/html-validation.png)
 
-*Figure 21: W3C HTML validation results.*
+*Figure 22: W3C HTML validation results.*
 
 ### CSS Validation
 
 ![CSS Validation](static/images/testing-screenshots/css-validation.png)
 
-*Figure 22: W3C CSS validation results.*
+*Figure 23: W3C CSS validation results.*
 
 ### JavaScript Validation
 
 ![JavaScript Validation](static/images/testing-screenshots/javascript-validation.png)
 
-*Figure 23: JavaScript validation results.*
+*Figure 24: JavaScript validation results.*
 
 ### Python Validation
 
 ![Python Validation](static/images/testing-screenshots/python-validation.png)
 
-*Figure 24: Python validation results.*
+*Figure 25: Python validation results.*
 
 ---
 
@@ -1207,7 +1244,7 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Lighthouse Testing](static/images/testing-screenshots/lighthouse-testing.png)
 
-*Figure 25: Lighthouse performance, accessibility, best practices and SEO results.*
+*Figure 26: Lighthouse performance, accessibility, best practices and SEO results.*
 
 ## Production Deployment Testing
 
@@ -1240,12 +1277,12 @@ Testing included:
 
 - Successful payments using Stripe test cards.
 - Redirect to the custom payment success page.
-- Creation of a `PontoonAccess` record after payment.
+- Webhook verification using Stripe CLI.
+- Automatic creation or updating of the PontoonAccess record.
+- Verification that users retained access after closing the browser before selecting a Pontoon team.
 - Prevention of unauthorised users accessing the Pontoon game.
-- Stripe CLI webhook testing using `stripe listen` and `stripe trigger`.
-- Verification that webhook events such as `payment_intent.created`, `payment_intent.succeeded`, `charge.succeeded` and `charge.updated` were successfully received.
 
-The application currently grants Pontoon access through the payment success view after Stripe redirects the user back to the application. Webhook verification has been implemented and tested, with full webhook-driven database updates identified as a future enhancement.
+The application now grants Pontoon access through verified Stripe webhooks. This ensures payment processing is independent of the customer's browser session and follows Stripe's recommended server-to-server workflow.
 
 ---
 
@@ -1267,17 +1304,17 @@ During deployment several issues were identified and resolved:
 
 ![Heroku Dashboard](static/images/testing-screenshots/heroku-dashboard.png)
 
-*Figure 26: Heroku dashboard showing the deployed application, active web dyno and attached PostgreSQL database.*
+*Figure 27: Heroku dashboard showing the deployed application, active web dyno and attached PostgreSQL database.*
 
 ![Heroku Resources](static/images/testing-screenshots/heroku-resources.png)
 
-*Figure 27: Heroku Resources page showing the application connected to a PostgreSQL production database and running web dyno.*
+*Figure 28: Heroku Resources page showing the application connected to a PostgreSQL production database and running web dyno.*
 
 #### Production Stripe Payment
 
 ![Production Stripe Payment](static/images/testing-screenshots/production-stripe-payment.png)
 
-*Figure 28: Stripe payment system operating successfully in production.*
+*Figure 29: Stripe payment system operating successfully in production.*
 
 ---
 
@@ -1457,6 +1494,42 @@ for ball in PontoonBall.objects.filter(selected_by__isnull=False):
 ### Learning Outcome
 
 This demonstrated the importance of considering existing users whenever authentication, permission or payment systems are introduced.
+
+---
+
+## Stripe Webhook Development
+
+### Challenge
+
+Initially, Pontoon access was granted directly from the payment success view after Stripe redirected the customer back to the application.
+
+Although this worked, it did not follow Stripe's recommended server-to-server payment verification process and relied on the customer returning to the application after payment.
+
+While implementing webhooks, several issues were encountered including:
+
+- incorrect Stripe event object handling
+- metadata retrieval errors
+- HTTP 500 server responses
+- event parsing exceptions
+- duplicate payment processing
+
+Debugging these issues was initially difficult because very little diagnostic information was available.
+
+### Solution
+
+Detailed logging and structured exception handling were introduced throughout the webhook implementation.
+
+The Stripe CLI was then used to forward live webhook events to the local Django application while simulated payment events were generated using `stripe trigger`.
+
+Using three simultaneous terminal windows allowed the Django server, incoming Stripe events and simulated payment requests to be monitored in real time, making it significantly easier to identify and resolve webhook issues.
+
+Once the webhook had been verified, the payment success view was refactored so that it no longer granted Pontoon access directly. Instead, the view simply confirms payment while the webhook performs all database updates.
+
+Additional testing was carried out using Incognito Mode. After completing a successful payment, the browser window was deliberately closed before selecting a Pontoon team. Logging back in through a fresh browser session confirmed that Pontoon access had already been granted by the webhook, demonstrating that payment processing was independent of the success page redirect.
+
+### Learning Outcome
+
+This challenge significantly improved my understanding of Stripe webhooks, server-to-server communication, structured logging, exception handling and debugging techniques within Django applications.
 
 ---
 
