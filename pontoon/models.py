@@ -69,7 +69,9 @@ class PontoonBall(models.Model):
             ):
                 continue
 
-            # Calculate the score via 2 points for each goal scored and -1 point for each goal conceded.
+            # Calculate the score:
+            # +2 points for each goal scored and
+            # -1 point for each goal conceded.
 
             if fixture.home_team == self.team:
 
@@ -157,3 +159,4 @@ class PontoonAccess(models.Model):
     def __str__(self):
         # Display the username in the Django admin.
         return f"{self.user.username} Pontoon Access"
+    

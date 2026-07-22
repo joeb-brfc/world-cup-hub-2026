@@ -207,12 +207,6 @@ The interface uses a vibrant World Cup-inspired colour palette featuring gold, g
 
 # Wireframes
 
-## Homepage Wireframe
-
-*To be provided.*
-
----
-
 ![Fixtures Wireframe](./static/images/wireframes/fixtures.png)
 
 ![Prediction Page Wireframe](./static/images/wireframes/my-predictions.png)
@@ -220,11 +214,6 @@ The interface uses a vibrant World Cup-inspired colour palette featuring gold, g
 ![Pontoon Wireframe](./static/images/wireframes/pontoon.png)
 
 ![Prediction Leaderboard Wireframe](./static/images/wireframes/prediction-leaderboard.png)
----
-
-## Mobile Wireframe
-
-*To be provided.*
 
 ---
 
