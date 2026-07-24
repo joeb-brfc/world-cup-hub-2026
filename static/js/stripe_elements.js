@@ -1,3 +1,8 @@
+/* jshint esversion: 6 */
+/* global Stripe */
+/* global stripePublicKey */
+/* global clientSecret */
+/* global successUrl */
 // Initialise Stripe using the public key provided by Django.
 const stripe = Stripe(stripePublicKey);
 

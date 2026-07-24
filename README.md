@@ -54,6 +54,7 @@ The project demonstrates a range of Full Stack development skills, including:
   - [Administrator Workflow](#administrator-workflow)
   - [Responsive Design](#responsive-design)
 - [Future Improvements](#future-improvements)
+- [Credits] (#credits)
 - [Database Design](#database-design)
   - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
   - [Team](#team)
@@ -302,6 +303,42 @@ Several ideas were identified throughout development that could further improve 
 - Add administrator controls to create and manage multiple Pontoon competitions.
 - Improve accessibility further through additional ARIA labels, keyboard navigation and enhanced colour contrast.
 - Introduce optional dark mode.
+---
+
+## Credits
+
+### Code and Documentation
+
+- [Django Documentation](https://docs.djangoproject.com/) was consulted for
+  guidance on models, views, forms, authentication and application structure.
+- [Stripe Documentation](https://docs.stripe.com/) was used to implement Stripe
+  Elements, PaymentIntents and webhook-based payment confirmation.
+- [Bootstrap Documentation](https://getbootstrap.com/docs/) was used for the
+  responsive layout, navigation, cards, forms and utility classes.
+- [Code Institute](https://codeinstitute.net/) course materials and walkthrough
+  projects supported the initial Django project structure and deployment
+  process.
+- [W3Schools](https://www.w3schools.com/) and
+  [MDN Web Docs](https://developer.mozilla.org/) were consulted for general
+  HTML, CSS and JavaScript guidance.
+- Guidance and troubleshooting support were provided by ChatGPT. All generated
+  suggestions were reviewed, adapted and tested before being included in the
+  project.
+
+### Media
+
+- Team flag images were obtained from **https://flagicons.lipis.dev/**.
+
+### Technologies and Services
+
+- Django
+- PostgreSQL
+- Heroku
+- Stripe
+- Bootstrap
+- Font Awesome
+- Google Fonts
+- Git and GitHub
 
 ---
 
@@ -1219,7 +1256,7 @@ Successful webhook processing automatically:
 
 ![JavaScript Validation](static/images/testing-screenshots/javascript-validation.png)
 
-*Figure 24: JavaScript validation results.*
+*Figure 24: JSHint validation confirming that the custom Stripe payment JavaScript passed with no warnings or errors.*
 
 ### Python Validation
 

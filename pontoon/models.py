@@ -159,4 +159,3 @@ class PontoonAccess(models.Model):
     def __str__(self):
         # Display the username in the Django admin.
         return f"{self.user.username} Pontoon Access"
-    
