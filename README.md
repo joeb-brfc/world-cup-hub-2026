@@ -773,11 +773,11 @@ Although the project began with a defined set of user stories, several improveme
 
 #### Original Plan
 
-The original fixture page displayed all fixtures together on a single page.
+The original fixture page grouped fixtures by tournament stage. Group stage matches were displayed together, while knockout fixtures were organised by round. As the number of group stage fixtures increased, it became clear that displaying all group games together made navigation more difficult.
 
 #### Improvement Implemented
 
-As the number of fixtures increased, navigation became more difficult. Matchday filtering was introduced to improve usability.
+To improve usability, the group stage was divided into Matchday 1, Matchday 2, and Matchday 3 filters. This allowed users to navigate the 72 group stage fixtures more efficiently while keeping the existing knockout stage filters for the later rounds.
 
 Users can now filter fixtures by:
 
@@ -792,7 +792,7 @@ Users can now filter fixtures by:
 
 #### Benefit
 
-This significantly improved navigation and reduced the amount of scrolling required to find fixtures.
+Dividing the group stage into individual matchdays significantly improved navigation, reduced scrolling and made it much quicker for users to locate fixtures and enter predictions as the tournament progressed.
 
 ---
 
