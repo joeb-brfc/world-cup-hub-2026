@@ -54,7 +54,7 @@ The project demonstrates a range of Full Stack development skills, including:
   - [Administrator Workflow](#administrator-workflow)
   - [Responsive Design](#responsive-design)
 - [Future Improvements](#future-improvements)
-- [Credits] (#credits)
+- [Credits](#credits)
 - [Database Design](#database-design)
   - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
   - [Team](#team)
@@ -327,9 +327,14 @@ Several ideas were identified throughout development that could further improve 
 
 ### Media
 
-- Team flag images were obtained from **https://flagicons.lipis.dev/**.
+The following external media resources were used throughout the project:
 
-### Technologies and Services
+- Team flag images were sourced from [Flag Icons](https://flagicons.lipis.dev/).
+- Font Awesome icons were used throughout the user interface.
+- Google Fonts were used to enhance the application's typography.
+- The World Cup Hub hero image was created by the project author.
+
+### Technologies Used
 
 - Django
 - PostgreSQL
@@ -608,7 +613,7 @@ World Cup Hub 2026 was developed locally using Visual Studio Code before being d
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/world-cup-hub-2026.git
+git clone https://github.com/joeb-brfc/world-cup-hub-2026
 ```
 
 Navigate into the project directory:
@@ -1177,7 +1182,7 @@ The Pontoon leaderboard updated automatically based on goals scored and goals co
 
 ![Stripe Dashboard Payment](static/images/testing-screenshots/stripe-dashboard-payment-events.png)
 
-*Figure 19: Stripe dashboard confirming successful payment and webhook events during production testing.*
+*Figure 19: Stripe Dashboard confirming successful test payment transactions during production testing.*
 
 ---
 
